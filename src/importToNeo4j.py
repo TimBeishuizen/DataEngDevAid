@@ -1,5 +1,6 @@
 from typing import Union
 from xml.etree import ElementTree as ET
+from time import gmtime, strftime
 import re
 import neo4j.v1 as neo
 from neo4j.v1 import GraphDatabase, basic_auth
@@ -17,6 +18,11 @@ else:
 SERVER_URL = "localhost:7687"
 AUTH_USER = "neo4j"
 AUTH_PASSWORD = "neo"
+
+
+def print_time():
+    s = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    print(s)
 
 
 class SessionExtension:
@@ -171,6 +177,9 @@ def main():
 
     ext = SessionExtension(trans)
 
+    print("--- Task started ---")
+    print_time()
+
     print("Clearing database...")
     ext.clear_db()
 
@@ -185,22 +194,29 @@ def main():
         budget = ext.get_budget(budget_node)
         ext.add_budget(budget, activity)
         # Add planned disbursements
+        disbs: list = []
         disbursement_index = 0
         for disbursement_node in activity_node.iter("planned-disbursement"):
             disbursement = ext.get_disbursement(disbursement_node)
             ext.add_disbursement(disbursement, activity, disbursement_index)
             disbursement_index += 1
+            disbs.append(disbursement)
         # Organizations
+        orgs = []
         reporting_org_node: ET.Element = activity_node.find("reporting-org")
         organization = ext.get_organization(reporting_org_node)
+        orgs.append(organization)
         ext.add_organization(organization)
         for participating_org_node in activity_node.iter("participating-org"):
             organization = ext.get_organization(participating_org_node)
             ext.add_organization(organization)
+            orgs.append(organization)
         # Policy markers
+        policies = []
         for policy_marker_node in activity_node.iter("policy-marker"):
             policy = ext.get_policy(policy_marker_node)
             ext.add_policy(policy)
+            policies.append(policy)
         # Locations
         recipient_node = activity_node.find("recipient-country")
         if recipient_node is None:
@@ -208,9 +224,35 @@ def main():
         location = ext.get_location(recipient_node)
         ext.add_location(location)
 
+        # Now relations.
+        stmt = ""
+
+        # (Organization) -[Implements]-> (Policy)
+        for org, pol in zip(orgs, policies):
+            stmt = CSB.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id, "Implements")
+            trans.run(stmt)
+
+        # (Activity) -[Commits]-> (Budget)
+        stmt = CSB.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id, "Commits")
+        trans.run(stmt)
+
+        # (Budget) -[Commits] -> (Policy)
+        for pol in policies:
+            stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "pol", "Policy", pol.obj_id, "Commits")
+            trans.run(stmt)
+
+        # (Budget) -[Disburses]-> (Disbursement)
+        for dis in disbs:
+            stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement", dis.obj_id,
+                                          "Disburses")
+            trans.run(stmt)
+
     trans.commit()
 
     session.close()
+
+    print("--- Task completed ---")
+    print_time()
 
 
 if __name__ == '__main__':

@@ -79,6 +79,19 @@ class CypherStatementBuilder:
                                                           edge_class_name, props_str, n2_name)
         return create_str
 
+    @staticmethod
+    def create_edge_by_ids(n1_name: str, n1_class: str, n1_id: int, n2_name: str, n2_class: str, n2_id: int
+                           , edge_class: str, edge_props: Union[dict, None] = None, edge_name: str = None) -> str:
+        props_str = get_props_dict_str(edge_props)
+        edge_class = edge_class.upper()
+        create_str = "MATCH ({}:{}), ({}:{}) " \
+                     "WHERE {}.obj_id={} AND {}.obj_id={} " \
+                     "CREATE ({})-[{}:{}{}]->({})" \
+            .format(n1_name, n1_class, n2_name, n2_class,
+                    n1_name, n1_id, n2_name, n2_id,
+                    n1_name, edge_name if edge_name is not None else "", edge_class, props_str, n2_name)
+        return create_str
+
 
 if __name__ == '__main__':
     # Test script.
