@@ -3,7 +3,7 @@ from typing import Union, Any
 
 def get_escaped_str(v: Union[str, list, Any]) -> str:
     if type(v) is str:
-        return "'{}'".format(v)
+        return "'{}'".format(v.replace("'", "\\'"))
     elif type(v) is list:
         counter = 0
         s = ""
