@@ -174,37 +174,43 @@ def main():
                 # transactions = EdgeAttr.get_transactions(activity_node, orgs)
 
                 # (Activity) -[Commits]-> (Budget)
-                stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id,
+                stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
+                                               "budget", "Budget", budget.obj_id,
                                                "Commits")
                 ext.run(stmt)
 
                 # (Activity) -[Is_For_Location]-> (Location)
-                stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id, "loc", "Location", location.obj_id,
+                stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
+                                               "loc", "Location", location.obj_id,
                                                "Is_For", EdgeAttr.get_activity_attributes(activity))
                 ext.run(stmt)
 
                 # (Activity) -[Supports]-> (Policy)
                 for pol in policies:
-                    stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id, "pol", "Policy", pol.obj_id,
+                    stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
+                                                   "pol", "Policy", pol.obj_id,
                                                    "Supports", EdgeAttr.get_activity_attributes(activity))
                     ext.run(stmt)
 
-                # (Organization) -[Participates_In/Manages]-> (Activity)
+                # (Organization) -[Participates_In]-> (Activity)
                 for i, org in enumerate(organizations):
-                    stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id, "act", "Activity",
-                                                   activity.obj_id,
-                                                   "Participates_In" if i > 0 else "Manages",
-                                                   # TODO: a better word/phrase?
-                                                   EdgeAttr.get_activity_attributes(activity))
-                    ext.run(stmt)
+                    # 1. Ignore the first organization (reporting-org, always Ministry of Foreign Affairs).
+                    # 2. Ignore the Ministry's appearance in all participating organizations.
+                    if i > 0 and org.ref != "XM-DAC-7":
+                        stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
+                                                       "act", "Activity", activity.obj_id,
+                                                       "Participates_In", EdgeAttr.get_activity_attributes(activity))
+                        ext.run(stmt)
 
                 # (Organization) -[?]-> (Disbursement)
 
                 # (Organization) -[Implements]-> (Policy)
                 for i, (org, pol) in enumerate(zip(organizations, policies)):
-                    if i > 0:
-                        # Don't mess up with reporting organization.
-                        stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id,
+                    # 1. Ignore the first organization (reporting-org, always Ministry of Foreign Affairs).
+                    # 2. Ignore the Ministry's appearance in all participating organizations.
+                    if i > 0 and org.ref != "XM-DAC-7":
+                        stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
+                                                       "pol", "Policy", pol.obj_id,
                                                        "Implements")
                         ext.run(stmt)
 
@@ -212,8 +218,8 @@ def main():
 
                 # (Budget) -[Disburses]-> (Disbursement)
                 for dis in disbursements:
-                    stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement",
-                                                   dis.obj_id,
+                    stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                                                   "dis", "Disbursement", dis.obj_id,
                                                    "Disburses")
                     ext.run(stmt)
 
@@ -221,7 +227,8 @@ def main():
 
                 # (Policy) -[Commits] -> (Budget)
                 for pol in policies:
-                    stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id, "bud", "Budget", budget.obj_id,
+                    stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id,
+                                                   "bud", "Budget", budget.obj_id,
                                                    "Commits")
                     ext.run(stmt)
 
