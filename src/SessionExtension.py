@@ -21,9 +21,9 @@ class SessionExtension:
     _known_location_codes: List[str] = []
     _known_locations: List[Location] = []
     _added_location_codes: List[str] = []
-    _known_policy_names: List[str] = []
+    _known_policy_codes: List[int] = []
     _known_policies: List[Policy] = []
-    _added_policy_names: List[str] = []
+    _added_policy_codes: List[int] = []
 
     def __init__(self, session: neo.Session):
         self._session = session
@@ -116,29 +116,26 @@ class SessionExtension:
         return org.obj_id
 
     def get_policy(self, node: ET.Element) -> Policy:
+        code: int = int(node.get("code"))
         name: str = SessionExtension.narrative(node)
-        unique_name = Policy.get_unique_name(name)
-        if unique_name in self._added_policy_names:
-            index = self._known_policy_names.index(unique_name)
+        if code in self._added_policy_codes:
+            index = self._added_policy_codes.index(code)
             pol: Policy = self._known_policies[index]
             return pol
         vocabulary: int = int(node.get("vocabulary"))
-        code: int = int(node.get("code"))
-        significance: int = int(node.get("significance"))
-        policy = Policy(name, vocabulary, code, significance)
-        self._known_policy_names.append(policy.get_name())
+        policy = Policy(name, vocabulary, code)
+        self._known_policy_codes.append(policy.code)
         self._known_policies.append(policy)
         return policy
 
     def add_policy(self, policy: Policy) -> int:
-        if policy.get_name() in self._added_policy_names:
-            index = self._known_policy_names.index(policy.get_name())
+        if policy.code in self._added_policy_codes:
+            index = self._known_policy_codes.index(policy.code)
             pol: Policy = self._known_policies[index]
             return pol.obj_id
-        self._added_policy_names.append(policy.get_name())
+        self._added_policy_codes.append(policy.code)
         stmt = Stmt.create_node(policy.get_name(), "Policy", {
             "name": policy.name, "vocabulary": policy.vocabulary, "code": policy.code,
-            "significance": policy.significance,
             "obj_id": policy.obj_id
         })
         self._transaction.run(stmt)

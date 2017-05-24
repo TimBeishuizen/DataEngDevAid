@@ -1,3 +1,4 @@
+from typing import Dict
 from xml.etree import ElementTree as ET
 from time import localtime, strftime
 import neo4j.v1 as neo
@@ -105,10 +106,13 @@ def main():
                     ext.add_organization(organization)
                     organizations.append(organization)
 
+                # policy code -> significance
+                policy_significance_map: Dict[int, int] = dict()
                 # Policy markers
                 policies = []
                 for policy_marker_node in activity_node.iter("policy-marker"):
                     policy = ext.get_policy(policy_marker_node)
+                    policy_significance_map[policy.code] = int(policy_marker_node.get("significance"))
                     ext.add_policy(policy)
                     policies.append(policy)
 
@@ -119,15 +123,18 @@ def main():
                 location = ext.get_location(recipient_node)
                 ext.add_location(location)
 
-                return activity, budget, organizations, policies, location
+                return activity, budget, organizations, policies, location, policy_significance_map
 
-            activity, budget, organizations, policies, location = add_nodes()
+            activity, budget, organizations, policies, location, policy_significance_map = add_nodes()
 
             def add_relations(activity: Activity, budget: Budget, organizations: List[Organization],
-                              policies: List[Policy], location: Location):
+                              policies: List[Policy], location: Location, policy_significance_map: Dict[int, int]):
                 # Initialize transaction list and disbursement list.
                 transactions = EdgeAttr.get_transactions(activity_node, organizations)
                 disbursements = EdgeAttr.get_disbursements(activity_node, activity)
+
+                def get_pol_sig(code: int) -> int:
+                    return policy_significance_map.get(code, 0)
 
                 # (Activity) -[Commits]-> (Budget)
                 stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
@@ -144,7 +151,7 @@ def main():
                 # (Activity) -[Supports]-> (Policy)
                 for pol in policies:
                     # Ignore the policies whose significance level is 0 ("not targeted").
-                    if pol.significance > 0:
+                    if get_pol_sig(pol.code) > 0:
                         stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
                                                        "pol", "Policy", pol.obj_id,
                                                        "Supports", EdgeAttr.get_activity_attributes(activity))
@@ -167,7 +174,7 @@ def main():
                     if i == 0 or org.ref == "XM-DAC-7":
                         continue
                     for pol in policies:
-                        if pol.significance > 0:
+                        if get_pol_sig(pol.code) > 0:
                             stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
                                                            "pol", "Policy", pol.obj_id,
                                                            "Implements")
@@ -212,13 +219,13 @@ def main():
 
                 # (Policy) -[Commits] -> (Budget)
                 for pol in policies:
-                    if pol.significance > 0:
+                    if get_pol_sig(pol.code) > 0:
                         stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id,
                                                        "bud", "Budget", budget.obj_id,
                                                        "Commits")
                         ext.run(stmt)
 
-            add_relations(activity, budget, organizations, policies, location)
+            add_relations(activity, budget, organizations, policies, location, policy_significance_map)
 
         print("Committing...")
         ext.commit()

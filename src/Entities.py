@@ -11,6 +11,7 @@ except Exception:
 
 TRANSACTION_DEBUG = False
 
+
 def get_next_id() -> int:
     global next_id_val
     next_id_val += 1
@@ -118,24 +119,22 @@ class Organization:
 
 
 class Policy:
-    def __init__(self, name: str, vocabulary: int, code: int, significance: int):
+    def __init__(self, name: str, vocabulary: int, code: int):
         self.name = name
         self.vocabulary = vocabulary
         self.code = code
-        self.significance = significance
         self.obj_id = get_next_id()
 
     def get_name(self) -> str:
-        return Policy.get_unique_name(self.name)
+        return Policy.get_unique_name(self.code)
 
     @staticmethod
-    def get_unique_name(name: str) -> str:
-        return R_CHARS.sub("_", name)
+    def get_unique_name(code: int) -> str:
+        return "pol_" + str(code)
 
     name: str
     vocabulary: int
     code: int
-    significance: int
     obj_id: int
 
 
