@@ -126,8 +126,8 @@ def main():
             def add_relations(activity: Activity, budget: Budget, organizations: List[Organization],
                               policies: List[Policy], location: Location):
                 # Initialize transaction list and disbursement list.
-                # transactions = EdgeAttr.get_transactions(activity_node, organizations)
-                # disbursements = EdgeAttr.get_disbursements(activity_node, activity)
+                transactions = EdgeAttr.get_transactions(activity_node, organizations)
+                disbursements = EdgeAttr.get_disbursements(activity_node, activity)
 
                 # (Activity) -[Commits]-> (Budget)
                 stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
@@ -175,36 +175,36 @@ def main():
 
                 # (Organization) -[?]-> (Location)
 
-                # # (Budget) -[Disburses_To]-> (Organization)
-                # for i, org in enumerate(organizations):
-                #     if i == 0 or org.ref == "XM-DAC-7":
-                #         continue
-                #     for disbursement in disbursements:
-                #         stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
-                #                                        "org", "Organization", org.obj_id,
-                #                                        "Disburses_To",
-                #                                        EdgeAttr.get_disbursement_attributes(disbursement))
-                #         ext.run(stmt)
-                #
-                # # (Budget) -[Transfers_To]-> (Organization)
-                # for i, org in enumerate(organizations):
-                #     if i == 0 or org.ref == "XM-DAC-7":
-                #         continue
-                #     for transaction in transactions:
-                #         # Here we use the "receiver-org" of transaction node instead of "participating-org" of
-                #         # activity node.
-                #         if transaction.receiver_org is None:
-                #             if TRANSACTION_DEBUG:
-                #                 print("[WARN] Cannot create relation 'transfers to' between budget and organization, "
-                #                       "having a transaction as attribute. Receiver name={}"
-                #                       .format(transaction.receiver_name))
-                #             continue
-                #         if transaction.receiver_org.obj_id == org.obj_id:
-                #             stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
-                #                                            "org", "Organization", org.obj_id,
-                #                                            "Transfers_To",
-                #                                            EdgeAttr.get_transaction_attributes(transaction))
-                #             ext.run(stmt)
+                # (Budget) -[Disburses_To]-> (Organization)
+                for i, org in enumerate(organizations):
+                    if i == 0 or org.ref == "XM-DAC-7":
+                        continue
+                    for disbursement in disbursements:
+                        stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                                                       "org", "Organization", org.obj_id,
+                                                       "Disburses_To",
+                                                       EdgeAttr.get_disbursement_attributes(disbursement))
+                        ext.run(stmt)
+
+                # (Budget) -[Transfers_To]-> (Organization)
+                for i, org in enumerate(organizations):
+                    if i == 0 or org.ref == "XM-DAC-7":
+                        continue
+                    for transaction in transactions:
+                        # Here we use the "receiver-org" of transaction node instead of "participating-org" of
+                        # activity node.
+                        if transaction.receiver_org is None:
+                            if TRANSACTION_DEBUG:
+                                print("[WARN] Cannot create relation 'transfers to' between budget and organization, "
+                                      "having a transaction as attribute. Receiver name={}"
+                                      .format(transaction.receiver_name))
+                            continue
+                        if transaction.receiver_org.obj_id == org.obj_id:
+                            stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                                                           "org", "Organization", org.obj_id,
+                                                           "Transfers_To",
+                                                           EdgeAttr.get_transaction_attributes(transaction))
+                            ext.run(stmt)
 
                 # (Budget) -[?]-> (Location)
 
