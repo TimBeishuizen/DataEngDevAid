@@ -20,11 +20,18 @@ AUTH_USER = "neo4j"
 AUTH_PASSWORD = "neo"
 
 CLASS_LIST = ["Activity", "Budget", "Disbursement", "Organization", "Policy", "Location"]
+XML_FILES = [
+    "../data/IATIACTIVITIES19972007.xml",
+    "../data/IATIACTIVITIES20082009.xml",
+    "../data/IATIACTIVITIES20102011.xml",
+    "../data/IATIACTIVITIES20122013.xml",
+    "../data/IATIACTIVITIES20142015.xml",
+    "../data/IATIACTIVITIES20162017.xml"
+]
 
 
-def print_time():
-    s = strftime("%Y-%m-%d %H:%M:%S", localtime())
-    print(s)
+def timestr() -> str:
+    return strftime("%Y-%m-%d %H:%M:%S", localtime())
 
 
 class SessionExtension:
@@ -218,10 +225,8 @@ def main():
     driver: neo.Driver = GraphDatabase.driver("bolt://" + SERVER_URL, auth=basic_auth(AUTH_USER, AUTH_PASSWORD))
     session: neo.Session = driver.session()
 
-    tree = ET.ElementTree(file="../data/IATIACTIVITIES20162017.xml")
-
     print("--- Task started ---")
-    print_time()
+    print(timestr())
 
     print("Clearing indices...")
     # This operation could fail at bootstrap
@@ -252,116 +257,123 @@ def main():
     trans.commit()
     trans.close()
 
-    ext.begin_transaction()
+    def process_xml(file: str) -> None:
+        tree = ET.ElementTree(file=file)
 
-    print("Adding activity info...")
-    for activity_node in tree.iter("iati-activity"):
-        activity_node: ET.Element = activity_node
+        ext.begin_transaction()
 
-        # Activity
-        activity = ext.get_activity(activity_node)
-        ext.add_activity(activity)
-        # Budget
-        budget_node: ET.Element = activity_node.find("budget")
-        budget = ext.get_budget(budget_node, activity)
-        ext.add_budget(budget)
-        # Planned disbursements
-        disbs: List[Disbursement] = []
-        disbursement_index = 0
-        for disbursement_node in activity_node.iter("planned-disbursement"):
-            disbursement = ext.get_disbursement(disbursement_node, activity, disbursement_index)
-            ext.add_disbursement(disbursement)
-            disbursement_index += 1
-            disbs.append(disbursement)
-        # Organizations
-        orgs: List[Organization] = []
-        reporting_org_node: ET.Element = activity_node.find("reporting-org")
-        organization = ext.get_organization(reporting_org_node)
-        orgs.append(organization)
-        ext.add_organization(organization)
-        for participating_org_node in activity_node.iter("participating-org"):
-            organization = ext.get_organization(participating_org_node)
-            ext.add_organization(organization)
+        print("Adding activities for '{}'... ({})".format(file, timestr()))
+        for activity_node in tree.iter("iati-activity"):
+            activity_node: ET.Element = activity_node
+
+            # Activity
+            activity = ext.get_activity(activity_node)
+            ext.add_activity(activity)
+            # Budget
+            budget_node: ET.Element = activity_node.find("budget")
+            budget = ext.get_budget(budget_node, activity)
+            ext.add_budget(budget)
+            # Planned disbursements
+            disbs: List[Disbursement] = []
+            disbursement_index = 0
+            for disbursement_node in activity_node.iter("planned-disbursement"):
+                disbursement = ext.get_disbursement(disbursement_node, activity, disbursement_index)
+                ext.add_disbursement(disbursement)
+                disbursement_index += 1
+                disbs.append(disbursement)
+            # Organizations
+            orgs: List[Organization] = []
+            reporting_org_node: ET.Element = activity_node.find("reporting-org")
+            organization = ext.get_organization(reporting_org_node)
             orgs.append(organization)
-        # Policy markers
-        policies: List[Policy] = []
-        for policy_marker_node in activity_node.iter("policy-marker"):
-            policy = ext.get_policy(policy_marker_node)
-            ext.add_policy(policy)
-            policies.append(policy)
-        # Locations
-        recipient_node = activity_node.find("recipient-country")
-        if recipient_node is None:
-            recipient_node = activity_node.find("recipient-region")
-        location = ext.get_location(recipient_node)
-        ext.add_location(location)
+            ext.add_organization(organization)
+            for participating_org_node in activity_node.iter("participating-org"):
+                organization = ext.get_organization(participating_org_node)
+                ext.add_organization(organization)
+                orgs.append(organization)
+            # Policy markers
+            policies: List[Policy] = []
+            for policy_marker_node in activity_node.iter("policy-marker"):
+                policy = ext.get_policy(policy_marker_node)
+                ext.add_policy(policy)
+                policies.append(policy)
+            # Locations
+            recipient_node = activity_node.find("recipient-country")
+            if recipient_node is None:
+                recipient_node = activity_node.find("recipient-region")
+            location = ext.get_location(recipient_node)
+            ext.add_location(location)
 
-        def add_relations():
-            # Initialize transaction list.
-            # transactions = ext.get_transactions(activity_node, orgs)
+            def add_relations():
+                # Initialize transaction list.
+                # transactions = ext.get_transactions(activity_node, orgs)
 
-            # (Activity) -[Commits]-> (Budget)
-            stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id,
-                                           "Commits")
-            ext.run(stmt)
-
-            # (Activity) -[Is_For_Location]-> (Location)
-            stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "loc", "Location", location.obj_id,
-                                           "Is_For", EdgeAttr.get_activity_attributes(activity))
-            ext.run(stmt)
-
-            # (Activity) -[Supports]-> (Policy)
-            for pol in policies:
-                stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "pol", "Policy", pol.obj_id,
-                                               "Supports", EdgeAttr.get_activity_attributes(activity))
-                ext.run(stmt)
-
-            # (Organization) -[Participates_In/Manages]-> (Activity)
-            for i, org in enumerate(orgs):
-                stmt = Stat.create_edge_by_ids("org", "Organization", org.obj_id, "act", "Activity",
-                                               activity.obj_id,
-                                               "Participates_In" if i > 0 else "Manages",
-                                               # TODO: a better word/phrase?
-                                               EdgeAttr.get_activity_attributes(activity))
-                ext.run(stmt)
-
-            # (Organization) -[?]-> (Disbursement)
-
-            # (Organization) -[Implements]-> (Policy)
-            for i, (org, pol) in enumerate(zip(orgs, policies)):
-                if i > 0:
-                    # Don't mess up with reporting organization.
-                    stmt = Stat.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id,
-                                                   "Implements")
-                    ext.run(stmt)
-
-            # (Organization) -[?]-> (Location)
-
-            # (Budget) -[Disburses]-> (Disbursement)
-            for dis in disbs:
-                stmt = Stat.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement",
-                                               dis.obj_id,
-                                               "Disburses")
-                ext.run(stmt)
-
-            # (Budget) -[?]-> (Location)
-
-            # (Policy) -[Commits] -> (Budget)
-            for pol in policies:
-                stmt = Stat.create_edge_by_ids("pol", "Policy", pol.obj_id, "bud", "Budget", budget.obj_id,
+                # (Activity) -[Commits]-> (Budget)
+                stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id,
                                                "Commits")
                 ext.run(stmt)
 
-            # (Policy) -[?]-> (Location)
+                # (Activity) -[Is_For_Location]-> (Location)
+                stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "loc", "Location", location.obj_id,
+                                               "Is_For", EdgeAttr.get_activity_attributes(activity))
+                ext.run(stmt)
 
-        add_relations()
+                # (Activity) -[Supports]-> (Policy)
+                for pol in policies:
+                    stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "pol", "Policy", pol.obj_id,
+                                                   "Supports", EdgeAttr.get_activity_attributes(activity))
+                    ext.run(stmt)
 
-    ext.commit()
+                # (Organization) -[Participates_In/Manages]-> (Activity)
+                for i, org in enumerate(orgs):
+                    stmt = Stat.create_edge_by_ids("org", "Organization", org.obj_id, "act", "Activity",
+                                                   activity.obj_id,
+                                                   "Participates_In" if i > 0 else "Manages",
+                                                   # TODO: a better word/phrase?
+                                                   EdgeAttr.get_activity_attributes(activity))
+                    ext.run(stmt)
+
+                # (Organization) -[?]-> (Disbursement)
+
+                # (Organization) -[Implements]-> (Policy)
+                for i, (org, pol) in enumerate(zip(orgs, policies)):
+                    if i > 0:
+                        # Don't mess up with reporting organization.
+                        stmt = Stat.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id,
+                                                       "Implements")
+                        ext.run(stmt)
+
+                # (Organization) -[?]-> (Location)
+
+                # (Budget) -[Disburses]-> (Disbursement)
+                for dis in disbs:
+                    stmt = Stat.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement",
+                                                   dis.obj_id,
+                                                   "Disburses")
+                    ext.run(stmt)
+
+                # (Budget) -[?]-> (Location)
+
+                # (Policy) -[Commits] -> (Budget)
+                for pol in policies:
+                    stmt = Stat.create_edge_by_ids("pol", "Policy", pol.obj_id, "bud", "Budget", budget.obj_id,
+                                                   "Commits")
+                    ext.run(stmt)
+
+                    # (Policy) -[?]-> (Location)
+
+            add_relations()
+
+        print("Committing...")
+        ext.commit()
+
+    for xml_file in XML_FILES:
+        process_xml(xml_file)
 
     session.close()
 
     print("--- Task completed ---")
-    print_time()
+    print(timestr())
 
 
 if __name__ == '__main__':

@@ -3,7 +3,11 @@ from typing import Iterable, List
 
 next_id_val = 0
 
-R_CHARS: str = r"[.()\[\]' \-*,/&\":]"
+try:
+    # Trick for PyCharm
+    R_CHARS: __REGEX = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
+except Exception:
+    R_CHARS = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
 
 
 def get_next_id() -> int:
@@ -96,8 +100,8 @@ class Organization:
     @staticmethod
     def get_unique_ref(name: str, ref: str) -> str:
         # Some organizations, like Steps Towards Development, do not have a ref.
-        ref = re.sub(R_CHARS, "_", name) if ref is None else ref
-        if re.match(r"^[^A-Za-z_].*", ref):
+        ref = R_CHARS.sub("_", name) if ref is None else ref
+        if re.match(r"^[^A-Za-z_]", ref):
             ref = "org_" + ref
         return ref
 
@@ -117,7 +121,7 @@ class Policy:
         self.obj_id = get_next_id()
 
     def get_name(self) -> str:
-        return re.sub(R_CHARS, "_", self.name)
+        return R_CHARS.sub("_", self.name)
 
     name: str
     vocabulary: int
