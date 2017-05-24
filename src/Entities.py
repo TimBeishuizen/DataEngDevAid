@@ -121,7 +121,11 @@ class Policy:
         self.obj_id = get_next_id()
 
     def get_name(self) -> str:
-        return R_CHARS.sub("_", self.name)
+        return Policy.get_unique_name(self.name)
+
+    @staticmethod
+    def get_unique_name(name: str) -> str:
+        return R_CHARS.sub("_", name)
 
     name: str
     vocabulary: int

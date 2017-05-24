@@ -4,8 +4,8 @@ import neo4j.v1 as neo
 if __name__ == "__main__":
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
     # http://stackoverflow.com/questions/41816973/modulenotfounderror-what-does-it-mean-main-is-not-a-package
-    from CypherStatementBuilder import CypherStatementBuilder as Stmt
-    from Entities import *
+    from src.CypherStatementBuilder import CypherStatementBuilder as Stmt
+    from src.Entities import *
 else:
     # So do a trick, use the standard Python 3 import syntax to feed PyCharm's intellisense.
     from .CypherStatementBuilder import CypherStatementBuilder as Stmt
@@ -15,12 +15,15 @@ else:
 class SessionExtension:
     _session: neo.Session = None
     _transaction: neo.Transaction = None
-    _known_org_refs: list = []
-    _known_orgs: list = []
-    _added_org_refs: list = []
-    _known_location_codes: list = []
-    _known_locations: list = []
-    _added_location_codes: list = []
+    _known_org_refs: List[str] = []
+    _known_orgs: List[Organization] = []
+    _added_org_refs: List[str] = []
+    _known_location_codes: List[str] = []
+    _known_locations: List[Location] = []
+    _added_location_codes: List[str] = []
+    _known_policy_names: List[str] = []
+    _known_policies: List[Policy] = []
+    _added_policy_names: List[str] = []
 
     def __init__(self, session: neo.Session):
         self._session = session
@@ -132,12 +135,25 @@ class SessionExtension:
 
     def get_policy(self, node: ET.Element) -> Policy:
         name: str = SessionExtension.narrative(node)
+        unique_name = Policy.get_unique_name(name)
+        if unique_name in self._added_policy_names:
+            index = self._known_policy_names.index(unique_name)
+            pol: Policy = self._known_policies[index]
+            return pol
         vocabulary: int = int(node.get("vocabulary"))
         code: int = int(node.get("code"))
         significance: int = int(node.get("significance"))
-        return Policy(name, vocabulary, code, significance)
+        policy = Policy(name, vocabulary, code, significance)
+        self._known_policy_names.append(policy.get_name())
+        self._known_policies.append(policy)
+        return policy
 
     def add_policy(self, policy: Policy) -> int:
+        if policy.get_name() in self._added_policy_names:
+            index = self._known_policy_names.index(policy.get_name())
+            pol: Policy = self._known_policies[index]
+            return pol.obj_id
+        self._added_policy_names.append(policy.get_name())
         stmt = Stmt.create_node(policy.get_name(), "Policy", {
             "name": policy.name, "vocabulary": policy.vocabulary, "code": policy.code,
             "significance": policy.significance,

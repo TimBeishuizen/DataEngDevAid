@@ -8,9 +8,9 @@ from neo4j.v1 import GraphDatabase, basic_auth
 if __name__ == "__main__":
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
     # http://stackoverflow.com/questions/41816973/modulenotfounderror-what-does-it-mean-main-is-not-a-package
-    from CypherStatementBuilder import CypherStatementBuilder as Stmt
-    from Entities import *
-    from .SessionExtension import SessionExtension
+    from src.CypherStatementBuilder import CypherStatementBuilder as Stmt
+    from src.Entities import *
+    from src.SessionExtension import SessionExtension
 else:
     # So do a trick, use the standard Python 3 import syntax to feed PyCharm's intellisense.
     from .CypherStatementBuilder import CypherStatementBuilder as Stmt
@@ -23,12 +23,12 @@ AUTH_PASSWORD = "neo"
 
 CLASS_LIST = ["Activity", "Budget", "Disbursement", "Organization", "Policy", "Location"]
 XML_FILES = [
-    "../data/IATIACTIVITIES19972007.xml",
-    "../data/IATIACTIVITIES20082009.xml",
-    "../data/IATIACTIVITIES20102011.xml",
-    "../data/IATIACTIVITIES20122013.xml",
-    "../data/IATIACTIVITIES20142015.xml",
-    "../data/IATIACTIVITIES20162017.xml"
+    "../data/IATIACTIVITIES19972007.xml"  # ,
+    # "../data/IATIACTIVITIES20082009.xml",
+    # "../data/IATIACTIVITIES20102011.xml",
+    # "../data/IATIACTIVITIES20122013.xml",
+    # "../data/IATIACTIVITIES20142015.xml",
+    # "../data/IATIACTIVITIES20162017.xml"
 ]
 
 
@@ -119,8 +119,6 @@ def main():
             location: Location = None
 
             def add_nodes():
-                global activity, budget, disbursements, organizations, policies, location
-
                 # Activity
                 activity = ext.get_activity(activity_node)
                 ext.add_activity(activity)
@@ -166,7 +164,12 @@ def main():
                 location = ext.get_location(recipient_node)
                 ext.add_location(location)
 
-            def add_relations():
+                return activity, budget, disbursements, organizations, policies, location
+
+            activity, budget, disbursements, organizations, policies, location = add_nodes()
+
+            def add_relations(activity: Activity, budget: Budget, disbursements: List[Disbursement],
+                              organizations: List[Organization], policies: List[Policy], location: Location):
                 # Initialize transaction list.
                 # transactions = EdgeAttr.get_transactions(activity_node, orgs)
 
@@ -224,8 +227,7 @@ def main():
 
                     # (Policy) -[?]-> (Location)
 
-            add_nodes()
-            add_relations()
+            add_relations(activity, budget, disbursements, organizations, policies, location)
 
         print("Committing...")
         ext.commit()
