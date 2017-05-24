@@ -187,10 +187,12 @@ def main():
 
                 # (Activity) -[Supports]-> (Policy)
                 for pol in policies:
-                    stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
-                                                   "pol", "Policy", pol.obj_id,
-                                                   "Supports", EdgeAttr.get_activity_attributes(activity))
-                    ext.run(stmt)
+                    # Ignore the policies whose significance level is 0 ("not targeted").
+                    if pol.significance > 0:
+                        stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
+                                                       "pol", "Policy", pol.obj_id,
+                                                       "Supports", EdgeAttr.get_activity_attributes(activity))
+                        ext.run(stmt)
 
                 # (Organization) -[Participates_In]-> (Activity)
                 for i, org in enumerate(organizations):
@@ -208,7 +210,7 @@ def main():
                 for i, (org, pol) in enumerate(zip(organizations, policies)):
                     # 1. Ignore the first organization (reporting-org, always Ministry of Foreign Affairs).
                     # 2. Ignore the Ministry's appearance in all participating organizations.
-                    if i > 0 and org.ref != "XM-DAC-7":
+                    if pol.significance > 0 and i > 0 and org.ref != "XM-DAC-7":
                         stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
                                                        "pol", "Policy", pol.obj_id,
                                                        "Implements")
@@ -225,14 +227,15 @@ def main():
 
                 # (Budget) -[?]-> (Location)
 
+                # (Policy) -[?]-> (Location)
+
                 # (Policy) -[Commits] -> (Budget)
                 for pol in policies:
-                    stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id,
-                                                   "bud", "Budget", budget.obj_id,
-                                                   "Commits")
-                    ext.run(stmt)
-
-                    # (Policy) -[?]-> (Location)
+                    if pol.significance > 0:
+                        stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id,
+                                                       "bud", "Budget", budget.obj_id,
+                                                       "Commits")
+                        ext.run(stmt)
 
             add_relations(activity, budget, disbursements, organizations, policies, location)
 
