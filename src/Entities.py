@@ -16,14 +16,18 @@ def get_next_id() -> int:
     return next_id_val
 
 
+def date_str_to_int(date_str: str) -> int:
+    return int(date_str.replace("-", ""))
+
+
 class Activity:
     class ActivityDate:
         def __init__(self, ty: int, date: str):
             self.type = ty
-            self.date = date
+            self.date = date_str_to_int(date)
 
         type: int
-        date: str
+        date: int
 
     def __init__(self, identifier: str, description: str, status: int, dates: Iterable[ActivityDate]):
         self.identifier = identifier
@@ -45,20 +49,20 @@ class Activity:
 
 class Budget:
     def __init__(self, period_start: str, period_end: str, value: int, value_date: str, parent_activity: Activity):
-        self.period_start = period_start
-        self.period_end = period_end
+        self.period_start = date_str_to_int(period_start)
+        self.period_end = date_str_to_int(period_end)
         self.value = value
-        self.value_date = value_date
+        self.value_date = date_str_to_int(value_date)
         self.obj_id = get_next_id()
         self._parent_activity = parent_activity
 
     def get_name(self) -> str:
         return "bud_" + self._parent_activity.identifier.replace("-", "_")
 
-    period_start: str
-    period_end: str
+    period_start: int
+    period_end: int
     value: int
-    value_date: str
+    value_date: int
     obj_id: int
     _parent_activity: Activity
 
@@ -66,10 +70,10 @@ class Budget:
 class Disbursement:
     def __init__(self, period_start: str, period_end: str, value: int, value_date: str, parent_activity: Activity,
                  index: int):
-        self.period_start = period_start
-        self.period_end = period_end
+        self.period_start = date_str_to_int(period_start)
+        self.period_end = date_str_to_int(period_end)
         self.value = value
-        self.value_date = value_date
+        self.value_date = date_str_to_int(value_date)
         self.obj_id = get_next_id()
         self._parent_activity = parent_activity
         self._index = index
@@ -77,10 +81,10 @@ class Disbursement:
     def get_name(self) -> str:
         return "dis_" + self._parent_activity.identifier.replace("-", "_") + "_{}".format(self._index)
 
-    period_start: str
-    period_end: str
+    period_start: int
+    period_end: int
     value: int
-    value_date: str
+    value_date: int
     obj_id: int
     _parent_activity: Activity
     _index: int
@@ -141,7 +145,8 @@ class Location:
         self.obj_id = get_next_id()
 
     def get_name(self) -> str:
-        return "region-" + self.code if self.code.isnumeric() else "country-" + self.code
+        n = "region-" + self.code if self.code.isnumeric() else "country-" + self.code
+        return n.replace("-", "_")
 
     code: str
     name: str
@@ -152,9 +157,9 @@ class Transaction:
     def __init__(self, ty: int, date: str, value: int, value_date: str, provider_ref: str, provider_name: str,
                  receiver_ref: str, receiver_name: str, orgs: Iterable[Organization] = None):
         self.type = ty
-        self.date = date
+        self.date = date_str_to_int(date)
         self.value = value
-        self.value_date = value_date
+        self.value_date = date_str_to_int(value_date)
         self.provider_ref = provider_ref
         self.receiver_ref = receiver_ref
         self.provider_name = provider_name
@@ -175,9 +180,9 @@ class Transaction:
             self.receiver_org = find_org(orgs, self.receiver_ref, self.receiver_name)
 
     type: int
-    date: str
+    date: int
     value: int
-    value_date: str
+    value_date: int
     provider_ref: str
     provider_name: str
     receiver_ref: str
