@@ -1,4 +1,5 @@
 import re
+from typing import Iterable, List
 
 next_id_val = 0
 
@@ -12,11 +13,20 @@ def get_next_id() -> int:
 
 
 class Activity:
-    def __init__(self, identifier: str, description: str, status: int):
+    class ActivityDate:
+        def __init__(self, ty: int, date: str):
+            self.type = ty
+            self.date = date
+
+        type: int
+        date: str
+
+    def __init__(self, identifier: str, description: str, status: int, dates: Iterable[ActivityDate]):
         self.identifier = identifier
         self.description = description
         self.status = status
         self.obj_id = get_next_id()
+        self.dates = list(dates)
 
     def get_name(self) -> str:
         return "act_" + self.identifier.replace("-", "_")
@@ -25,6 +35,8 @@ class Activity:
     description: str
     status: int
     obj_id: int
+    # For edges
+    dates: List[ActivityDate]
 
 
 class Budget:
@@ -126,3 +138,41 @@ class Location:
     code: str
     name: str
     obj_id: int
+
+
+class Transaction:
+    def __init__(self, ty: int, date: str, value: int, value_date: str, provider_ref: str, provider_name: str,
+                 receiver_ref: str, receiver_name: str, orgs: Iterable[Organization] = None):
+        self.type = ty
+        self.date = date
+        self.value = value
+        self.value_date = value_date
+        self.provider_ref = provider_ref
+        self.receiver_ref = receiver_ref
+        self.provider_name = provider_name
+        self.receiver_name = receiver_name
+        if orgs is not None:
+            def find_org(orgs: Iterable[Organization], ref: str, name: str) -> Organization:
+                key = Organization.get_unique_ref(name, ref).replace("-", "_")
+                try:
+                    org = next(x for x in orgs if x.get_name() == key)
+                except StopIteration:
+                    print("[WARN] Cannot find responsible organization(s) for transaction: "
+                          "date={}, provider={}, receiver={}; key={}"
+                          .format(date, provider_name, receiver_name, key))
+                    org = None
+                return org
+
+            self.provider_org = find_org(orgs, self.provider_ref, self.provider_name)
+            self.receiver_org = find_org(orgs, self.receiver_ref, self.receiver_name)
+
+    type: int
+    date: str
+    value: int
+    value_date: str
+    provider_ref: str
+    provider_name: str
+    receiver_ref: str
+    receiver_name: str
+    provider_org: Organization
+    receiver_org: Organization

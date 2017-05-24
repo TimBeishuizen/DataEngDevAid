@@ -1,6 +1,6 @@
-from typing import Union
+from typing import Dict, Any
 from xml.etree import ElementTree as ET
-from time import gmtime, strftime
+from time import localtime, strftime
 import neo4j.v1 as neo
 import neo4j.exceptions as neo_ex
 from neo4j.v1 import GraphDatabase, basic_auth
@@ -8,11 +8,11 @@ from neo4j.v1 import GraphDatabase, basic_auth
 if __name__ == "__main__":
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
     # http://stackoverflow.com/questions/41816973/modulenotfounderror-what-does-it-mean-main-is-not-a-package
-    from CypherStatementBuilder import CypherStatementBuilder as CSB
+    from CypherStatementBuilder import CypherStatementBuilder as Stat
     from Entities import *
 else:
     # So do a trick, use the standard Python 3 import syntax to feed PyCharm's intellisense.
-    from .CypherStatementBuilder import CypherStatementBuilder as CSB
+    from .CypherStatementBuilder import CypherStatementBuilder as Stat
     from .Entities import *
 
 SERVER_URL = "localhost:7687"
@@ -23,7 +23,7 @@ CLASS_LIST = ["Activity", "Budget", "Disbursement", "Organization", "Policy", "L
 
 
 def print_time():
-    s = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    s = strftime("%Y-%m-%d %H:%M:%S", localtime())
     print(s)
 
 
@@ -68,10 +68,13 @@ class SessionExtension:
         description: str = self._get_narrative(desc_node)
         status_node: ET.Element = node.find("activity-status")
         status: int = int(status_node.get("code"))
-        return Activity(identifier, description, status)
+        dates: List[Activity.ActivityDate] = []
+        for act_date_node in node.iter("activity-date"):
+            dates.append(Activity.ActivityDate(int(act_date_node.get("type")), act_date_node.get("iso-date")))
+        return Activity(identifier, description, status, dates)
 
     def add_activity(self, activity: Activity) -> int:
-        stmt = CSB.create_node(activity.get_name(), "Activity", {
+        stmt = Stat.create_node(activity.get_name(), "Activity", {
             "identifier": activity.identifier, "description": activity.description, "status": activity.status,
             "obj_id": activity.obj_id
         })
@@ -88,7 +91,7 @@ class SessionExtension:
 
     def add_budget(self, budget: Budget) -> int:
         # Budget naming: bud_{$activity_ident}
-        stmt = CSB.create_node(budget.get_name(), "Budget", {
+        stmt = Stat.create_node(budget.get_name(), "Budget", {
             "period_start": budget.period_start, "period_end": budget.period_end,
             "value": budget.value, "value_date": budget.value_date,
             "obj_id": budget.obj_id
@@ -106,7 +109,7 @@ class SessionExtension:
 
     def add_disbursement(self, disbursement: Disbursement) -> int:
         # Disbursement naming: dis_{$activity_ident}_{$index}
-        stmt = CSB.create_node(disbursement.get_name(), "Disbursement", {
+        stmt = Stat.create_node(disbursement.get_name(), "Disbursement", {
             "period_start": disbursement.period_start, "period_end": disbursement.period_end,
             "value": disbursement.value, "value_date": disbursement.value_date,
             "obj_id": disbursement.obj_id
@@ -134,7 +137,7 @@ class SessionExtension:
             org: Organization = self._known_orgs[index]
             return org.obj_id
         self._added_org_refs.append(org.ref)
-        stmt = CSB.create_node(org.get_name(), "Organization", {
+        stmt = Stat.create_node(org.get_name(), "Organization", {
             "name": org.name, "ref": org.ref, "type": org.type,
             "obj_id": org.obj_id
         })
@@ -149,7 +152,7 @@ class SessionExtension:
         return Policy(name, vocabulary, code, significance)
 
     def add_policy(self, policy: Policy) -> int:
-        stmt = CSB.create_node(policy.get_name(), "Policy", {
+        stmt = Stat.create_node(policy.get_name(), "Policy", {
             "name": policy.name, "vocabulary": policy.vocabulary, "code": policy.code,
             "significance": policy.significance,
             "obj_id": policy.obj_id
@@ -174,12 +177,41 @@ class SessionExtension:
             loc: Location = self._known_locations[index]
             return loc.obj_id
         self._added_location_codes.append(location.code)
-        stmt = CSB.create_node(location.get_name(), "Location", {
+        stmt = Stat.create_node(location.get_name(), "Location", {
             "code": location.code, "name": location.name,
             "obj_id": location.obj_id
         })
         self._transaction.run(stmt)
         return location.obj_id
+
+    def get_transactions(self, node: ET.Element, orgs: Iterable[Organization] = None) -> List[Transaction]:
+        transactions: List[Transaction] = []
+        for transaction_node in node.iter("transaction"):
+            transaction_node: ET.Element = transaction_node
+            ty = int(transaction_node.find("transaction-type").get("code"))
+            date = transaction_node.find("transaction-date").get("iso-date")
+            value_node: ET.Element = transaction_node.find("value")
+            value = int(value_node.text)
+            value_date = value_node.get("value-date")
+            provider_node: ET.Element = transaction_node.find("provider-org")
+            provider_ref = provider_node.get("ref")
+            provider_name = self._get_narrative(provider_node)
+            receiver_node: ET.Element = transaction_node.find("receiver-org")
+            receiver_ref = receiver_node.get("ref")
+            receiver_name = self._get_narrative(receiver_node)
+            transaction = Transaction(ty, date, value, value_date, provider_ref, provider_name,
+                                      receiver_ref, receiver_name, orgs)
+            transactions.append(transaction)
+        return transactions
+
+
+class EdgeAttr:
+    @staticmethod
+    def get_activity_attributes(activity: Activity) -> Dict[str, Any]:
+        act_attr_dict: Dict[str, str] = dict()
+        for act_date in activity.dates:
+            act_attr_dict["date_type_{}".format(act_date.type)] = act_date.date
+        return act_attr_dict
 
 
 def main():
@@ -216,8 +248,7 @@ def main():
     # https://stackoverflow.com/questions/24875665/how-to-bulk-insert-relationships
     trans = session.begin_transaction()
     for class_name in CLASS_LIST:
-        stmt = "CREATE INDEX ON :{}(obj_id);".format(class_name)
-        trans.run(stmt)
+        trans.run("CREATE INDEX ON :{}(obj_id);".format(class_name))
     trans.commit()
     trans.close()
 
@@ -235,7 +266,7 @@ def main():
         budget = ext.get_budget(budget_node, activity)
         ext.add_budget(budget)
         # Planned disbursements
-        disbs: list = []
+        disbs: List[Disbursement] = []
         disbursement_index = 0
         for disbursement_node in activity_node.iter("planned-disbursement"):
             disbursement = ext.get_disbursement(disbursement_node, activity, disbursement_index)
@@ -243,7 +274,7 @@ def main():
             disbursement_index += 1
             disbs.append(disbursement)
         # Organizations
-        orgs = []
+        orgs: List[Organization] = []
         reporting_org_node: ET.Element = activity_node.find("reporting-org")
         organization = ext.get_organization(reporting_org_node)
         orgs.append(organization)
@@ -253,7 +284,7 @@ def main():
             ext.add_organization(organization)
             orgs.append(organization)
         # Policy markers
-        policies = []
+        policies: List[Policy] = []
         for policy_marker_node in activity_node.iter("policy-marker"):
             policy = ext.get_policy(policy_marker_node)
             ext.add_policy(policy)
@@ -266,28 +297,62 @@ def main():
         ext.add_location(location)
 
         def add_relations():
-            # (Organization) -[Implements]-> (Policy)
-            for org, pol in zip(orgs, policies):
-                stmt = CSB.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id,
-                                              "Implements")
-                ext.run(stmt)
+            # Initialize transaction list.
+            # transactions = ext.get_transactions(activity_node, orgs)
 
             # (Activity) -[Commits]-> (Budget)
-            stmt = CSB.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id,
-                                          "Commits")
+            stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id,
+                                           "Commits")
             ext.run(stmt)
 
-            # (Budget) -[Commits] -> (Policy)
+            # (Activity) -[Is_For_Location]-> (Location)
+            stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "loc", "Location", location.obj_id,
+                                           "Is_For", EdgeAttr.get_activity_attributes(activity))
+            ext.run(stmt)
+
+            # (Activity) -[Supports]-> (Policy)
             for pol in policies:
-                stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "pol", "Policy", pol.obj_id,
-                                              "Commits")
+                stmt = Stat.create_edge_by_ids("act", "Activity", activity.obj_id, "pol", "Policy", pol.obj_id,
+                                               "Supports", EdgeAttr.get_activity_attributes(activity))
                 ext.run(stmt)
+
+            # (Organization) -[Participates_In/Manages]-> (Activity)
+            for i, org in enumerate(orgs):
+                stmt = Stat.create_edge_by_ids("org", "Organization", org.obj_id, "act", "Activity",
+                                               activity.obj_id,
+                                               "Participates_In" if i > 0 else "Manages",
+                                               # TODO: a better word/phrase?
+                                               EdgeAttr.get_activity_attributes(activity))
+                ext.run(stmt)
+
+            # (Organization) -[?]-> (Disbursement)
+
+            # (Organization) -[Implements]-> (Policy)
+            for i, (org, pol) in enumerate(zip(orgs, policies)):
+                if i > 0:
+                    # Don't mess up with reporting organization.
+                    stmt = Stat.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id,
+                                                   "Implements")
+                    ext.run(stmt)
+
+            # (Organization) -[?]-> (Location)
 
             # (Budget) -[Disburses]-> (Disbursement)
             for dis in disbs:
-                stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement", dis.obj_id,
-                                              "Disburses")
+                stmt = Stat.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement",
+                                               dis.obj_id,
+                                               "Disburses")
                 ext.run(stmt)
+
+            # (Budget) -[?]-> (Location)
+
+            # (Policy) -[Commits] -> (Budget)
+            for pol in policies:
+                stmt = Stat.create_edge_by_ids("pol", "Policy", pol.obj_id, "bud", "Budget", budget.obj_id,
+                                               "Commits")
+                ext.run(stmt)
+
+            # (Policy) -[?]-> (Location)
 
         add_relations()
 
