@@ -198,6 +198,9 @@ def main():
                     if i == 0 or org.ref == "XM-DAC-7":
                         continue
                     for transaction in transactions:
+                        # Type 2 = commitment, ignore it. Just keep the real transactions (type = 3).
+                        if transaction.type == 2:
+                            continue
                         # Here we use the "receiver-org" of transaction node instead of "participating-org" of
                         # activity node.
                         if transaction.receiver_org is None:
