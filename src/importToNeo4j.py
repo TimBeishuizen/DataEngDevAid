@@ -1,4 +1,3 @@
-from typing import Dict, Any
 from xml.etree import ElementTree as ET
 from time import localtime, strftime
 import neo4j.v1 as neo
@@ -11,17 +10,19 @@ if __name__ == "__main__":
     from src.CypherStatementBuilder import CypherStatementBuilder as Stmt
     from src.Entities import *
     from src.SessionExtension import SessionExtension
+    from src.EdgeAttr import EdgeAttr
 else:
     # So do a trick, use the standard Python 3 import syntax to feed PyCharm's intellisense.
     from .CypherStatementBuilder import CypherStatementBuilder as Stmt
     from .Entities import *
     from .SessionExtension import SessionExtension
+    from .EdgeAttr import EdgeAttr
 
 SERVER_URL = "localhost:7687"
 AUTH_USER = "neo4j"
 AUTH_PASSWORD = "neo"
 
-CLASS_LIST = ["Activity", "Budget", "Disbursement", "Organization", "Policy", "Location"]
+CLASS_LIST = ["Activity", "Budget", "Organization", "Policy", "Location"]
 XML_FILES = [
     "../data/IATIACTIVITIES19972007.xml"  # ,
     # "../data/IATIACTIVITIES20082009.xml",
@@ -34,36 +35,6 @@ XML_FILES = [
 
 def timestr() -> str:
     return strftime("%Y-%m-%d %H:%M:%S", localtime())
-
-
-class EdgeAttr:
-    @staticmethod
-    def get_activity_attributes(activity: Activity) -> Dict[str, Any]:
-        act_attr_dict: Dict[str, str] = dict()
-        for act_date in activity.dates:
-            act_attr_dict["date_type_{}".format(act_date.type)] = act_date.date
-        return act_attr_dict
-
-    @staticmethod
-    def get_transactions(node: ET.Element, organizations: Iterable[Organization] = None) -> List[Transaction]:
-        transactions: List[Transaction] = []
-        for transaction_node in node.iter("transaction"):
-            transaction_node: ET.Element = transaction_node
-            ty = int(transaction_node.find("transaction-type").get("code"))
-            date = transaction_node.find("transaction-date").get("iso-date")
-            value_node: ET.Element = transaction_node.find("value")
-            value = int(value_node.text)
-            value_date = value_node.get("value-date")
-            provider_node: ET.Element = transaction_node.find("provider-org")
-            provider_ref = provider_node.get("ref")
-            provider_name = SessionExtension.narrative(provider_node)
-            receiver_node: ET.Element = transaction_node.find("receiver-org")
-            receiver_ref = receiver_node.get("ref")
-            receiver_name = SessionExtension.narrative(receiver_node)
-            transaction = Transaction(ty, date, value, value_date, provider_ref, provider_name,
-                                      receiver_ref, receiver_name, organizations)
-            transactions.append(transaction)
-        return transactions
 
 
 def main():
@@ -111,13 +82,6 @@ def main():
         for activity_node in tree.iter("iati-activity"):
             activity_node: ET.Element = activity_node
 
-            activity: Activity = None
-            budget: Budget = None
-            disbursements: List[Disbursement] = None
-            organizations: List[Organization] = None
-            policies: List[Policy] = None
-            location: Location = None
-
             def add_nodes():
                 # Activity
                 activity = ext.get_activity(activity_node)
@@ -127,15 +91,6 @@ def main():
                 budget_node: ET.Element = activity_node.find("budget")
                 budget = ext.get_budget(budget_node, activity)
                 ext.add_budget(budget)
-
-                # Planned disbursements
-                disbursements = []
-                disbursement_index = 0
-                for disbursement_node in activity_node.iter("planned-disbursement"):
-                    disbursement = ext.get_disbursement(disbursement_node, activity, disbursement_index)
-                    ext.add_disbursement(disbursement)
-                    disbursement_index += 1
-                    disbursements.append(disbursement)
 
                 # Organizations
                 organizations = []
@@ -164,14 +119,15 @@ def main():
                 location = ext.get_location(recipient_node)
                 ext.add_location(location)
 
-                return activity, budget, disbursements, organizations, policies, location
+                return activity, budget, organizations, policies, location
 
-            activity, budget, disbursements, organizations, policies, location = add_nodes()
+            activity, budget, organizations, policies, location = add_nodes()
 
-            def add_relations(activity: Activity, budget: Budget, disbursements: List[Disbursement],
-                              organizations: List[Organization], policies: List[Policy], location: Location):
-                # Initialize transaction list.
-                # transactions = EdgeAttr.get_transactions(activity_node, orgs)
+            def add_relations(activity: Activity, budget: Budget, organizations: List[Organization],
+                              policies: List[Policy], location: Location):
+                # Initialize transaction list and disbursement list.
+                # transactions = EdgeAttr.get_transactions(activity_node, organizations)
+                # disbursements = EdgeAttr.get_disbursements(activity_node, activity)
 
                 # (Activity) -[Commits]-> (Budget)
                 stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
@@ -204,26 +160,51 @@ def main():
                                                        "Participates_In", EdgeAttr.get_activity_attributes(activity))
                         ext.run(stmt)
 
-                # (Organization) -[?]-> (Disbursement)
-
                 # (Organization) -[Implements]-> (Policy)
-                for i, (org, pol) in enumerate(zip(organizations, policies)):
+                for i, org in enumerate(organizations):
                     # 1. Ignore the first organization (reporting-org, always Ministry of Foreign Affairs).
                     # 2. Ignore the Ministry's appearance in all participating organizations.
-                    if pol.significance > 0 and i > 0 and org.ref != "XM-DAC-7":
-                        stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
-                                                       "pol", "Policy", pol.obj_id,
-                                                       "Implements")
-                        ext.run(stmt)
+                    if i == 0 or org.ref == "XM-DAC-7":
+                        continue
+                    for pol in policies:
+                        if pol.significance > 0:
+                            stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
+                                                           "pol", "Policy", pol.obj_id,
+                                                           "Implements")
+                            ext.run(stmt)
 
                 # (Organization) -[?]-> (Location)
 
-                # (Budget) -[Disburses]-> (Disbursement)
-                for dis in disbursements:
-                    stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
-                                                   "dis", "Disbursement", dis.obj_id,
-                                                   "Disburses")
-                    ext.run(stmt)
+                # # (Budget) -[Disburses_To]-> (Organization)
+                # for i, org in enumerate(organizations):
+                #     if i == 0 or org.ref == "XM-DAC-7":
+                #         continue
+                #     for disbursement in disbursements:
+                #         stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                #                                        "org", "Organization", org.obj_id,
+                #                                        "Disburses_To",
+                #                                        EdgeAttr.get_disbursement_attributes(disbursement))
+                #         ext.run(stmt)
+                #
+                # # (Budget) -[Transfers_To]-> (Organization)
+                # for i, org in enumerate(organizations):
+                #     if i == 0 or org.ref == "XM-DAC-7":
+                #         continue
+                #     for transaction in transactions:
+                #         # Here we use the "receiver-org" of transaction node instead of "participating-org" of
+                #         # activity node.
+                #         if transaction.receiver_org is None:
+                #             if TRANSACTION_DEBUG:
+                #                 print("[WARN] Cannot create relation 'transfers to' between budget and organization, "
+                #                       "having a transaction as attribute. Receiver name={}"
+                #                       .format(transaction.receiver_name))
+                #             continue
+                #         if transaction.receiver_org.obj_id == org.obj_id:
+                #             stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                #                                            "org", "Organization", org.obj_id,
+                #                                            "Transfers_To",
+                #                                            EdgeAttr.get_transaction_attributes(transaction))
+                #             ext.run(stmt)
 
                 # (Budget) -[?]-> (Location)
 
@@ -237,7 +218,7 @@ def main():
                                                        "Commits")
                         ext.run(stmt)
 
-            add_relations(activity, budget, disbursements, organizations, policies, location)
+            add_relations(activity, budget, organizations, policies, location)
 
         print("Committing...")
         ext.commit()

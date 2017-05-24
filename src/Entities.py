@@ -9,6 +9,7 @@ try:
 except Exception:
     R_CHARS = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
 
+TRANSACTION_DEBUG = False
 
 def get_next_id() -> int:
     global next_id_val
@@ -170,9 +171,10 @@ class Transaction:
                 try:
                     org = next(x for x in orgs if x.get_name() == key)
                 except StopIteration:
-                    print("[WARN] Cannot find responsible organization(s) for transaction: "
-                          "date={}, provider={}, receiver={}; key={}"
-                          .format(date, provider_name, receiver_name, key))
+                    if TRANSACTION_DEBUG:
+                        print("[WARN] Cannot find responsible organization(s) for transaction: "
+                              "date={}, provider={}, receiver={}; key={}"
+                              .format(date, provider_name, receiver_name, key))
                     org = None
                 return org
 

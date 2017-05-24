@@ -88,24 +88,6 @@ class SessionExtension:
         self._transaction.run(stmt)
         return budget.obj_id
 
-    def get_disbursement(self, node: ET.Element, parent_activity: Activity, index: int) -> Disbursement:
-        period_start: str = node.find("period-start").get("iso-date")
-        period_end: str = node.find("period-end").get("iso-date")
-        value_node: ET.Element = node.find("value")
-        value: int = int(value_node.text)
-        value_date: str = value_node.get("value-date")
-        return Disbursement(period_start, period_end, value, value_date, parent_activity, index)
-
-    def add_disbursement(self, disbursement: Disbursement) -> int:
-        # Disbursement naming: dis_{$activity_ident}_{$index}
-        stmt = Stmt.create_node(disbursement.get_name(), "Disbursement", {
-            "period_start": disbursement.period_start, "period_end": disbursement.period_end,
-            "value": disbursement.value, "value_date": disbursement.value_date,
-            "obj_id": disbursement.obj_id
-        })
-        self._transaction.run(stmt)
-        return disbursement.obj_id
-
     def get_organization(self, node: ET.Element) -> Organization:
         name: str = SessionExtension.narrative(node)
         ref: str = node.get("ref")

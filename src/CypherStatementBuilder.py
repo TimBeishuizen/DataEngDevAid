@@ -2,7 +2,10 @@ from typing import Union, Any
 
 
 def get_escaped_str(v: Union[str, list, Any]) -> str:
-    if type(v) is str:
+    if v is None:
+        # Treat as an empty string.
+        return "''"
+    elif type(v) is str:
         return "'{}'".format(v.replace("\\", "\\\\").replace("'", "\\'"))
     elif type(v) is list:
         counter = 0
