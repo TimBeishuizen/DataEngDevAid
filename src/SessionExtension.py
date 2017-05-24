@@ -168,7 +168,8 @@ class SessionExtension:
             index = self._known_location_codes.index(code)
             loc: Location = self._known_locations[index]
             return loc
-        location = Location(code)
+        name = SessionExtension.narrative(node)
+        location = Location(code, name)
         self._known_location_codes.append(location.code)
         self._known_locations.append(location)
         return location

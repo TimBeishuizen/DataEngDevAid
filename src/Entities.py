@@ -135,13 +135,13 @@ class Policy:
 
 
 class Location:
-    def __init__(self, code: str):
+    def __init__(self, code: str, name: str):
         self.code = code
-        self.name = "region-" + code if code.isnumeric() else "country-" + code
+        self.name = name
         self.obj_id = get_next_id()
 
     def get_name(self) -> str:
-        return self.name.replace("-", "_")
+        return "region-" + self.code if self.code.isnumeric() else "country-" + self.code
 
     code: str
     name: str
