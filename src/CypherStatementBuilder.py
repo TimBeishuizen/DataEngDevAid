@@ -55,8 +55,8 @@ class CypherStatementBuilder:
         return create_str
 
     @staticmethod
-    def create_edge(n1_name: str, n2_name: str, edge_class_name: str, edge_props: Union[dict, None] = None,
-                    edge_name: str = None) -> str:
+    def create_edge_by_names(n1_name: str, n2_name: str, edge_class_name: str, edge_props: Union[dict, None] = None,
+                             edge_name: str = None) -> str:
         """
         Usage:
         create_edge("Keanu", "TheMatrix", "acts_in", {"roles": ["Neo"]})
@@ -106,11 +106,11 @@ if __name__ == '__main__':
     # We might also need to check for illegal names and classes...
     # But... well, not implemented.
 
-    stmt = q.create_edge("Keanu", "TheMatrix", "acted_in", {"roles": ["Neo"]})
+    stmt = q.create_edge_by_names("Keanu", "TheMatrix", "acted_in", {"roles": ["Neo"]})
     assert stmt == "CREATE (Keanu)-[:ACTED_IN {roles:['Neo']}]->(TheMatrix)"
-    stmt = q.create_edge("Keanu", "TheMatrix", "acted_in", {"roles": ["Neo", "The One"]})
+    stmt = q.create_edge_by_names("Keanu", "TheMatrix", "acted_in", {"roles": ["Neo", "The One"]})
     assert stmt == "CREATE (Keanu)-[:ACTED_IN {roles:['Neo', 'The One']}]->(TheMatrix)"
-    stmt = q.create_edge("Keanu", "TheMatrix", "acted_in")
+    stmt = q.create_edge_by_names("Keanu", "TheMatrix", "acted_in")
     assert stmt == "CREATE (Keanu)-[:ACTED_IN]->(TheMatrix)"
-    stmt = q.create_edge("Keanu", "TheMatrix", "acted_in", edge_name="rel1")
+    stmt = q.create_edge_by_names("Keanu", "TheMatrix", "acted_in", edge_name="rel1")
     assert stmt == "CREATE (Keanu)-[rel1:ACTED_IN]->(TheMatrix)"

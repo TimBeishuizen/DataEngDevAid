@@ -1,8 +1,8 @@
 from typing import Union
 from xml.etree import ElementTree as ET
 from time import gmtime, strftime
-import re
 import neo4j.v1 as neo
+import neo4j.exceptions as neo_ex
 from neo4j.v1 import GraphDatabase, basic_auth
 
 if __name__ == "__main__":
@@ -19,6 +19,8 @@ SERVER_URL = "localhost:7687"
 AUTH_USER = "neo4j"
 AUTH_PASSWORD = "neo"
 
+CLASS_LIST = ["Activity", "Budget", "Disbursement", "Organization", "Policy", "Location"]
+
 
 def print_time():
     s = strftime("%Y-%m-%d %H:%M:%S", gmtime())
@@ -26,7 +28,8 @@ def print_time():
 
 
 class SessionExtension:
-    _session: Union[neo.Session, neo.Transaction] = None
+    _session: neo.Session = None
+    _transaction: neo.Transaction = None
     _known_org_refs: list = []
     _known_orgs: list = []
     _added_org_refs: list = []
@@ -34,14 +37,29 @@ class SessionExtension:
     _known_locations: list = []
     _added_location_codes: list = []
 
-    def __init__(self, session: Union[neo.Session, neo.Transaction]):
+    def __init__(self, session: neo.Session):
         self._session = session
 
     def _get_narrative(self, node: ET.Element) -> str:
         return node.find("narrative").text
 
-    def clear_db(self) -> None:
-        self._session.run("match(n) detach delete n;")
+    def begin_transaction(self) -> None:
+        if self._transaction is not None:
+            return
+        self._transaction = self._session.begin_transaction()
+
+    def commit(self) -> None:
+        self._transaction.commit()
+        self._transaction.close()
+        self._transaction = None
+
+    def rollback(self) -> None:
+        self._transaction.rollback()
+        self._transaction.close()
+        self._transaction = None
+
+    def run(self, query: str) -> None:
+        self._transaction.run(query)
 
     def get_activity(self, node: ET.Element) -> Activity:
         ident_node: ET.Element = node.find("iati-identifier")
@@ -53,58 +71,54 @@ class SessionExtension:
         return Activity(identifier, description, status)
 
     def add_activity(self, activity: Activity) -> int:
-        stmt = CSB.create_node("act_" + activity.identifier.replace("-", "_"), "Activity", {
+        stmt = CSB.create_node(activity.get_name(), "Activity", {
             "identifier": activity.identifier, "description": activity.description, "status": activity.status,
             "obj_id": activity.obj_id
         })
-        self._session.run(stmt)
+        self._transaction.run(stmt)
         return activity.obj_id
 
-    def get_budget(self, node: ET.Element) -> Budget:
+    def get_budget(self, node: ET.Element, parent_activity: Activity) -> Budget:
         period_start: str = node.find("period-start").get("iso-date")
         period_end: str = node.find("period-end").get("iso-date")
         value_node: ET.Element = node.find("value")
         value: int = int(value_node.text)
         value_date: str = value_node.get("value-date")
-        return Budget(period_start, period_end, value, value_date)
+        return Budget(period_start, period_end, value, value_date, parent_activity)
 
-    def add_budget(self, budget: Budget, parent_activity: Activity) -> int:
+    def add_budget(self, budget: Budget) -> int:
         # Budget naming: bud_{$activity_ident}
-        stmt = CSB.create_node("bud_" + parent_activity.identifier.replace("-", "_"), "Budget", {
+        stmt = CSB.create_node(budget.get_name(), "Budget", {
             "period_start": budget.period_start, "period_end": budget.period_end,
             "value": budget.value, "value_date": budget.value_date,
             "obj_id": budget.obj_id
         })
-        self._session.run(stmt)
+        self._transaction.run(stmt)
         return budget.obj_id
 
-    def get_disbursement(self, node: ET.Element) -> Disbursement:
+    def get_disbursement(self, node: ET.Element, parent_activity: Activity, index: int) -> Disbursement:
         period_start: str = node.find("period-start").get("iso-date")
         period_end: str = node.find("period-end").get("iso-date")
         value_node: ET.Element = node.find("value")
         value: int = int(value_node.text)
         value_date: str = value_node.get("value-date")
-        return Disbursement(period_start, period_end, value, value_date)
+        return Disbursement(period_start, period_end, value, value_date, parent_activity, index)
 
-    def add_disbursement(self, disbursement: Disbursement, parent_activity: Activity, index: int) -> int:
+    def add_disbursement(self, disbursement: Disbursement) -> int:
         # Disbursement naming: dis_{$activity_ident}_{$index}
-        stmt = CSB.create_node("dis_" + parent_activity.identifier.replace("-", "_") + "_{}".format(index),
-                               "Disbursement", {
-                                   "period_start": disbursement.period_start, "period_end": disbursement.period_end,
-                                   "value": disbursement.value, "value_date": disbursement.value_date,
-                                   "obj_id": disbursement.obj_id
-                               })
-        self._session.run(stmt)
+        stmt = CSB.create_node(disbursement.get_name(), "Disbursement", {
+            "period_start": disbursement.period_start, "period_end": disbursement.period_end,
+            "value": disbursement.value, "value_date": disbursement.value_date,
+            "obj_id": disbursement.obj_id
+        })
+        self._transaction.run(stmt)
         return disbursement.obj_id
 
     def get_organization(self, node: ET.Element) -> Organization:
         name: str = self._get_narrative(node)
         ref: str = node.get("ref")
         ty: int = int(node.get("type"))
-        # Some organizations, like Steps Towards Development, do not have a ref.
-        ref = re.sub(r"[.()\[\]' \-*,/&]", "_", name) if ref is None else ref
-        if re.match(r"^[^A-Za-z_].*", ref):
-            ref = "Org_" + ref
+        ref = Organization.get_unique_ref(name, ref)
         if ref in self._added_org_refs:
             index = self._known_org_refs.index(ref)
             org: Organization = self._known_orgs[index]
@@ -114,18 +128,18 @@ class SessionExtension:
         self._known_orgs.append(organization)
         return organization
 
-    def add_organization(self, organization: Organization) -> int:
-        if organization.ref in self._added_org_refs:
-            index = self._known_org_refs.index(organization.ref)
+    def add_organization(self, org: Organization) -> int:
+        if org.ref in self._added_org_refs:
+            index = self._known_org_refs.index(org.ref)
             org: Organization = self._known_orgs[index]
             return org.obj_id
-        self._added_org_refs.append(organization.ref)
-        stmt = CSB.create_node(organization.ref.replace("-", "_"), "Organization", {
-            "name": organization.name, "ref": organization.ref, "type": organization.type,
-            "obj_id": organization.obj_id
+        self._added_org_refs.append(org.ref)
+        stmt = CSB.create_node(org.get_name(), "Organization", {
+            "name": org.name, "ref": org.ref, "type": org.type,
+            "obj_id": org.obj_id
         })
-        self._session.run(stmt)
-        return organization.obj_id
+        self._transaction.run(stmt)
+        return org.obj_id
 
     def get_policy(self, node: ET.Element) -> Policy:
         name: str = self._get_narrative(node)
@@ -135,12 +149,12 @@ class SessionExtension:
         return Policy(name, vocabulary, code, significance)
 
     def add_policy(self, policy: Policy) -> int:
-        stmt = CSB.create_node("", "Policy", {
+        stmt = CSB.create_node(policy.get_name(), "Policy", {
             "name": policy.name, "vocabulary": policy.vocabulary, "code": policy.code,
             "significance": policy.significance,
             "obj_id": policy.obj_id
         })
-        self._session.run(stmt)
+        self._transaction.run(stmt)
         return policy.obj_id
 
     def get_location(self, node: ET.Element) -> Location:
@@ -160,45 +174,72 @@ class SessionExtension:
             loc: Location = self._known_locations[index]
             return loc.obj_id
         self._added_location_codes.append(location.code)
-        stmt = CSB.create_node(location.name, "Location", {
+        stmt = CSB.create_node(location.get_name(), "Location", {
             "code": location.code, "name": location.name,
             "obj_id": location.obj_id
         })
-        self._session.run(stmt)
+        self._transaction.run(stmt)
         return location.obj_id
 
 
 def main():
     driver: neo.Driver = GraphDatabase.driver("bolt://" + SERVER_URL, auth=basic_auth(AUTH_USER, AUTH_PASSWORD))
     session: neo.Session = driver.session()
-    trans: neo.Transaction = session.begin_transaction()
 
-    tree = ET.ElementTree(file="../data/IATIACTIVITIES19972007.xml")
-
-    ext = SessionExtension(trans)
+    tree = ET.ElementTree(file="../data/IATIACTIVITIES20162017.xml")
 
     print("--- Task started ---")
     print_time()
 
-    print("Clearing database...")
-    ext.clear_db()
+    print("Clearing indices...")
+    # This operation could fail at bootstrap
+    trans: neo.Transaction = session.begin_transaction()
+    for class_name in CLASS_LIST:
+        trans.run("DROP INDEX ON :{}(obj_id);".format(class_name))
+    try:
+        trans.commit()
+    except neo_ex.DatabaseError as ex:
+        print(ex.message)
+        trans.rollback()
+    finally:
+        trans.close()
+
+    print("Clearing nodes and relations...")
+    trans = session.begin_transaction()
+    trans.run("MATCH (n) DETACH DELETE n;")
+    trans.commit()
+    trans.close()
+
+    ext = SessionExtension(session)
+
+    print("Creating indices...")
+    # https://stackoverflow.com/questions/24875665/how-to-bulk-insert-relationships
+    trans = session.begin_transaction()
+    for class_name in CLASS_LIST:
+        stmt = "CREATE INDEX ON :{}(obj_id);".format(class_name)
+        trans.run(stmt)
+    trans.commit()
+    trans.close()
+
+    ext.begin_transaction()
 
     print("Adding activity info...")
     for activity_node in tree.iter("iati-activity"):
         activity_node: ET.Element = activity_node
-        # Add an activity
+
+        # Activity
         activity = ext.get_activity(activity_node)
         ext.add_activity(activity)
-        # Add its budget
+        # Budget
         budget_node: ET.Element = activity_node.find("budget")
-        budget = ext.get_budget(budget_node)
-        ext.add_budget(budget, activity)
-        # Add planned disbursements
+        budget = ext.get_budget(budget_node, activity)
+        ext.add_budget(budget)
+        # Planned disbursements
         disbs: list = []
         disbursement_index = 0
         for disbursement_node in activity_node.iter("planned-disbursement"):
-            disbursement = ext.get_disbursement(disbursement_node)
-            ext.add_disbursement(disbursement, activity, disbursement_index)
+            disbursement = ext.get_disbursement(disbursement_node, activity, disbursement_index)
+            ext.add_disbursement(disbursement)
             disbursement_index += 1
             disbs.append(disbursement)
         # Organizations
@@ -224,30 +265,33 @@ def main():
         location = ext.get_location(recipient_node)
         ext.add_location(location)
 
-        # Now relations.
-        stmt = ""
+        def add_relations():
+            # (Organization) -[Implements]-> (Policy)
+            for org, pol in zip(orgs, policies):
+                stmt = CSB.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id,
+                                              "Implements")
+                ext.run(stmt)
 
-        # (Organization) -[Implements]-> (Policy)
-        for org, pol in zip(orgs, policies):
-            stmt = CSB.create_edge_by_ids("org", "Organization", org.obj_id, "pol", "Policy", pol.obj_id, "Implements")
-            trans.run(stmt)
+            # (Activity) -[Commits]-> (Budget)
+            stmt = CSB.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id,
+                                          "Commits")
+            ext.run(stmt)
 
-        # (Activity) -[Commits]-> (Budget)
-        stmt = CSB.create_edge_by_ids("act", "Activity", activity.obj_id, "budget", "Budget", budget.obj_id, "Commits")
-        trans.run(stmt)
+            # (Budget) -[Commits] -> (Policy)
+            for pol in policies:
+                stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "pol", "Policy", pol.obj_id,
+                                              "Commits")
+                ext.run(stmt)
 
-        # (Budget) -[Commits] -> (Policy)
-        for pol in policies:
-            stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "pol", "Policy", pol.obj_id, "Commits")
-            trans.run(stmt)
+            # (Budget) -[Disburses]-> (Disbursement)
+            for dis in disbs:
+                stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement", dis.obj_id,
+                                              "Disburses")
+                ext.run(stmt)
 
-        # (Budget) -[Disburses]-> (Disbursement)
-        for dis in disbs:
-            stmt = CSB.create_edge_by_ids("bud", "Budget", budget.obj_id, "dis", "Disbursement", dis.obj_id,
-                                          "Disburses")
-            trans.run(stmt)
+        add_relations()
 
-    trans.commit()
+    ext.commit()
 
     session.close()
 
