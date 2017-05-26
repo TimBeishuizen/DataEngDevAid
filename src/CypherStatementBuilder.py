@@ -59,7 +59,7 @@ class CypherStatementBuilder:
 
     @staticmethod
     def create_edge_by_names(n1_name: str, n2_name: str, edge_class_name: str, edge_props: Union[dict, None] = None,
-                             edge_name: str = None) -> str:
+                             edge_name: str = None, is_unique: bool = False) -> str:
         """
         Usage:
         create_edge("Keanu", "TheMatrix", "acts_in", {"roles": ["Neo"]})
@@ -78,20 +78,23 @@ class CypherStatementBuilder:
         """
         props_str = get_props_dict_str(edge_props)
         edge_class_name = edge_class_name.upper()
-        create_str = "CREATE ({})-[{}:{}{}]->({})".format(n1_name, edge_name if edge_name is not None else "",
-                                                          edge_class_name, props_str, n2_name)
+        create_str = "CREATE {}({})-[{}:{}{}]->({})".format(n1_name, edge_name if edge_name is not None else "",
+                                                            "UNIQUE " if is_unique else "",
+                                                            edge_class_name, props_str, n2_name)
         return create_str
 
     @staticmethod
-    def create_edge_by_ids(n1_name: str, n1_class: str, n1_id: int, n2_name: str, n2_class: str, n2_id: int
-                           , edge_class: str, edge_props: Union[dict, None] = None, edge_name: str = None) -> str:
+    def create_edge_by_ids(n1_name: str, n1_class: str, n1_id: int, n2_name: str, n2_class: str, n2_id: int,
+                           edge_class: str, edge_props: Union[dict, None] = None, edge_name: str = None,
+                           is_unique: bool = False) -> str:
         props_str = get_props_dict_str(edge_props)
         edge_class = edge_class.upper()
         create_str = "MATCH ({}:{}), ({}:{}) " \
                      "WHERE {}.obj_id={} AND {}.obj_id={} " \
-                     "CREATE ({})-[{}:{}{}]->({})" \
+                     "CREATE {}({})-[{}:{}{}]->({})" \
             .format(n1_name, n1_class, n2_name, n2_class,
                     n1_name, n1_id, n2_name, n2_id,
+                    "UNIQUE " if is_unique else "",
                     n1_name, edge_name if edge_name is not None else "", edge_class, props_str, n2_name)
         return create_str
 

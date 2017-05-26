@@ -175,9 +175,10 @@ def main():
                         continue
                     for pol in policies:
                         if get_pol_sig(pol.code) > 0:
+                            # Note that the relation between a specific pair of organization and policy is unique.
                             stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
                                                            "pol", "Policy", pol.obj_id,
-                                                           "Implements")
+                                                           "Implements", is_unique=True)
                             ext.run(stmt)
 
                 # (Organization) -[?]-> (Location)
