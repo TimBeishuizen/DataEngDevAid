@@ -4,6 +4,7 @@ from time import localtime, strftime
 import neo4j.v1 as neo
 import neo4j.exceptions as neo_ex
 from neo4j.v1 import GraphDatabase, basic_auth
+import csv
 
 if __name__ == "__main__":
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
@@ -231,11 +232,69 @@ def main():
 
             add_relations(activity, budget, organizations, policies, location, policy_significance_map)
 
+
+
         print("Committing...")
         ext.commit()
 
+        print("Find all nodes")
+        nodes = []
+        result = session.run("MATCH (n) RETURN EXTRACT(key IN keys(n) | {value: n[key], key:key})")
+        for record in result:
+            node = []
+            pre_node = record[0]
+            for item in pre_node:
+                if item['key'] == 'obj_id':
+                    node.insert(0, item['value'])
+                else:
+                    node.append(item['key'])
+                    if isinstance(item['value'],str):
+                        node.append(item['value'].encode('ascii', 'ignore'))
+                    else:
+                        node.append(item['value'])
+            nodes.append(node)
+
+        print("Save nodes in csv file")
+        with open('nodes.csv', 'w') as csvfile:
+            csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
+            for node in nodes:
+                csvwriter.writerow(node)
+
+
+        # Save edges
+        print("Find all edges")
+        edges = []
+        edge_count = 0
+        result = session.run("MATCH (n1) -[t]- (n2) RETURN EXTRACT(key IN keys(t) | {value: t[key], key:key}), n1, n2")
+        for record in result:
+            edge = []
+            edge.append(edge_count)
+            edge_count += 1
+            edge.append(record[1]["obj_id"])
+            edge.append(record[2]["obj_id"])
+            pre_edge = record[0]
+            for item in pre_edge:
+                if item['key'] == 'obj_id':
+                    edge.insert(0, item['value'])
+                else:
+                    edge.append(item['key'])
+                    if isinstance(item['value'],str):
+                        edge.append(item['value'].encode('ascii', 'ignore'))
+                    else:
+                        edge.append(item['value'])
+            edges.append(edge)
+
+        print("Save edges in csv file")
+        with open('edges.csv', 'w') as csvfile:
+            csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
+            for edge in edges:
+                csvwriter.writerow(edge)
+
     for xml_file in XML_FILES:
         process_xml(xml_file)
+
+
+
 
     session.close()
 
