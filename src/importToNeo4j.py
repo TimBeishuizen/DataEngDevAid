@@ -211,11 +211,11 @@ def main():
                                                        "Participates_In", EdgeAttr.participates_in(activity))
                         ext.run(stmt)
 
-                # (Policy) -[Funds] -> (Budget)
+                # (Budget) -[Funds] -> (Policy)
                 for pol in policies:
                     if get_pol_sig(pol.code) > 0:
-                        stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id,
-                                                       "bud", "Budget", budget.obj_id,
+                        stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                                                       "pol", "Policy", pol.obj_id,
                                                        "Funds", EdgeAttr.funds(budget))
                         ext.run(stmt)
 
