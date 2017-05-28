@@ -43,29 +43,21 @@ def main():
     driver: neo.Driver = GraphDatabase.driver("bolt://" + SERVER_URL, auth=basic_auth(AUTH_USER, AUTH_PASSWORD))
     session: neo.Session = driver.session()
 
+    ext = SessionExtension(session)
+
     print("--- Task started ---")
     print(timestr())
 
     print("Clearing indices...")
     # This operation could fail at bootstrap
-    trans: neo.Transaction = session.begin_transaction()
     for class_name in CLASS_LIST:
-        trans.run("DROP INDEX ON :{}(obj_id);".format(class_name))
-    try:
-        trans.commit()
-    except neo_ex.DatabaseError as ex:
-        print(ex.message)
-        trans.rollback()
-    finally:
-        trans.close()
+        try:
+            ext.run_session("DROP INDEX ON :{}(obj_id);".format(class_name))
+        except neo_ex.DatabaseError as ex:
+            print(ex.message)
 
     print("Clearing nodes and relations...")
-    trans = session.begin_transaction()
-    trans.run("MATCH (n) DETACH DELETE n;")
-    trans.commit()
-    trans.close()
-
-    ext = SessionExtension(session)
+    ext.run_session("MATCH (n) DETACH DELETE n;")
 
     print("Creating indices...")
     # https://stackoverflow.com/questions/24875665/how-to-bulk-insert-relationships
@@ -126,7 +118,7 @@ def main():
 
                 return activity, budget, organizations, policies, location, policy_significance_map
 
-            activity, budget, organizations, policies, location, policy_significance_map = add_nodes()
+            t_activity, t_budget, t_organizations, t_policies, t_location, t_psm = add_nodes()
 
             def add_relations(activity: Activity, budget: Budget, organizations: List[Organization],
                               policies: List[Policy], location: Location, policy_significance_map: Dict[int, int]):
@@ -178,8 +170,8 @@ def main():
                             if TRANSACTION_DEBUG:
                                 print(
                                     "[WARN] Cannot create relation 'transfers to' between budget and organization, "
-                                    "having a transaction as attribute. Receiver name={}"
-                                        .format(transaction.receiver_name))
+                                    "having a transaction as attribute. Receiver name={}".format(
+                                        transaction.receiver_name))
                             continue
                         if transaction.receiver_org.obj_id == org.obj_id:
                             stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
@@ -227,14 +219,18 @@ def main():
                                                        "Funds", EdgeAttr.funds(budget))
                         ext.run(stmt)
 
-            add_relations(activity, budget, organizations, policies, location, policy_significance_map)
+            add_relations(t_activity, t_budget, t_organizations, t_policies, t_location, t_psm)
 
         print("Committing...")
         ext.commit()
 
-        print("Find all nodes")
+    for xml_file in XML_FILES:
+        process_xml(xml_file)
+
+    def generate_csv(sess: neo.Session):
+        print("Find all nodes ({})".format(timestr()))
         nodes = []
-        result = session.run("MATCH (n) RETURN EXTRACT(key IN keys(n) | {value: n[key], key:key})")
+        result = sess.run("MATCH (n) RETURN EXTRACT(key IN keys(n) | {value: n[key], key:key})")
         for record in result:
             node = []
             pre_node = record[0]
@@ -249,20 +245,19 @@ def main():
                         node.append(item['value'])
             nodes.append(node)
 
-        print("Save nodes in csv file")
+        print("Save nodes in csv file ({})".format(timestr()))
         with open('nodes.csv', 'w') as csvfile:
             csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
             for node in nodes:
                 csvwriter.writerow(node)
 
         # Save edges
-        print("Find all edges")
+        print("Find all edges ({})".format(timestr()))
         edges = []
         edge_count = 0
-        result = session.run("MATCH (n1) -[t]- (n2) RETURN EXTRACT(key IN keys(t) | {value: t[key], key:key}), n1, n2")
+        result = sess.run("MATCH (n1) -[t]- (n2) RETURN EXTRACT(key IN keys(t) | {value: t[key], key:key}), n1, n2")
         for record in result:
-            edge = []
-            edge.append(edge_count)
+            edge = [edge_count]
             edge_count += 1
             edge.append(record[1]["obj_id"])
             edge.append(record[2]["obj_id"])
@@ -278,14 +273,13 @@ def main():
                         edge.append(item['value'])
             edges.append(edge)
 
-        print("Save edges in csv file")
+        print("Save edges in csv file ({})".format(timestr()))
         with open('edges.csv', 'w') as csvfile:
             csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
             for edge in edges:
                 csvwriter.writerow(edge)
 
-    for xml_file in XML_FILES:
-        process_xml(xml_file)
+    generate_csv(session)
 
     session.close()
 

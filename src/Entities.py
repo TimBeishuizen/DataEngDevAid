@@ -157,12 +157,11 @@ class Location:
 
 
 class Transaction:
-    def __init__(self, ty: int, date: str, value: int, value_date: str, provider_ref: str, provider_name: str,
+    def __init__(self, ty: int, date: str, value: int, provider_ref: str, provider_name: str,
                  receiver_ref: str, receiver_name: str, orgs: Iterable[Organization] = None):
         self.type = ty
         self.date = date_str_to_int(date)
         self.value = value
-        self.value_date = date_str_to_int(value_date)
         self.provider_ref = provider_ref
         self.receiver_ref = receiver_ref
         self.provider_name = provider_name
@@ -186,7 +185,6 @@ class Transaction:
     type: int
     date: int
     value: int
-    value_date: int
     provider_ref: str
     provider_name: str
     receiver_ref: str

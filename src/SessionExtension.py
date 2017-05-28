@@ -51,6 +51,9 @@ class SessionExtension:
     def run(self, query: str) -> None:
         self._transaction.run(query)
 
+    def run_session(self, query: str) -> None:
+        self._session.run(query)
+
     def get_activity(self, node: ET.Element) -> Activity:
         ident_node: ET.Element = node.find("iati-identifier")
         identifier: str = ident_node.text

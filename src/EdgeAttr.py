@@ -26,8 +26,7 @@ class EdgeAttr:
             period_end: str = disbursement_node.find("period-end").get("iso-date")
             value_node: ET.Element = disbursement_node.find("value")
             value: int = int(value_node.text)
-            value_date: str = value_node.get("value-date")
-            disbursement = Disbursement(period_start, period_end, value, value_date, parent_activity, i)
+            disbursement = Disbursement(period_start, period_end, value, parent_activity, i)
             disbursements.append(disbursement)
         return disbursements
 
@@ -47,7 +46,7 @@ class EdgeAttr:
             receiver_node: ET.Element = transaction_node.find("receiver-org")
             receiver_ref = receiver_node.get("ref")
             receiver_name = SessionExtension.narrative(receiver_node)
-            transaction = Transaction(ty, date, value, value_date, provider_ref, provider_name,
+            transaction = Transaction(ty, date, value, provider_ref, provider_name,
                                       receiver_ref, receiver_name, organizations)
             transactions.append(transaction)
         return transactions
