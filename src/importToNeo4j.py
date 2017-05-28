@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import List
 from xml.etree import ElementTree as ET
 from time import localtime, strftime
 import neo4j.v1 as neo
@@ -140,33 +140,14 @@ def main():
                 # (Activity) -[Commits]-> (Budget)
                 stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
                                                "budget", "Budget", budget.obj_id,
-                                               "Commits")
+                                               "Commits", EdgeAttr.commits(budget))
                 ext.run(stmt)
 
-                # (Activity) -[Is_For_Location]-> (Location)
+                # (Activity) -[Executed_In]-> (Location)
                 stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
                                                "loc", "Location", location.obj_id,
-                                               "Is_For", EdgeAttr.get_activity_attributes(activity))
+                                               "Executed_In", EdgeAttr.executed_in(activity))
                 ext.run(stmt)
-
-                # (Activity) -[Supports]-> (Policy)
-                for pol in policies:
-                    # Ignore the policies whose significance level is 0 ("not targeted").
-                    if get_pol_sig(pol.code) > 0:
-                        stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
-                                                       "pol", "Policy", pol.obj_id,
-                                                       "Supports", EdgeAttr.get_activity_attributes(activity))
-                        ext.run(stmt)
-
-                # (Organization) -[Participates_In]-> (Activity)
-                for i, org in enumerate(organizations):
-                    # 1. Ignore the first organization (reporting-org, always Ministry of Foreign Affairs).
-                    # 2. Ignore the Ministry's appearance in all participating organizations.
-                    if i > 0 and org.ref != "XM-DAC-7":
-                        stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
-                                                       "act", "Activity", activity.obj_id,
-                                                       "Participates_In", EdgeAttr.get_activity_attributes(activity))
-                        ext.run(stmt)
 
                 # (Organization) -[Implements]-> (Policy)
                 for i, org in enumerate(organizations):
@@ -179,23 +160,11 @@ def main():
                             # Note that the relation between a specific pair of organization and policy is unique.
                             stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
                                                            "pol", "Policy", pol.obj_id,
-                                                           "Implements", is_unique=True)
+                                                           "Implements", EdgeAttr.implements(),
+                                                           is_unique=True)
                             ext.run(stmt)
 
-                # (Organization) -[?]-> (Location)
-
-                # (Budget) -[Disburses_To]-> (Organization)
-                for i, org in enumerate(organizations):
-                    if i == 0 or org.ref == "XM-DAC-7":
-                        continue
-                    for disbursement in disbursements:
-                        stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
-                                                       "org", "Organization", org.obj_id,
-                                                       "Disburses_To",
-                                                       EdgeAttr.get_disbursement_attributes(disbursement))
-                        ext.run(stmt)
-
-                # (Budget) -[Transfers_To]-> (Organization)
+                # (Budget) -[Transacts]-> (Organization)
                 for i, org in enumerate(organizations):
                     if i == 0 or org.ref == "XM-DAC-7":
                         continue
@@ -207,27 +176,55 @@ def main():
                         # activity node.
                         if transaction.receiver_org is None:
                             if TRANSACTION_DEBUG:
-                                print("[WARN] Cannot create relation 'transfers to' between budget and organization, "
-                                      "having a transaction as attribute. Receiver name={}"
-                                      .format(transaction.receiver_name))
+                                print(
+                                    "[WARN] Cannot create relation 'transfers to' between budget and organization, "
+                                    "having a transaction as attribute. Receiver name={}"
+                                        .format(transaction.receiver_name))
                             continue
                         if transaction.receiver_org.obj_id == org.obj_id:
                             stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
                                                            "org", "Organization", org.obj_id,
-                                                           "Transfers_To",
-                                                           EdgeAttr.get_transaction_attributes(transaction))
+                                                           "Transacts",
+                                                           EdgeAttr.transacts(transaction))
                             ext.run(stmt)
 
-                # (Budget) -[?]-> (Location)
+                # (Budget) -[Plans_Disbursement]-> (Organization)
+                for i, org in enumerate(organizations):
+                    if i == 0 or org.ref == "XM-DAC-7":
+                        continue
+                    for disbursement in disbursements:
+                        stmt = Stmt.create_edge_by_ids("bud", "Budget", budget.obj_id,
+                                                       "org", "Organization", org.obj_id,
+                                                       "Plans_Disbursement",
+                                                       EdgeAttr.plans_disbursement(disbursement))
+                        ext.run(stmt)
 
-                # (Policy) -[?]-> (Location)
+                # (Activity) -[Supports]-> (Policy)
+                for pol in policies:
+                    # Ignore the policies whose significance level is 0 ("not targeted").
+                    if get_pol_sig(pol.code) > 0:
+                        stmt = Stmt.create_edge_by_ids("act", "Activity", activity.obj_id,
+                                                       "pol", "Policy", pol.obj_id,
+                                                       "Supports",
+                                                       EdgeAttr.supports(activity, pol, policy_significance_map))
+                        ext.run(stmt)
 
-                # (Policy) -[Commits] -> (Budget)
+                # (Organization) -[Participates_In]-> (Activity)
+                for i, org in enumerate(organizations):
+                    # 1. Ignore the first organization (reporting-org, always Ministry of Foreign Affairs).
+                    # 2. Ignore the Ministry's appearance in all participating organizations.
+                    if i > 0 and org.ref != "XM-DAC-7":
+                        stmt = Stmt.create_edge_by_ids("org", "Organization", org.obj_id,
+                                                       "act", "Activity", activity.obj_id,
+                                                       "Participates_In", EdgeAttr.participates_in(activity))
+                        ext.run(stmt)
+
+                # (Policy) -[Funds] -> (Budget)
                 for pol in policies:
                     if get_pol_sig(pol.code) > 0:
                         stmt = Stmt.create_edge_by_ids("pol", "Policy", pol.obj_id,
                                                        "bud", "Budget", budget.obj_id,
-                                                       "Commits")
+                                                       "Funds", EdgeAttr.funds(budget))
                         ext.run(stmt)
 
             add_relations(activity, budget, organizations, policies, location, policy_significance_map)

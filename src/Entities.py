@@ -1,12 +1,12 @@
 import re
-from typing import Iterable, List
+from typing import Iterable, Dict
 
 next_id_val = 0
 
 try:
     # Trick for PyCharm
     R_CHARS: __REGEX = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
-except Exception:
+except NameError:
     R_CHARS = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
 
 TRANSACTION_DEBUG = False
@@ -31,51 +31,57 @@ class Activity:
         type: int
         date: int
 
-    def __init__(self, identifier: str, description: str, status: int, dates: Iterable[ActivityDate]):
+    def __init__(self, identifier: str, description: str, status: int, title: str, dates: Iterable[ActivityDate]):
         self.identifier = identifier
         self.description = description
+        self.title = title
         self.status = status
         self.obj_id = get_next_id()
-        self.dates = list(dates)
+        self.dates = dict()
+        for date in dates:
+            self.dates[date.type] = date.date
 
     def get_name(self) -> str:
         return "act_" + self.identifier.replace("-", "_")
 
     identifier: str
     description: str
+    title: str
     status: int
     obj_id: int
     # For edges
-    dates: List[ActivityDate]
+    dates: Dict[int, int]
 
 
 class Budget:
-    def __init__(self, period_start: str, period_end: str, value: int, value_date: str, parent_activity: Activity):
-        self.period_start = date_str_to_int(period_start)
-        self.period_end = date_str_to_int(period_end)
+    def __init__(self, period_start: str, period_end: str, value: int, ty: int, status: int,
+                 parent_activity: Activity):
         self.value = value
-        self.value_date = date_str_to_int(value_date)
+        self.type = ty
+        self.status = status
         self.obj_id = get_next_id()
         self._parent_activity = parent_activity
+        self._period_start = date_str_to_int(period_start)
+        self._period_end = date_str_to_int(period_end)
 
     def get_name(self) -> str:
         return "bud_" + self._parent_activity.identifier.replace("-", "_")
 
-    period_start: int
-    period_end: int
     value: int
-    value_date: int
+    type: int
+    status: int
     obj_id: int
     _parent_activity: Activity
+    _period_start: int
+    _period_end: int
 
 
 class Disbursement:
-    def __init__(self, period_start: str, period_end: str, value: int, value_date: str, parent_activity: Activity,
+    def __init__(self, period_start: str, period_end: str, value: int, parent_activity: Activity,
                  index: int):
         self.period_start = date_str_to_int(period_start)
         self.period_end = date_str_to_int(period_end)
         self.value = value
-        self.value_date = date_str_to_int(value_date)
         self.obj_id = get_next_id()
         self._parent_activity = parent_activity
         self._index = index
@@ -86,7 +92,6 @@ class Disbursement:
     period_start: int
     period_end: int
     value: int
-    value_date: int
     obj_id: int
     _parent_activity: Activity
     _index: int
@@ -119,9 +124,8 @@ class Organization:
 
 
 class Policy:
-    def __init__(self, name: str, vocabulary: int, code: int):
+    def __init__(self, name: str, code: int):
         self.name = name
-        self.vocabulary = vocabulary
         self.code = code
         self.obj_id = get_next_id()
 
@@ -133,7 +137,6 @@ class Policy:
         return "pol_" + str(code)
 
     name: str
-    vocabulary: int
     code: int
     obj_id: int
 

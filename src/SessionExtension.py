@@ -1,3 +1,4 @@
+from typing import List
 from xml.etree import ElementTree as ET
 import neo4j.v1 as neo
 
@@ -55,16 +56,19 @@ class SessionExtension:
         identifier: str = ident_node.text
         desc_node: ET.Element = node.find("description")
         description: str = SessionExtension.narrative(desc_node)
+        title_node: ET.Element = node.find("title")
+        title: str = SessionExtension.narrative(title_node)
         status_node: ET.Element = node.find("activity-status")
         status: int = int(status_node.get("code"))
         dates: List[Activity.ActivityDate] = []
         for act_date_node in node.iter("activity-date"):
             dates.append(Activity.ActivityDate(int(act_date_node.get("type")), act_date_node.get("iso-date")))
-        return Activity(identifier, description, status, dates)
+        return Activity(identifier, description, status, title, dates)
 
     def add_activity(self, activity: Activity) -> int:
         stmt = Stmt.create_node(activity.get_name(), "Activity", {
-            "identifier": activity.identifier, "description": activity.description, "status": activity.status,
+            "identifier": activity.identifier, "description": activity.description, "title": activity.title,
+            "status": activity.status,
             "obj_id": activity.obj_id
         })
         self._transaction.run(stmt)
@@ -73,16 +77,16 @@ class SessionExtension:
     def get_budget(self, node: ET.Element, parent_activity: Activity) -> Budget:
         period_start: str = node.find("period-start").get("iso-date")
         period_end: str = node.find("period-end").get("iso-date")
-        value_node: ET.Element = node.find("value")
-        value: int = int(value_node.text)
-        value_date: str = value_node.get("value-date")
-        return Budget(period_start, period_end, value, value_date, parent_activity)
+        value: int = int(node.find("value").text)
+        # http://iatistandard.org/202/activity-standard/iati-activities/iati-activity/budget/
+        ty: int = int(node.get("type")) if node.get("type") is not None else 0
+        status: int = int(node.get("status")) if node.get("status") is not None else 1
+        return Budget(period_start, period_end, value, ty, status, parent_activity)
 
     def add_budget(self, budget: Budget) -> int:
         # Budget naming: bud_{$activity_ident}
         stmt = Stmt.create_node(budget.get_name(), "Budget", {
-            "period_start": budget.period_start, "period_end": budget.period_end,
-            "value": budget.value, "value_date": budget.value_date,
+            "value": budget.value,
             "obj_id": budget.obj_id
         })
         self._transaction.run(stmt)
@@ -122,8 +126,7 @@ class SessionExtension:
             index = self._added_policy_codes.index(code)
             pol: Policy = self._known_policies[index]
             return pol
-        vocabulary: int = int(node.get("vocabulary"))
-        policy = Policy(name, vocabulary, code)
+        policy = Policy(name, code)
         self._known_policy_codes.append(policy.code)
         self._known_policies.append(policy)
         return policy
@@ -135,7 +138,7 @@ class SessionExtension:
             return pol.obj_id
         self._added_policy_codes.append(policy.code)
         stmt = Stmt.create_node(policy.get_name(), "Policy", {
-            "name": policy.name, "vocabulary": policy.vocabulary, "code": policy.code,
+            "name": policy.name, "code": policy.code,
             "obj_id": policy.obj_id
         })
         self._transaction.run(stmt)
