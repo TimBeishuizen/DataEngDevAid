@@ -9,10 +9,10 @@ import csv
 if __name__ == "__main__":
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
     # http://stackoverflow.com/questions/41816973/modulenotfounderror-what-does-it-mean-main-is-not-a-package
-    from src.CypherStatementBuilder import CypherStatementBuilder as Stmt
-    from src.Entities import *
-    from src.SessionExtension import SessionExtension
-    from src.EdgeAttr import EdgeAttr
+    from CypherStatementBuilder import CypherStatementBuilder as Stmt
+    from Entities import *
+    from SessionExtension import SessionExtension
+    from EdgeAttr import EdgeAttr
 else:
     # So do a trick, use the standard Python 3 import syntax to feed PyCharm's intellisense.
     from .CypherStatementBuilder import CypherStatementBuilder as Stmt

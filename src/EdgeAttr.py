@@ -2,8 +2,8 @@ from typing import Dict, Any
 from xml.etree import ElementTree as ET
 
 if __name__ == "__main__":
-    from src.Entities import *
-    from src.SessionExtension import SessionExtension
+    from Entities import *
+    from SessionExtension import SessionExtension
 else:
     from .Entities import *
     from .SessionExtension import SessionExtension
