@@ -1,10 +1,10 @@
 from typing import Dict, Any
 from xml.etree import ElementTree as ET
 
-if __name__ == "__main__":
+try:
     from Entities import *
     from SessionExtension import SessionExtension
-else:
+except ImportError:
     from .Entities import *
     from .SessionExtension import SessionExtension
 

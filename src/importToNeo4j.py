@@ -6,14 +6,14 @@ import neo4j.exceptions as neo_ex
 from neo4j.v1 import GraphDatabase, basic_auth
 import csv
 
-if __name__ == "__main__":
+try:
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
     # http://stackoverflow.com/questions/41816973/modulenotfounderror-what-does-it-mean-main-is-not-a-package
     from CypherStatementBuilder import CypherStatementBuilder as Stmt
     from Entities import *
     from SessionExtension import SessionExtension
     from EdgeAttr import EdgeAttr
-else:
+except ImportError:
     # So do a trick, use the standard Python 3 import syntax to feed PyCharm's intellisense.
     from .CypherStatementBuilder import CypherStatementBuilder as Stmt
     from .Entities import *
@@ -232,8 +232,6 @@ def main():
 
             add_relations(activity, budget, organizations, policies, location, policy_significance_map)
 
-
-
         print("Committing...")
         ext.commit()
 
@@ -248,7 +246,7 @@ def main():
                     node.insert(0, item['value'])
                 else:
                     node.append(item['key'])
-                    if isinstance(item['value'],str):
+                    if isinstance(item['value'], str):
                         node.append(item['value'].encode('ascii', 'ignore'))
                     else:
                         node.append(item['value'])
@@ -259,7 +257,6 @@ def main():
             csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
             for node in nodes:
                 csvwriter.writerow(node)
-
 
         # Save edges
         print("Find all edges")
@@ -278,7 +275,7 @@ def main():
                     edge.insert(0, item['value'])
                 else:
                     edge.append(item['key'])
-                    if isinstance(item['value'],str):
+                    if isinstance(item['value'], str):
                         edge.append(item['value'].encode('ascii', 'ignore'))
                     else:
                         edge.append(item['value'])
@@ -292,9 +289,6 @@ def main():
 
     for xml_file in XML_FILES:
         process_xml(xml_file)
-
-
-
 
     session.close()
 
