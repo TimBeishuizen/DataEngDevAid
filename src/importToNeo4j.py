@@ -26,12 +26,12 @@ AUTH_PASSWORD = "neo"
 
 CLASS_LIST = ["Activity", "Budget", "Organization", "Policy", "Location"]
 XML_FILES = [
-    "../data/IATIACTIVITIES19972007.xml"  # ,
-    # "../data/IATIACTIVITIES20082009.xml",
-    # "../data/IATIACTIVITIES20102011.xml",
-    # "../data/IATIACTIVITIES20122013.xml",
-    # "../data/IATIACTIVITIES20142015.xml",
-    # "../data/IATIACTIVITIES20162017.xml"
+    "../data/IATIACTIVITIES19972007.xml",
+    "../data/IATIACTIVITIES20082009.xml",
+    "../data/IATIACTIVITIES20102011.xml",
+    "../data/IATIACTIVITIES20122013.xml",
+    "../data/IATIACTIVITIES20142015.xml",
+    "../data/IATIACTIVITIES20162017.xml"
 ]
 
 
