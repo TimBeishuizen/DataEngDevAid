@@ -62,9 +62,9 @@ class EdgeAttr:
     def executed_in(activity: Activity) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
         attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_PLANNED, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
+        attr_dict["actual_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
+        attr_dict["planned_period_end"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
+        attr_dict["actual_period_end"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
         return attr_dict
 
     @staticmethod
@@ -94,9 +94,9 @@ class EdgeAttr:
 
         attr_dict: Dict[str, Any] = dict()
         attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_PLANNED, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
+        attr_dict["actual_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
+        attr_dict["planned_period_end"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
+        attr_dict["actual_period_end"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
         attr_dict["significance"] = get_pol_sig(policy.code)
         return attr_dict
 
@@ -104,9 +104,9 @@ class EdgeAttr:
     def participates_in(activity: Activity) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
         attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_PLANNED, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
+        attr_dict["actual_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
+        attr_dict["planned_period_end"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
+        attr_dict["actual_period_end"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
         return attr_dict
 
     @staticmethod

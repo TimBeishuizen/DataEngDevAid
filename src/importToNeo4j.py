@@ -230,9 +230,11 @@ def main():
     def generate_csv(sess: neo.Session):
         print("Find all nodes ({})".format(timestr()))
         nodes = []
-        result = sess.run("MATCH (n) RETURN EXTRACT(key IN keys(n) | {value: n[key], key:key})")
+        result = sess.run("MATCH (n) RETURN EXTRACT(key IN keys(n) | {value: n[key], key:key}), labels(n)")
         for record in result:
             node = []
+            node.append('Node Label')
+            node.append(record[1][0])
             pre_node = record[0]
             for item in pre_node:
                 if item['key'] == 'obj_id':
@@ -240,13 +242,13 @@ def main():
                 else:
                     node.append(item['key'])
                     if isinstance(item['value'], str):
-                        node.append(item['value'].encode('ascii', 'ignore'))
+                        node.append(item['value'])
                     else:
                         node.append(item['value'])
             nodes.append(node)
 
         print("Save nodes in csv file ({})".format(timestr()))
-        with open('nodes.csv', 'w') as csvfile:
+        with open('nodes.csv', 'w', encoding='utf8') as csvfile:
             csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
             for node in nodes:
                 csvwriter.writerow(node)
@@ -255,12 +257,14 @@ def main():
         print("Find all edges ({})".format(timestr()))
         edges = []
         edge_count = 0
-        result = sess.run("MATCH (n1) -[t]- (n2) RETURN EXTRACT(key IN keys(t) | {value: t[key], key:key}), n1, n2")
+        result = sess.run("MATCH (n1) -[t]-> (n2) RETURN EXTRACT(key IN keys(t) | {value: t[key], key:key}), n1, n2, type(t)")
         for record in result:
             edge = [edge_count]
             edge_count += 1
             edge.append(record[1]["obj_id"])
             edge.append(record[2]["obj_id"])
+            edge.append('Edge Label')
+            edge.append(record[3])
             pre_edge = record[0]
             for item in pre_edge:
                 if item['key'] == 'obj_id':
@@ -268,7 +272,7 @@ def main():
                 else:
                     edge.append(item['key'])
                     if isinstance(item['value'], str):
-                        edge.append(item['value'].encode('ascii', 'ignore'))
+                        edge.append(item['value'])
                     else:
                         edge.append(item['value'])
             edges.append(edge)
@@ -279,7 +283,7 @@ def main():
             for edge in edges:
                 csvwriter.writerow(edge)
 
-    generate_csv(session)
+    # generate_csv(session)
 
     session.close()
 
