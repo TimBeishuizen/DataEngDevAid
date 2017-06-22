@@ -3,11 +3,7 @@ from typing import Iterable, Dict
 
 next_id_val = 0
 
-try:
-    # Trick for PyCharm
-    R_CHARS: __REGEX = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
-except NameError:
-    R_CHARS = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
+R_CHARS = re.compile(r"[.()\[\]' \-*,/&\":;%@#$<>!?|+={}~`^]")
 
 TRANSACTION_DEBUG = False
 
@@ -20,6 +16,10 @@ def get_next_id() -> int:
 
 def date_str_to_int(date_str: str) -> int:
     return int(date_str.replace("-", ""))
+
+
+def sanitize_date(date_val: int) -> int:
+    return 20170630 if date_val == -1 or date_val > 99990000 else date_val
 
 
 class Activity:

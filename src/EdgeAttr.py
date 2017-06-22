@@ -54,17 +54,17 @@ class EdgeAttr:
     @staticmethod
     def commits(budget: Budget) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
-        attr_dict["period_start"] = budget._period_start
-        attr_dict["period_end"] = budget._period_end
+        attr_dict["period_start"] = sanitize_date(budget._period_start)
+        attr_dict["period_end"] = sanitize_date(budget._period_end)
         return attr_dict
 
     @staticmethod
     def executed_in(activity: Activity) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_PLANNED, -1)
-        attr_dict["actual_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
-        attr_dict["planned_period_end"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
-        attr_dict["actual_period_end"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
+        attr_dict["planned_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_PLANNED, -1))
+        attr_dict["actual_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_ACTUAL, -1))
+        attr_dict["planned_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_PLANNED, -1))
+        attr_dict["actual_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_ACTUAL, -1))
         return attr_dict
 
     @staticmethod
@@ -82,8 +82,8 @@ class EdgeAttr:
     @staticmethod
     def plans_disbursement(disbursement: Disbursement) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
-        attr_dict["period_start"] = disbursement.period_start
-        attr_dict["period_end"] = disbursement.period_end
+        attr_dict["period_start"] = sanitize_date(disbursement.period_start)
+        attr_dict["period_end"] = sanitize_date(disbursement.period_end)
         attr_dict["value"] = disbursement.value
         return attr_dict
 
@@ -93,25 +93,25 @@ class EdgeAttr:
             return policy_significance_map.get(code, 0)
 
         attr_dict: Dict[str, Any] = dict()
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_PLANNED, -1)
-        attr_dict["actual_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
-        attr_dict["planned_period_end"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
-        attr_dict["actual_period_end"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
+        attr_dict["planned_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_PLANNED, -1))
+        attr_dict["actual_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_ACTUAL, -1))
+        attr_dict["planned_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_PLANNED, -1))
+        attr_dict["actual_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_ACTUAL, -1))
         attr_dict["significance"] = get_pol_sig(policy.code)
         return attr_dict
 
     @staticmethod
     def participates_in(activity: Activity) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
-        attr_dict["planned_period_start"] = activity.dates.get(ActivityDate.START_PLANNED, -1)
-        attr_dict["actual_period_start"] = activity.dates.get(ActivityDate.START_ACTUAL, -1)
-        attr_dict["planned_period_end"] = activity.dates.get(ActivityDate.END_PLANNED, -1)
-        attr_dict["actual_period_end"] = activity.dates.get(ActivityDate.END_ACTUAL, -1)
+        attr_dict["planned_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_PLANNED, -1))
+        attr_dict["actual_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_ACTUAL, -1))
+        attr_dict["planned_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_PLANNED, -1))
+        attr_dict["actual_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_ACTUAL, -1))
         return attr_dict
 
     @staticmethod
     def funds(budget: Budget) -> Dict[str, Any]:
         attr_dict: Dict[str, Any] = dict()
-        attr_dict["period_start"] = budget._period_start
-        attr_dict["period_end"] = budget._period_end
+        attr_dict["period_start"] = sanitize_date(budget._period_start)
+        attr_dict["period_end"] = sanitize_date(budget._period_end)
         return attr_dict
