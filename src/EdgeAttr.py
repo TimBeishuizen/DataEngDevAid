@@ -1,5 +1,7 @@
-from typing import Dict, List, Any
+from typing import List, Any
 from xml.etree import ElementTree as ET
+
+from ActivityDate import ActivityDate
 
 try:
     from Entities import *
@@ -7,14 +9,6 @@ try:
 except ImportError:
     from .Entities import *
     from .SessionExtension import SessionExtension
-
-
-class ActivityDate:
-    START_PLANNED = 1
-    START_ACTUAL = 2
-    END_PLANNED = 3
-    END_ACTUAL = 4
-
 
 class EdgeAttr:
     @staticmethod

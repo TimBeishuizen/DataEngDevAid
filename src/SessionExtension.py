@@ -1,6 +1,8 @@
-from typing import List
+from typing import List, Any
 from xml.etree import ElementTree as ET
 import neo4j.v1 as neo
+
+from ActivityDate import ActivityDate
 
 try:
     # The main module must import files from the same directory in this way, but PyCharm just can't recognize it.
@@ -69,11 +71,21 @@ class SessionExtension:
         return Activity(identifier, description, status, title, dates)
 
     def add_activity(self, activity: Activity) -> int:
-        stmt = Stmt.create_node(activity.get_name(), "Activity", {
+        attr_dict: Dict[str, Any] = dict()
+        attr_dict["planned_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_PLANNED, -1))
+        attr_dict["actual_period_start"] = sanitize_date(activity.dates.get(ActivityDate.START_ACTUAL, -1))
+        attr_dict["planned_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_PLANNED, -1))
+        attr_dict["actual_period_end"] = sanitize_date(activity.dates.get(ActivityDate.END_ACTUAL, -1))
+
+        base_dict = {
             "identifier": activity.identifier, "description": activity.description, "title": activity.title,
             "status": activity.status,
             "obj_id": activity.obj_id
-        })
+        }
+        for kv in base_dict.items():
+            attr_dict[kv[0]] = kv[1]
+
+        stmt = Stmt.create_node(activity.get_name(), "Activity", attr_dict)
         self._transaction.run(stmt)
         return activity.obj_id
 
