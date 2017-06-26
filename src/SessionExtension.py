@@ -166,7 +166,7 @@ class SessionExtension:
             return loc.obj_id
         self._added_location_codes.append(location.code)
         stmt = Stmt.create_node(location.get_name(), "Location", {
-            "code": location.code, "name": location.name,
+            "code": location.code, "name": location.name, "is_country": location.is_country,
             "obj_id": location.obj_id
         })
         self._transaction.run(stmt)

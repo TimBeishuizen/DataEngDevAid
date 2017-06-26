@@ -145,6 +145,7 @@ class Location:
     def __init__(self, code: str, name: str):
         self.code = code
         self.name = name
+        self.is_country = not code.isnumeric()
         self.obj_id = get_next_id()
 
     def get_name(self) -> str:
@@ -153,6 +154,7 @@ class Location:
 
     code: str
     name: str
+    is_country: bool
     obj_id: int
 
 

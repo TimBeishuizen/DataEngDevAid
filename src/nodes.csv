@@ -11,44 +11,44 @@
 11,Node Label,Policy,name,Aid Targeting the Objectives of the Framework Convention on Climate Change - Adaptation,code,7
 12,Node Label,Policy,name,Aid Targeting the Objectives of the Convention to Combat Desertification,code,8
 13,Node Label,Policy,name,"Reproductive, Maternal, Newborn and Child Health",code,9
-14,Node Label,Location,name,BANGLADESH,code,BD
+14,Node Label,Location,is_country,True,name,BANGLADESH,code,BD
 24,Node Label,Activity,status,4,identifier,NL-1-PPR-10036,description,Bijdrage Afghanistan Stabilisation Programme,title,DVB SF Afghanistan - ASP
 25,Node Label,Budget,value,3110400
 26,Node Label,Organization,name,Ministry of Interior,ref,Ministry_of_Interior,type,10
-27,Node Label,Location,name,AFGHANISTAN,code,AF
+27,Node Label,Location,is_country,True,name,AFGHANISTAN,code,AF
 40,Node Label,Activity,status,4,description,CNV Actie KomOver 2005-2008,identifier,NL-1-PPR-10040,title,DSI Subsidie CNV 2005-2008
 41,Node Label,Budget,value,41446378
 42,Node Label,Organization,type,22,ref,NL-KvK-54436222-27541,name,CNV
-43,Node Label,Location,name,WORLD WIDE,code,998
+43,Node Label,Location,is_country,False,name,WORLD WIDE,code,998
 51,Node Label,Activity,status,4,description,FNV Mondiaal 2005-2008,identifier,NL-1-PPR-10041,title,DSI Subsidie FNV 2005-2008
 52,Node Label,Budget,value,99008742
 53,Node Label,Organization,type,22,ref,ABVAKABO_FNV,name,ABVAKABO FNV
 61,Node Label,Activity,description,funding various projects,identifier,NL-1-PPR-10042,status,2,title,HAR Block Human Rights
 62,Node Label,Budget,value,1250124
 63,Node Label,Organization,ref,NCA,name,NCA,type,10
-64,Node Label,Location,name,ZIMBABWE,code,ZW
+64,Node Label,Location,is_country,True,name,ZIMBABWE,code,ZW
 78,Node Label,Activity,status,4,identifier,NL-1-PPR-10066,description,grant to improve broad based access to financial services,title,MNG broad access fin serv
 79,Node Label,Budget,value,1415094
 80,Node Label,Organization,name,FINANCIERA NIC. DE INVERSIONES S.A(FNI),type,70,ref,FINANCIERA_NIC__DE_INVERSIONES_S_A_FNI_
-81,Node Label,Location,name,NICARAGUA,code,NI
+81,Node Label,Location,is_country,True,name,NICARAGUA,code,NI
 90,Node Label,Activity,description,Verplichte contributie aan de International Seabed Authority,status,4,identifier,NL-1-PPR-10137,title,DVF verplichte contributie ISA
 91,Node Label,Budget,value,1322875
 92,Node Label,Organization,ref,ISA,name,ISA,type,40
 101,Node Label,Activity,description,to contribute to the funding of the health sector programme,status,4,identifier,NL-1-PPR-10150,title,DAR Health sector co-funding
 102,Node Label,Budget,value,41835319
 103,Node Label,Organization,name,Ministry of Finance,ref,Ministry_of_Finance,type,10
-104,Node Label,Location,code,TZ,name,"TANZANIA, UNITED REPUBLIC OF"
+104,Node Label,Location,code,TZ,is_country,True,name,"TANZANIA, UNITED REPUBLIC OF"
 112,Node Label,Activity,description,Lachua al servicio de su gente,identifier,NL-1-PPR-10244,status,4,title,GUA Lachua fase III
 113,Node Label,Budget,value,6456059
 114,Node Label,Organization,type,30,ref,NL-KVK-41180885,name,IUCN
-115,Node Label,Location,name,GUATEMALA,code,GT
+115,Node Label,Location,is_country,True,name,GUATEMALA,code,GT
 124,Node Label,Activity,status,4,identifier,NL-1-PPR-10245,description,"Justicia Ambiental, empoderamiento comunitario y equidad social para la conservacion de la region Sarstun-Motagua",title,GUA Justicia Ambiental
 125,Node Label,Budget,value,19110100
 126,Node Label,Organization,type,23,name,FUNDACION DEFENSORES DE LA NATURALEZA,ref,FUNDACION_DEFENSORES_DE_LA_NATURALEZA
 135,Node Label,Activity,description,MRC - Flood Management Mitigation Program,status,4,identifier,NL-1-PPR-10279,title,HAN Flood mngt & Mitigation
 136,Node Label,Budget,value,19071798
 137,Node Label,Organization,ref,MRC,name,MRC,type,40
-138,Node Label,Location,name,VIET NAM,code,VN
+138,Node Label,Location,is_country,True,name,VIET NAM,code,VN
 152,Node Label,Activity,description,DCO TMF St. Filmfestival Rotterdam - Hubert Bals Fonds vh IFFR,status,4,identifier,NL-1-PPR-10281,title,DCO TMF HBF/IFFR 2005-2008
 153,Node Label,Budget,value,4987500
 154,Node Label,Organization,type,21,name,International Film Festival,ref,International_Film_Festival
@@ -58,19 +58,19 @@
 171,Node Label,Activity,description,"TMF programmasubsidie voor het Transnational Institute, gericht op ondersteuning van kennisontwikkeling en bevordering van interregionale netwerken op het gebied van gooed bestuur; focus op Afrika.",status,4,identifier,NL-1-PPR-10300,title,DMV/VG WW TNI TMF 05-08
 172,Node Label,Budget,value,8955294
 173,Node Label,Organization,type,22,ref,NL-KVK-41201806,name,TNI
-174,Node Label,Location,name,"AFRICA, REGIONAL",code,298
+174,Node Label,Location,is_country,False,name,"AFRICA, REGIONAL",code,298
 182,Node Label,Activity,status,4,description,Bevorderen van PPP middels TA,identifier,NL-1-PPR-10303,title,JAK PSP Development Facility
 183,Node Label,Budget,value,3761928
 184,Node Label,Organization,ref,org_46004,name,AsDB,type,40
-185,Node Label,Location,name,INDONESIA,code,ID
+185,Node Label,Location,is_country,True,name,INDONESIA,code,ID
 194,Node Label,Activity,status,2,identifier,NL-1-PPR-10312,description,Meerjarig beleidskader voor de gezondheidssector,title,PRM SECTORPLAN GEZONDHEIDSZORG
 195,Node Label,Budget,value,23083155
 196,Node Label,Organization,ref,PLOS,name,PLOS,type,10
-197,Node Label,Location,name,SURINAME,code,SR
+197,Node Label,Location,is_country,True,name,SURINAME,code,SR
 212,Node Label,Activity,status,4,identifier,NL-1-PPR-1034,description,"Develop a planning support system to analyze managementscenarios for Nile inflows and releases; develop scenarios for floods and droughts, due to climate change, taking into account Nile water management as an integral part of its water policy",title,KAI Lake Nasser Fl/Dr CA
 213,Node Label,Budget,value,6592565
 214,Node Label,Organization,ref,MWRI,name,MWRI,type,10
-215,Node Label,Location,name,EGYPT,code,EG
+215,Node Label,Location,name,EGYPT,code,EG,is_country,True
 226,Node Label,Activity,description,Decentralisatie,identifier,NL-1-PPR-10340,title,Kai MISR,status,4
 227,Node Label,Budget,value,424020
 228,Node Label,Organization,ref,XM-DAC-41114,name,UNDP,type,40
@@ -83,7 +83,7 @@
 260,Node Label,Budget,value,6145246
 275,Node Label,Activity,status,4,identifier,NL-1-PPR-10379,description,Protection and management of 4 wetland areas in Pakistan,title,ISL UNDP Wetlands Project
 276,Node Label,Budget,value,7289869
-277,Node Label,Location,name,PAKISTAN,code,PK
+277,Node Label,Location,is_country,True,name,PAKISTAN,code,PK
 289,Node Label,Activity,description,"sustainable, effective and efficient use of water resources (a.o. for sustainable irrigated agriculture) through decentra- lization of government management tasks and private sector participation",status,4,identifier,NL-1-PPR-1038,title,KAI Institutional Reform Unit
 290,Node Label,Budget,value,1804000
 303,Node Label,Activity,description,"Informatie, publiciteit, lobby en netwerkvorming mbt repr rechten",status,4,identifier,NL-1-PPR-10399,title,DSI WGNRR TMF-sub. 2005-2008
@@ -95,19 +95,19 @@
 324,Node Label,Activity,identifier,NL-1-PPR-10428,status,4,title,BOG UNICEF II,description,Capacitación en gestion integral de residuos sólidos
 325,Node Label,Budget,value,1821699
 326,Node Label,Organization,type,40,ref,org_41122,name,UNICEF
-327,Node Label,Location,name,COLOMBIA,code,CO
+327,Node Label,Location,is_country,True,name,COLOMBIA,code,CO
 335,Node Label,Activity,description,Bestrijding van vrouwenbesnijdenis (FGM) in Africa,status,4,identifier,NL-1-PPR-10431,title,DSI IAC TMF-sub. 2005-2008
 336,Node Label,Budget,value,1004780
 337,Node Label,Organization,ref,IAC,name,IAC,type,21
-338,Node Label,Location,name,"SOUTH OF SAHARA, REGIONAL",code,289
+338,Node Label,Location,is_country,False,name,"SOUTH OF SAHARA, REGIONAL",code,289
 346,Node Label,Activity,description,Bevordering van gezondheid en rechten van vrouwen in Latijns Amerika en de Cariben,status,4,identifier,NL-1-PPR-10432,title,DSI LACWHN TMF-sub. 2005-2008
 347,Node Label,Budget,value,718254
 348,Node Label,Organization,ref,Latin_American_and_Caribean_Women_s_Health_Network,name,Latin American and Caribean Women's Health Network,type,30
-349,Node Label,Location,name,"SOUTH AMERICA, REGIONAL",code,489
+349,Node Label,Location,is_country,False,name,"SOUTH AMERICA, REGIONAL",code,489
 357,Node Label,Activity,status,4,description,DMW ECLNV FAO Financ.Strategieen,identifier,NL-1-PPR-10445,title,DMW ECLNV FAO Financ.Strat.
 358,Node Label,Budget,value,20000
 359,Node Label,Organization,ref,MINISTERIE_VAN_ECONOMISCHE_ZAKEN__LANDBOUW_EN_INNOVATIE__V_H_LNV_,name,"MINISTERIE VAN ECONOMISCHE ZAKEN, LANDBOUW EN INNOVATIE (V/H LNV)",type,10
-360,Node Label,Location,name,"AMERICA, REGIONAL",code,498
+360,Node Label,Location,is_country,False,name,"AMERICA, REGIONAL",code,498
 368,Node Label,Activity,description,DMW FAO ASP/Africa Stockpiles Program,status,4,identifier,NL-1-PPR-10454,title,DMW FAO Africa Stockpiles Pr.
 369,Node Label,Budget,value,2203468
 370,Node Label,Organization,ref,FAO,name,FAO,type,40
@@ -117,7 +117,7 @@
 389,Node Label,Activity,status,4,identifier,NL-1-PPR-10470,description,Clean up of the Porto Romano hot spot,title,TIR Porto Romano
 390,Node Label,Budget,value,7265419
 391,Node Label,Organization,ref,org_44000,name,WB,type,40
-392,Node Label,Location,name,ALBANIA,code,AL
+392,Node Label,Location,is_country,True,name,ALBANIA,code,AL
 402,Node Label,Activity,status,4,identifier,NL-1-PPR-10471,description,Het Biodiversiteitsfonds (BDF) ondersteunt initiatieven gericht op armoedebestijding en duurzaam gebruik van agrobiodiversiteit.,title,DMW HIVOS Biodiv.fonds II
 403,Node Label,Budget,value,14920000
 404,Node Label,Organization,type,22,ref,NL-KVK-41198677,name,HIVOS
@@ -130,7 +130,7 @@
 430,Node Label,Activity,status,4,description,DSI GIP TMF-sub. 2005-2008,identifier,NL-1-PPR-10523,title,DSI GIP TMF-sub. 2005-2008
 431,Node Label,Budget,value,5555000
 432,Node Label,Organization,ref,GIP,name,GIP,type,21
-433,Node Label,Location,name,"MOLDOVA, REPUBLIC OF",code,MD
+433,Node Label,Location,is_country,True,name,"MOLDOVA, REPUBLIC OF",code,MD
 442,Node Label,Activity,description,"With a rotating stock of ARV's continuity of AIDS-treatment programs will besecured and at the same time a capacity building program on aspects of procurement, quality control, intellectual property rights, distribution and regulation will be set up",status,4,identifier,NL-1-PPR-10534,title,DSI IDA TMF-sub. 2005-2008
 443,Node Label,Budget,value,5890000
 444,Node Label,Organization,type,21,ref,IDA_FOUNDATION,name,IDA FOUNDATION
@@ -139,7 +139,7 @@
 456,Node Label,Organization,ref,Alliance_of_Mayors___Mun__Leaders_on_Hiv_Aids_Africa,name,Alliance of Mayors & Mun. Leaders on Hiv/Aids Africa,type,23
 465,Node Label,Activity,description,Community based conservation of biodiv.,status,4,identifier,NL-1-PPR-10567,title,PEK  Altai Sayan Biodiversity
 466,Node Label,Budget,value,2711870
-467,Node Label,Location,name,MONGOLIA,code,MN
+467,Node Label,Location,is_country,True,name,MONGOLIA,code,MN
 477,Node Label,Activity,description,"Versterking culturele identiteit en cultureel draagvlak Afrika, Azië en Latijns-Amerika.",status,4,identifier,NL-1-PPR-10579,title,DCO TMF The Art of Development
 478,Node Label,Budget,value,1500000
 479,Node Label,Organization,name,STICHTING THEATRE EMBASSY,ref,STICHTING_THEATRE_EMBASSY,type,22
@@ -154,11 +154,11 @@
 518,Node Label,Activity,identifier,NL-1-PPR-10603,status,4,title,DDE AVALON,description,Organisatie landbouw in 5 landen in Centraal & Oost-Europa
 519,Node Label,Budget,value,2265280
 520,Node Label,Organization,type,22,ref,AVALON,name,AVALON
-521,Node Label,Location,name,GEORGIA,code,GE
+521,Node Label,Location,is_country,True,name,GEORGIA,code,GE
 529,Node Label,Activity,identifier,NL-1-PPR-10605,status,4,title,DDE ISCOM,description,Bevordering v. duurzaam ketenbeheer en armoedebestrijding
 530,Node Label,Budget,value,788800
 531,Node Label,Organization,ref,Institute_for_Sustainable_Commodities,name,Institute for Sustainable Commodities,type,80
-532,Node Label,Location,name,GHANA,code,GH
+532,Node Label,Location,name,GHANA,code,GH,is_country,True
 540,Node Label,Activity,identifier,NL-1-PPR-10606,status,4,title,DDE YDN,description,Youth Development Netwerk - Beroepsonderwijs
 541,Node Label,Budget,value,2627584
 542,Node Label,Organization,name,Youth Development Network,ref,Youth_Development_Network,type,23
@@ -190,7 +190,7 @@
 641,Node Label,Activity,description,co-financement du programme d'appui au developpement sanitaire,status,4,identifier,NL-1-PPR-10780,title,OAU Dev. Sanitaire 2005-2008
 642,Node Label,Budget,value,34567811
 643,Node Label,Organization,ref,MINGZ,name,MINGZ,type,10
-644,Node Label,Location,name,BURKINA FASO,code,BF
+644,Node Label,Location,is_country,True,name,BURKINA FASO,code,BF
 652,Node Label,Activity,description,Support to development of water and sanitation sector reform,status,4,identifier,NL-1-PPR-10783,title,JAK Indonesia Wat San Program
 653,Node Label,Budget,value,49443588
 663,Node Label,Activity,status,4,description,DSI IFOR TMF-subsidie 2005-2008,identifier,NL-1-PPR-10785,title,DSI IFOR TMF-sub. 2005-8
@@ -205,7 +205,7 @@
 693,Node Label,Activity,description,Sector Budget Support to the National Department of Education,status,4,identifier,NL-1-PPR-10833,title,PRE SBS Education National
 694,Node Label,Budget,value,62644520
 695,Node Label,Organization,ref,DOE,name,DOE,type,10
-696,Node Label,Location,name,SOUTH AFRICA,code,ZA
+696,Node Label,Location,is_country,True,name,SOUTH AFRICA,code,ZA
 703,Node Label,Activity,description,Rural Education Programme KwaZulu Natal Province,status,4,identifier,NL-1-PPR-10834,title,Education Support Centres KZN
 704,Node Label,Budget,value,45882965
 705,Node Label,Organization,name,Media in Education Trust,ref,Media_in_Education_Trust,type,70
@@ -214,23 +214,23 @@
 716,Node Label,Organization,name,NORTH WEST DEPT OF EDUCATION,ref,NORTH_WEST_DEPT_OF_EDUCATION,type,10
 725,Node Label,Activity,description,The FAO-CFJJ project supports the effective implementation of progressive new laws regulating natural resources access and use,status,4,identifier,NL-1-PPR-10851,title,MAP Decentr. Legal Support NRM
 726,Node Label,Budget,value,4795681
-727,Node Label,Location,name,MOZAMBIQUE,code,MZ
+727,Node Label,Location,is_country,True,name,MOZAMBIQUE,code,MZ
 736,Node Label,Activity,description,Bevorderen ontw MKB,identifier,NL-1-PPR-10872,status,4,title,PEK Regional Economy
 737,Node Label,Budget,value,1815468
 738,Node Label,Organization,ref,GTZ,name,GTZ,type,10
 745,Node Label,Activity,description, conservation biodiversité et utilisation durable des ressources,status,4,identifier,NL-1-PPR-10885,title,BAM appui mise en oeuvre PAZU
 746,Node Label,Budget,value,836724
 747,Node Label,Organization,ref,DNCN,name,DNCN,type,10
-748,Node Label,Location,name,MALI,code,ML
+748,Node Label,Location,name,MALI,code,ML,is_country,True
 757,Node Label,Activity,description,DMW GTZ AMES Uganda,identifier,NL-1-PPR-10911,status,4,title,DMW GTZ/AMES Uganda
 758,Node Label,Budget,value,2338574
-759,Node Label,Location,name,UGANDA,code,UG
+759,Node Label,Location,is_country,True,name,UGANDA,code,UG
 769,Node Label,Activity,description,"Verbetering van de wereldvoedselvoorziening in het kader van algemene economische ontwikkeling dmv wetenschappelijke activiteiten op het gebied van modellering, training van beleidsadviseurs en advisering van beleidsmakers",status,4,identifier,NL-1-PPR-10928,title,DDE-SOW VU Bijdrage 2005-2009
 770,Node Label,Budget,value,9555670
 771,Node Label,Organization,ref,SOW_VU__STICHTING_ONDERZOEK_WERELDVOEDSELVRAAGSTUKKEN_,name,SOW-VU (STICHTING ONDERZOEK WERELDVOEDSELVRAAGSTUKKEN),type,80
 781,Node Label,Activity,description,Strengthening National HR Capacity,identifier,NL-1-PPR-10938,status,4,title,SAA Support to MHR
 782,Node Label,Budget,value,2004000
-783,Node Label,Location,name,YEMEN,code,YE
+783,Node Label,Location,name,YEMEN,code,YE,is_country,True
 792,Node Label,Activity,description,DMW0048326/IUCN 2005-08/Corebijdrage,status,4,identifier,NL-1-PPR-10955,title,DMW0048326/IUCN 2005-08Core
 793,Node Label,Budget,value,18916975
 800,Node Label,Activity,description,Kanaal voor Nederlandse bijdragen aan trustfunds BW-trustfunds,status,4,identifier,NL-1-PPR-10994,title,DVF BNPP (nieuwe stijl)
@@ -243,7 +243,7 @@
 827,Node Label,Organization,type,23,name,"INAB, INSTITUTO NACIONAL DE BOSQUES",ref,INAB__INSTITUTO_NACIONAL_DE_BOSQUES
 838,Node Label,Activity,status,4,identifier,NL-1-PPR-11035,description,Good Governance and Equal Participation in Post-Conflict Sudan,title,KHA Good Governance Sudan
 839,Node Label,Budget,value,4176621
-840,Node Label,Location,name,SUDAN,code,SD
+840,Node Label,Location,name,SUDAN,code,SD,is_country,True
 851,Node Label,Activity,description,DMW LNV Leren voor Duurz.Ontw.,identifier,NL-1-PPR-11104,title,DMW LNV LVDO,status,4
 852,Node Label,Budget,value,6142800
 860,Node Label,Activity,description,Advisory Panel Project on Water Management consisting of Centreal Office in Egypt and Secretariate in NL,status,4,identifier,NL-1-PPR-11155,title,KAI Advisory Panel Project IV
@@ -274,7 +274,7 @@
 967,Node Label,Activity,status,4,identifier,NL-1-PPR-11484,description,Construction and management of cold storage facility,title,KIG Cold storage
 968,Node Label,Budget,value,1043048
 969,Node Label,Organization,ref,Ministère_de_lAgriculture__de_lHydraulique_et_des_Ressources_Halieutiques,name,"Ministère de lAgriculture, de lHydraulique et des Ressources Halieutiques",type,10
-970,Node Label,Location,name,RWANDA,code,RW
+970,Node Label,Location,is_country,True,name,RWANDA,code,RW
 977,Node Label,Activity,description,DMW0048884 SNV Toegang biogas in ZO Azie,status,4,identifier,NL-1-PPR-11488,title,DMW0048884/SNV Asia Biogas
 978,Node Label,Budget,value,14276000
 979,Node Label,Organization,type,22,ref,NL-KVK-41152786,name,SNV
@@ -286,21 +286,21 @@
 1012,Node Label,Activity,status,4,identifier,NL-1-PPR-11529,description,Ondersteuning van MTEF fase 2 gericht op versterking MTEF proces en implementatie programma budgetting,title,TBL-AM MTEF fase 2
 1013,Node Label,Budget,value,2077660
 1014,Node Label,Organization,ref,GB-GOV-1,name,DFID,type,10
-1015,Node Label,Location,name,ARMENIA,code,AM
+1015,Node Label,Location,is_country,True,name,ARMENIA,code,AM
 1023,Node Label,Activity,description,Strenghtening capacity Geo parliament in dealing with good economic governance and improving democratic parliamentary practices,status,4,identifier,NL-1-PPR-11537,title,TBL GEO support Geo parliament
 1024,Node Label,Budget,value,512000
 1025,Node Label,Organization,ref,EWPPP,name,EWPPP,type,22
 1033,Node Label,Activity,description,Arrangement avec le MICPE pour un renforcement des capacités de sa Direction du Commerce Extérieur (DCE),status,4,identifier,NL-1-PPR-11541,title,Arrang. MICPE renforcement DCE
 1034,Node Label,Budget,value,31914
 1035,Node Label,Organization,ref,Direction_du_Commerce_Exterieur_du_Micpe,name,Direction du Commerce Exterieur du Micpe,type,10
-1036,Node Label,Location,name,BENIN,code,BJ
+1036,Node Label,Location,name,BENIN,code,BJ,is_country,True
 1043,Node Label,Activity,description,FENASCOM STRATEGIC PLAN,status,4,identifier,NL-1-PPR-11647,title,BAM Community Man. HIV/AIDS
 1044,Node Label,Budget,value,1957229
 1045,Node Label,Organization,type,10,ref,FENASCOM,name,FENASCOM
 1053,Node Label,Activity,status,4,identifier,NL-1-PPR-11671,description,"Support to setting up a new, integrated police force in Burundi",title,KIG SSR Police Burundi
 1054,Node Label,Budget,value,6898689
 1055,Node Label,Organization,type,70,ref,NL-KVK-32037590,name,IPA
-1056,Node Label,Location,name,BURUNDI,code,BI
+1056,Node Label,Location,is_country,True,name,BURUNDI,code,BI
 1065,Node Label,Activity,identifier,NL-1-PPR-11675,status,4,title,DCO SAHARA,description,sociaal wetenschappelijk HIV/AIDS onderzoek
 1066,Node Label,Budget,value,955740
 1067,Node Label,Organization,ref,HSRC,name,HSRC,type,80
@@ -342,7 +342,7 @@
 1206,Node Label,Activity,description,"Bijdrage aan NAVO PfP Trustfund tbv vernietiging van kleine wapens, MANPADS en munitie in Oekraïne, fase I",status,4,identifier,NL-1-PPR-11932,title,DVB Oekraïne PfP Trust Fund
 1207,Node Label,Budget,value,333000
 1208,Node Label,Organization,ref,NAMSA,name,NAMSA,type,10
-1209,Node Label,Location,name,UKRAINE,code,UA
+1209,Node Label,Location,is_country,True,name,UKRAINE,code,UA
 1218,Node Label,Activity,status,4,identifier,NL-1-PPR-11964,description,Fortalecimiento a la Gestion de las Areas Protegidas y Biodiversidad de Guatemala,title,GUA Fortalecimiento CONAP
 1219,Node Label,Budget,value,9198890
 1220,Node Label,Organization,ref,CATIE,name,CATIE,type,10
@@ -361,7 +361,7 @@
 1266,Node Label,Activity,identifier,NL-1-PPR-12086,status,4,title,SKO ATA ISUM,description,organisation of international summer university
 1267,Node Label,Budget,value,2092373
 1268,Node Label,Organization,name,STICHTING SPARK,ref,NL-KVK-41213450,type,22
-1269,Node Label,Location,name,"MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF",code,MK
+1269,Node Label,Location,name,"MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF",code,MK,is_country,True
 1276,Node Label,Activity,identifier,NL-1-PPR-12093,status,4,title,DSI SUJ,description,Programma Stage/Uitwisseling Jongeren (SUJ)
 1277,Node Label,Budget,value,37369638
 1278,Node Label,Organization,name,NEDERLANDS JEUGDINSTITUUT (NJI),type,80,ref,NEDERLANDS_JEUGDINSTITUUT__NJI_
@@ -376,7 +376,7 @@
 1315,Node Label,Activity,description,"TMF Programma subsidie voor SPOLU, dat zich richt op verbetering van de leefomstandigheden van de Roma in centraal en oost Europa middels capaciteitsversterking van de Roma gemeenschappen.",status,4,identifier,NL-1-PPR-12120,title,DMV/MR QE SPOLU TMF 2006
 1316,Node Label,Budget,value,3625000
 1317,Node Label,Organization,name,STICHTING ERGO NETWORK,ref,STICHTING_ERGO_NETWORK,type,21
-1318,Node Label,Location,name,"EUROPE, REGIONAL",code,89
+1318,Node Label,Location,is_country,False,name,"EUROPE, REGIONAL",code,89
 1325,Node Label,Activity,status,4,identifier,NL-1-PPR-12121,description,Appui aux organisations de producteurs et developpement des filières dans troic cercles de la region de koulikoro .Achèvement le 31 decembre 2011,title,Dev.Econ.rural Koulikoro
 1326,Node Label,Budget,value,15198629
 1327,Node Label,Organization,name,CHAMBRE REGIONALE D'AGRICULTURE DE KKLO,type,23,ref,CHAMBRE_REGIONALE_D_AGRICULTURE_DE_KKLO
@@ -402,7 +402,7 @@
 1406,Node Label,Activity,status,4,identifier,NL-1-PPR-12183,description,Support to the institutional development of education NGO networking organisation,title,ADD Basic Ed. Ass.
 1407,Node Label,Budget,value,580718
 1408,Node Label,Organization,ref,BEA_E,name,BEA-E,type,23
-1409,Node Label,Location,name,ETHIOPIA,code,ET
+1409,Node Label,Location,is_country,True,name,ETHIOPIA,code,ET
 1416,Node Label,Activity,status,4,identifier,NL-1-PPR-12186,description,Ondersteuning van het EU-FLEGT Action Plan: het ontwikkelen van een systeem van monitoring en openbaar toezicht op de bossensector voor het tegengaan van illegale houtkap- en export,title,DML LNV BBI VERIFOR
 1417,Node Label,Budget,value,951086
 1418,Node Label,Organization,ref,ODI,name,ODI,type,80
@@ -414,11 +414,11 @@
 1449,Node Label,Activity,status,4,identifier,NL-1-PPR-12193,description,Support to the integral anticorruption program,title,Anticorruption Program
 1450,Node Label,Budget,value,3025535
 1451,Node Label,Organization,name,MINISTERIO DE HACIENDA (BOLIVIA),type,10,ref,MINISTERIO_DE_HACIENDA__BOLIVIA_
-1452,Node Label,Location,code,BO,name,"BOLIVIA, PLURINATIONAL STATE OF"
+1452,Node Label,Location,code,BO,is_country,True,name,"BOLIVIA, PLURINATIONAL STATE OF"
 1461,Node Label,Activity,description,Support to Girls Education,identifier,NL-1-PPR-12200,status,4,title,LUS FAWEZA Phase II
 1462,Node Label,Budget,value,5941860
 1463,Node Label,Organization,type,23,ref,FAWEZA,name,FAWEZA
-1464,Node Label,Location,name,ZAMBIA,code,ZM
+1464,Node Label,Location,is_country,True,name,ZAMBIA,code,ZM
 1472,Node Label,Activity,description,"Bijdrage aan het EITI (Extractive Industries Transparency Initiative) Multi Donor Trust Fund, opgericht ter vergroting van transparantie van betalingen door o.m. oliemaatschappijen aan overheden en ontvangsten door overheden.",status,4,identifier,NL-1-PPR-12205,title,DMV/VG WW EITI WB Multidonor
 1473,Node Label,Budget,value,2143400
 1474,Node Label,Organization,ref,EITI,name,EITI,type,30
@@ -457,7 +457,7 @@
 1595,Node Label,Activity,description,Enhancing the rights of girls and boys in Kenya,status,4,identifier,NL-1-PPR-12296,title,NAI Enhancing Juvenile Justice
 1596,Node Label,Budget,value,2003643
 1597,Node Label,Organization,ref,KAACR,name,KAACR,type,23
-1598,Node Label,Location,name,KENYA,code,KE
+1598,Node Label,Location,name,KENYA,code,KE,is_country,True
 1606,Node Label,Activity,status,4,identifier,NL-1-PPR-12309,description,Bijdrage OESO/DAC GOVNET werkplan 2005-2006,title,DMV/VG WW OESO GOVNET
 1607,Node Label,Budget,value,195000
 1608,Node Label,Organization,ref,OECD,name,OECD,type,40
@@ -514,7 +514,7 @@
 1802,Node Label,Activity,description,Harmonised technical assistance to enterprise sector recovery  in order to reduce poverty (through execution of major elements of BiH MTDS),status,4,identifier,NL-1-PPR-12509,title,SAR Enterprise S Recovery Fund
 1803,Node Label,Budget,value,47434
 1804,Node Label,Organization,ref,ESRF,name,ESRF,type,10
-1805,Node Label,Location,name,BOSNIA AND HERZEGOVINA,code,BA
+1805,Node Label,Location,is_country,True,name,BOSNIA AND HERZEGOVINA,code,BA
 1810,Node Label,Activity,description,Fortalecimiento de salud reproductiva y reduccion de maortalidad materna como estrategia para el ejercicio de los derechos reproductivos de las mujeres,status,4,identifier,NL-1-PPR-12518,title,GUA Reduc. mortalidad materna
 1811,Node Label,Budget,value,6970210
 1820,Node Label,Activity,description,NVR MISSIE ALS GASTORGANISATIE VAN HET VROUWEN VOOR WATER PARTNERSCHAP; BEWERKSTELLIGEN DAT VROUWEN - GEGEVEN HUN KENNIS EN ERVARING-DAADWERKELIJK DE GEWENSTE MEDEVERANTWOORDELIJKHEID DRAGEN OP ALLE TERREINEN IN DE SAMENLEVING,status,4,identifier,NL-1-PPR-12522,title,DMW TMF 2006 NED. VROUWEN RAAD
@@ -582,25 +582,25 @@
 2040,Node Label,Activity,description,Subsidie aan Seva Network Foundation t.b.v. Basic Educaton,status,4,identifier,NL-1-PPR-12723,title,DCO TMF Subsidie Seva Network
 2041,Node Label,Budget,value,9701520
 2042,Node Label,Organization,name,Seva Network Foundation,ref,Seva_Network_Foundation,type,22
-2043,Node Label,Location,name,INDIA,code,IN
+2043,Node Label,Location,name,INDIA,code,IN,is_country,True
 2052,Node Label,Activity,identifier,NL-1-PPR-12728,title,MNG Social Marketing RHC & BCC,description,Social marketing of condoms and hormonal contraceptives plus behavioural change communications,status,4
 2053,Node Label,Budget,value,2836260
 2054,Node Label,Organization,ref,PSI,name,PSI,type,21
 2064,Node Label,Activity,status,4,identifier,NL-1-PPR-12733,description,Verbteren ondernemingsklimaat Kaapverdië,title,DAK CV Business Climate
 2065,Node Label,Budget,value,1077160
 2066,Node Label,Organization,ref,UNODC,name,UNODC,type,40
-2067,Node Label,Location,name,CAPE VERDE,code,CV
+2067,Node Label,Location,is_country,True,name,CAPE VERDE,code,CV
 2074,Node Label,Activity,description,Appui à la DGAT/MISD pour la mise en oeuvre de la déconcentration,status,4,identifier,NL-1-PPR-12742,title,Appui à la déconcentration
 2075,Node Label,Budget,value,1678932
 2076,Node Label,Organization,ref,Ministere_Du_Dev___De_L_Economie_Et_Des_Finances,name,"Ministere Du Dev., De L'Economie Et Des Finances",type,10
 2084,Node Label,Activity,description,DSI TMF-subsiedie NSPOH 2006-2010,status,4,identifier,NL-1-PPR-12754,title,DSI TMF NSPOH 2006-2010
 2085,Node Label,Budget,value,2653192
 2086,Node Label,Organization,ref,NSPOH,name,NSPOH,type,80
-2087,Node Label,Location,name,"CENTRAL ASIA, REGIONAL",code,619
+2087,Node Label,Location,is_country,False,name,"CENTRAL ASIA, REGIONAL",code,619
 2096,Node Label,Activity,description,"Herstel van het spoorwegsignalerings- en communicatiesysteem, getroffen door de Tsunami van eind december 2004. Kanalisering via de FMO/NI (Financiele hulp). Uitvoering door Vialis/NMA.  Bedrag is incl. kosten consultant ARCADIS en vergoeding FMO.",status,4,identifier,NL-1-PPR-12757,title,DMV/VG LK FMO Tsunami spoorweg
 2097,Node Label,Budget,value,14515304
 2098,Node Label,Organization,ref,NIO___NEDERLANDSE_INVESTERINGSBANK_ONTW_LANDEN,name,NIO - NEDERLANDSE INVESTERINGSBANK ONTW.LANDEN,type,10
-2099,Node Label,Location,name,SRI LANKA,code,LK
+2099,Node Label,Location,is_country,True,name,SRI LANKA,code,LK
 2106,Node Label,Activity,description,"Transforming and strengthening the sector institutions for efficient, accountable and transparent administration of justice.",status,4,identifier,NL-1-PPR-12760,title,NAI GJLOS Medium Term Strategy
 2107,Node Label,Budget,value,10826400
 2108,Node Label,Organization,type,70,ref,ATOS_CONSULTING,name,ATOS CONSULTING
@@ -667,7 +667,7 @@
 2333,Node Label,Activity,status,4,identifier,NL-1-PPR-12943,description,Inventarisatie van Traditionele Tibetaanse Muziek,title,PEK Tibetan Music
 2334,Node Label,Budget,value,87096
 2335,Node Label,Organization,name,University of Tibet,ref,University_of_Tibet,type,80
-2336,Node Label,Location,name,CHINA,code,CN
+2336,Node Label,Location,name,CHINA,code,CN,is_country,True
 2343,Node Label,Activity,status,4,identifier,NL-1-PPR-12950,description,Reform of the technical/vocational education and training (TVET) sector,title,MAP TVET reform project
 2344,Node Label,Budget,value,9223234
 2345,Node Label,Organization,ref,IBRD,name,IBRD,type,40
@@ -679,7 +679,7 @@
 2368,Node Label,Organization,ref,MEBA,name,MEBA,type,10
 2378,Node Label,Activity,description,Leniging van acute nood in gezondheidszorg Irak door verstrekking van 'medical kits' aan 16 ziekenhuizen. Zie ook nr. 5945.,status,4,identifier,NL-1-PPR-12979,title,DMV/HH IQ NRK Kits 2005
 2379,Node Label,Budget,value,541368
-2380,Node Label,Location,name,IRAQ,code,IQ
+2380,Node Label,Location,name,IRAQ,code,IQ,is_country,True
 2386,Node Label,Activity,description,"Core funding to ORAM Nampula to implement a program which aims at devolving control over land resources to users at community level, ensuring their participation in the design and implementation of policies and development initiatives",status,4,identifier,NL-1-PPR-12987,title,MAP ORAM Nampula 2006-2011
 2387,Node Label,Budget,value,2280800
 2388,Node Label,Organization,ref,ORAM,name,ORAM,type,23
@@ -697,7 +697,7 @@
 2432,Node Label,Activity,description,Contribution to UNRWA for their microfinance program and a re-housing project in Khan Younis,status,4,identifier,NL-1-PPR-13168,title,RAM UNRWA recovery projects
 2433,Node Label,Budget,value,13682802
 2434,Node Label,Organization,ref,UNRWA,name,UNRWA,type,40
-2435,Node Label,Location,code,PS,name,"PALESTINIAN TERRITORY, OCCUPIED"
+2435,Node Label,Location,code,PS,is_country,True,name,"PALESTINIAN TERRITORY, OCCUPIED"
 2444,Node Label,Activity,identifier,NL-1-PPR-13172,status,4,title,SALIN EI/GCE,description,Towards Achievement EFA Real World Strategies and Teachers' Unions response on EFA and HIV/AIDS
 2445,Node Label,Budget,value,26689347
 2446,Node Label,Organization,ref,GCE,name,GCE,type,21
@@ -742,7 +742,7 @@
 2598,Node Label,Activity,status,4,identifier,NL-1-PPR-13393,description,DCO AIT 2006-2010 Human Resources Development for Asian Partner Countries,title,DCO AIT 2006-2010
 2599,Node Label,Budget,value,1865969
 2600,Node Label,Organization,ref,AIT,name,AIT,type,80
-2601,Node Label,Location,name,THAILAND,code,TH
+2601,Node Label,Location,is_country,True,name,THAILAND,code,TH
 2608,Node Label,Activity,status,4,identifier,NL-1-PPR-13411,description,Socio economic recovery of Srebrenica,title,SAR SRRP II (b)
 2609,Node Label,Budget,value,9022661
 2618,Node Label,Activity,description,Uitvoering van bilateraal overeengekomen werkplannen palmolie en garnalen en groente/tropisch fruit,status,4,identifier,NL-1-PPR-13426,title,DDE WSSD markttoegang/cap.opb.
@@ -900,7 +900,7 @@
 3158,Node Label,Budget,value,29616083
 3171,Node Label,Activity,description,AWARENESS RAISING AMONG LOCAL INSTITUTIONS,identifier,NL-1-PPR-14254,status,4,title,BEL UNDP Returnee Issues
 3172,Node Label,Budget,value,563771
-3173,Node Label,Location,name,SERBIA,code,RS
+3173,Node Label,Location,is_country,True,name,SERBIA,code,RS
 3179,Node Label,Activity,identifier,NL-1-PPR-14256,title,DMV/HH AF Defensie CIMIC 06-08,description,"Bijdrage ter ondersteuning van CIMIC (Hearts and Minds) aktviteiten in Uruzgan, Afghanistan, verdeeld over 4 tranches van ieder ¿ 250.000",status,4
 3180,Node Label,Budget,value,3960401
 3181,Node Label,Organization,name,MINISTERIE VAN DEFENSIE,ref,MINISTERIE_VAN_DEFENSIE,type,10
@@ -956,7 +956,7 @@
 3380,Node Label,Activity,description,uitvoering van het ammendement Brinkel,status,4,identifier,NL-1-PPR-14417,title,DMV/VG DRC CTB REJUSCO 2006
 3381,Node Label,Budget,value,2199872
 3382,Node Label,Organization,type,10,ref,BE-BCE_KBO-0264814354,name,CTB
-3383,Node Label,Location,name,"CONGO, THE DEMOCRATIC REPUBLIC OF THE",code,CD
+3383,Node Label,Location,name,"CONGO, THE DEMOCRATIC REPUBLIC OF THE",code,CD,is_country,True
 3389,Node Label,Activity,description,education sector support fund,status,4,identifier,NL-1-PPR-14419,title,MAP Educ.sect.supp. 2007-2009
 3390,Node Label,Budget,value,119000000
 3391,Node Label,Organization,type,10,name,MINISTERIO DA EDUCACAO E CULTURA MOZAMBIQUE,ref,MINISTERIO_DA_EDUCACAO_E_CULTURA_MOZAMBIQUE
@@ -968,7 +968,7 @@
 3410,Node Label,Organization,ref,IFDC,name,IFDC,type,21
 3418,Node Label,Activity,status,4,identifier,NL-1-PPR-14424,description,Recrutement d'assistants parlementaires,title,DAK SN Appui au Parlement
 3419,Node Label,Budget,value,485520
-3420,Node Label,Location,name,SENEGAL,code,SN
+3420,Node Label,Location,is_country,True,name,SENEGAL,code,SN
 3427,Node Label,Activity,description,Strengthening local government and civil participation with gender equality in the Cho'rti region of the Chiquimula province and 4 city councils of Huehuetenango,status,4,identifier,NL-1-PPR-14426,title,Strengthening local government
 3428,Node Label,Budget,value,3145612
 3429,Node Label,Organization,type,22,ref,MOVIMONDO,name,MOVIMONDO
@@ -1058,7 +1058,7 @@
 3778,Node Label,Activity,status,4,identifier,NL-1-PPR-14586,description,Bijdrage aan betere toegang tot gezondheidszorg dmv ontwikkeling en versterking verzekeringstelsels,title,DDE HIF 2006-2012
 3779,Node Label,Budget,value,66806220
 3780,Node Label,Organization,name,Health Insurance Fund,ref,Health_Insurance_Fund,type,30
-3781,Node Label,Location,name,NIGERIA,code,NG
+3781,Node Label,Location,is_country,True,name,NIGERIA,code,NG
 3790,Node Label,Activity,status,2,description,Instellingssubsidie SNV 2007   2015,identifier,NL-1-PPR-14598,title,DSI SUBSIDIE SNV 2007 2015
 3791,Node Label,Budget,value,1352126950
 3804,Node Label,Activity,description,Verbetering Investeringsklimaat,identifier,NL-1-PPR-14599,status,4,title,INA Investeringsklimaat
@@ -1087,7 +1087,7 @@
 ",title,SJO PSC 2006-2009
 3883,Node Label,Budget,value,19250195
 3884,Node Label,Organization,type,23,ref,FUNDECOCR,name,FUNDECOCR
-3885,Node Label,Location,name,COSTA RICA,code,CR
+3885,Node Label,Location,is_country,True,name,COSTA RICA,code,CR
 3894,Node Label,Activity,description,Lokaal cultuurfonds 2006-2008,identifier,NL-1-PPR-14626,status,4,title,KAI LCF 2006-2008
 3895,Node Label,Budget,value,1551119
 3896,Node Label,Organization,name,Multiple Parties,ref,Multiple_Parties,type,70
@@ -1127,7 +1127,7 @@
 4025,Node Label,Activity,description,verkiezingseducatie,identifier,NL-1-PPR-14761,title,LUA Niza DW,status,4
 4026,Node Label,Budget,value,143000
 4027,Node Label,Organization,type,22,name,NEDERLANDS INSTITUUT VOOR ZUID AFRIKA,ref,NEDERLANDS_INSTITUUT_VOOR_ZUID_AFRIKA
-4028,Node Label,Location,name,ANGOLA,code,AO
+4028,Node Label,Location,is_country,True,name,ANGOLA,code,AO
 4032,Node Label,Activity,description,onderzoeksprogramma 2007-2010,identifier,NL-1-PPR-14764,status,2,title,DCO WOTRO 2007-2010
 4033,Node Label,Budget,value,20655162
 4034,Node Label,Organization,ref,NWO___NED_ORG_VOOR_WETENSCHAPPELIJK_ONDERZOEK,name,NWO - NED.ORG.VOOR WETENSCHAPPELIJK ONDERZOEK,type,80
@@ -1290,7 +1290,7 @@
 4556,Node Label,Activity,status,4,description,AFEW activiteiten in Centraal Azie,identifier,NL-1-PPR-14960,title,DSI AFEW MFS 2008 - 2010
 4557,Node Label,Budget,value,13748942
 4558,Node Label,Organization,ref,AFEW,name,AFEW,type,22
-4559,Node Label,Location,name,"ASIA, REGIONAL",code,798
+4559,Node Label,Location,is_country,False,name,"ASIA, REGIONAL",code,798
 4568,Node Label,Activity,status,4,identifier,NL-1-PPR-14961,description,To protect natural resources and to secure sustained access of local communities to these resources for generations to come,title,DMW MFS 2006 FoEI
 4569,Node Label,Budget,value,3628518
 4570,Node Label,Organization,type,21,name,Friends of the Earth International,ref,Friends_of_the_Earth_International
@@ -1705,11 +1705,11 @@
 5948,Node Label,Activity,description,Bijdragen aan formulering beleid openbare veiligheid met respect voor mensenrechten,status,4,identifier,NL-1-PPR-15957,title,SJO Seguridad Ciudad Integral
 5949,Node Label,Budget,value,570994
 5950,Node Label,Organization,type,80,ref,CIPRODEH,name,CIPRODEH
-5951,Node Label,Location,name,HONDURAS,code,HN
+5951,Node Label,Location,is_country,True,name,HONDURAS,code,HN
 5956,Node Label,Activity,description,Derechos de las mujeres y sociedad civil,status,4,identifier,NL-1-PPR-15958,title,SJO Derechos de las mujeres
 5957,Node Label,Budget,value,602284
 5958,Node Label,Organization,ref,IIDH,name,IIDH,type,70
-5959,Node Label,Location,name,"North & Central America, regional",code,389
+5959,Node Label,Location,name,"North & Central America, regional",code,389,is_country,False
 5964,Node Label,Activity,description,Islamic Relief Conflict Transformation and Peace Building,status,4,identifier,NL-1-PPR-15962,title,SAA Conflict Transformation
 5965,Node Label,Budget,value,167902
 5966,Node Label,Organization,name,Islamic Relief Yemen,ref,GB-CHC-328158,type,21
@@ -1728,7 +1728,7 @@
 6009,Node Label,Activity,description,Juventud sin violencia,identifier,NL-1-PPR-15989,status,4,title,SJO Sembrando Futuro
 6010,Node Label,Budget,value,616306
 6011,Node Label,Organization,ref,UNIVERSIDAD_CENTROAMERICANA_JOSE_SIMEON_CANAS_UCA,name,UNIVERSIDAD CENTROAMERICANA JOSE SIMEON CANAS-UCA,type,80
-6012,Node Label,Location,name,EL SALVADOR,code,SV
+6012,Node Label,Location,is_country,True,name,EL SALVADOR,code,SV
 6017,Node Label,Activity,status,4,identifier,NL-1-PPR-15990,description,Management van Intellectueel Eigendom,title,CAS-IP Innovation Systems
 6018,Node Label,Budget,value,4580646
 6019,Node Label,Organization,name,Bioversity International,ref,Bioversity_International,type,80
@@ -1791,7 +1791,7 @@
 6213,Node Label,Organization,ref,ADRA,name,ADRA,type,21
 6220,Node Label,Activity,description,humanitaire hulp in x-regio,status,4,identifier,NL-1-PPR-16175,title,DMV/HH - NP - 2007 - NRK
 6221,Node Label,Budget,value,716000
-6222,Node Label,Location,name,NEPAL,code,NP
+6222,Node Label,Location,name,NEPAL,code,NP,is_country,True
 6228,Node Label,Activity,status,4,identifier,NL-1-PPR-16177,description,"RNE Funding is used to cover the costs of the ICDDR,B `core¿ activities to conduct of research and ultimately achieve the objectives of the Centre¿s Strategic Plan.",title,"Core Support to ICDDR,B"
 6229,Node Label,Budget,value,12192000
 6230,Node Label,Organization,type,80,ref,ICDDR_B,name,"ICDDR,B"
@@ -1824,7 +1824,7 @@
 6316,Node Label,Budget,value,63000000
 6323,Node Label,Activity,status,4,identifier,NL-1-PPR-16244,description,Directe noodhulp voor de meest kwetsbare ontheemden in en rond Mogadishu en de lower-shabelle.,title,DMV/HH SO NRK 2007
 6324,Node Label,Budget,value,443634
-6325,Node Label,Location,name,SOMALIA,code,SO
+6325,Node Label,Location,is_country,True,name,SOMALIA,code,SO
 6330,Node Label,Activity,status,4,identifier,NL-1-PPR-16245,description,Promoting Integrated Sustainable Waste Management through Public Private Partnerships in Southern Municipalities.,title,DMW PPP Urban Environment
 6331,Node Label,Budget,value,4130422
 6342,Node Label,Activity,identifier,NL-1-PPR-16249,title,DMV/HH KE SV/IRC Kakuma 07/08,description,"Hulp aan Sudanese (en andere) vluchtelingen in Kakuma kamp Noord Kenya, alsmede steun voor omringende Turkana bevolking",status,4
@@ -1839,7 +1839,7 @@
 6364,Node Label,Organization,ref,IITA,name,IITA,type,80
 6369,Node Label,Activity,description,BUEN GOBIERNO EN JUNIN,identifier,NL-1-PPR-16271,status,4,title,LIM FSA 2007 FOVIDA
 6370,Node Label,Budget,value,115200
-6371,Node Label,Location,name,PERU,code,PE
+6371,Node Label,Location,name,PERU,code,PE,is_country,True
 6376,Node Label,Activity,status,4,description,Implementation Master Plan,identifier,NL-1-PPR-16277,title,HAN Safe Motherhood Phase two
 6377,Node Label,Budget,value,11457673
 6385,Node Label,Activity,description,Improve forest governance and alleviate poverty,status,2,identifier,NL-1-PPR-16288,title,DMW ITTO Trop. Law and Trade
@@ -1852,7 +1852,7 @@
 6412,Node Label,Activity,description,Contribution to development of independent mass media in Central Asia,status,4,identifier,NL-1-PPR-16294,title,Central Asian News Service
 6413,Node Label,Budget,value,148595
 6414,Node Label,Organization,name,Eurasia Foundation,ref,Eurasia_Foundation,type,22
-6415,Node Label,Location,name,KYRGYZSTAN,code,KG
+6415,Node Label,Location,is_country,True,name,KYRGYZSTAN,code,KG
 6419,Node Label,Activity,description,"Onderzoek naar bevordering van vrede, wederopbouw en goed bestuur in OS-landen",status,4,identifier,NL-1-PPR-16299,title,DMV/VG WW/Clingendael/PCRP
 6420,Node Label,Budget,value,6019339
 6427,Node Label,Activity,status,4,identifier,NL-1-PPR-16304,description,HIV/AIDS Information and Resource Service Capacity Building Project,title,HIVAIDS services map
@@ -1913,7 +1913,7 @@
 6622,Node Label,Activity,status,4,identifier,NL-1-PPR-16403,description,Strengthening a united assembly of Darul Ifta in the Philippines,title,MAN_Muftis and Ulama
 6623,Node Label,Budget,value,121519
 6624,Node Label,Organization,ref,PCID,name,PCID,type,23
-6625,Node Label,Location,name,PHILIPPINES,code,PH
+6625,Node Label,Location,is_country,True,name,PHILIPPINES,code,PH
 6630,Node Label,Activity,identifier,NL-1-PPR-16406,title,ACC,description,To improve local economic development and livelihoods and reduce poverty through sustainable natural resource management in South Rift Valley.,status,4
 6631,Node Label,Budget,value,6645595
 6632,Node Label,Organization,type,23,name,African Conservation Centre,ref,African_Conservation_Centre
@@ -1987,7 +1987,7 @@
 6851,Node Label,Activity,status,4,description,verbetering selectiviteit garnalenvisserij,identifier,NL-1-PPR-16522,title,DAM visserijproject fase 2
 6852,Node Label,Budget,value,358285
 6853,Node Label,Organization,name,Wageningen Imares BV,ref,Wageningen_Imares_BV,type,70
-6854,Node Label,Location,name,MAURITANIA,code,MR
+6854,Node Label,Location,is_country,True,name,MAURITANIA,code,MR
 6859,Node Label,Activity,identifier,NL-1-PPR-16526,title,PPEA Part.Nat.de l'Eau (PNE),description,L'appui par le Partenariat National de l'Eau (PNE) au Programme Plutiannuel d'appui néerlandais au secteur de l'Eau & l'Assainissement,status,4
 6860,Node Label,Budget,value,2736063
 6861,Node Label,Organization,ref,PNE,name,PNE,type,23
@@ -1999,13 +1999,13 @@
 6882,Node Label,Organization,ref,DGCI,name,DGCI,type,10
 6887,Node Label,Activity,description,verbetering watervoorziening in Noord-Korea teneind gezondheid in gemeenscahppen te verbeteren,status,4,identifier,NL-1-PPR-16534,title,DMV/HH KP NRK WatSan 2007
 6888,Node Label,Budget,value,1898800
-6889,Node Label,Location,name,"KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF",code,KP
+6889,Node Label,Location,name,"KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF",code,KP,is_country,True
 6899,Node Label,Activity,description,"Environmental assessment module (opbouw, onderhoud, inzet) en inzet MINVROM-medewrekers ten behoeve van UNDAC-missies",status,4,identifier,NL-1-PPR-16535,title,DMV/HH VROM Env Ass mod. undac
 6900,Node Label,Budget,value,2660958
 6901,Node Label,Organization,ref,MINISTERIE_VAN_INFRASTRUCTUUR_EN_MILIEU__V_H_VROM_,name,MINISTERIE VAN INFRASTRUCTUUR EN MILIEU (V/H VROM),type,10
 6909,Node Label,Activity,identifier,NL-1-PPR-16536,status,4,title,YAO CHOC,description,CHanger des Habitudes s'Opposer à la Corruption
 6910,Node Label,Budget,value,76800
-6911,Node Label,Location,name,CAMEROON,code,CM
+6911,Node Label,Location,is_country,True,name,CAMEROON,code,CM
 6919,Node Label,Activity,description,Diplomatenopleiding voor diplomaten uit 11 kernlanden van de Grote Meren landen,status,4,identifier,NL-1-PPR-16543,title,DMV/VG RF/Clingendael/cursus
 6920,Node Label,Budget,value,1248700
 6926,Node Label,Activity,identifier,NL-1-PPR-16544,title,Appui à l'Assemblée Nationale,description,Appui au renforcement des capacités de l'Assemblée nationale du Bénin,status,4
@@ -2015,7 +2015,7 @@
 6938,Node Label,Budget,value,18552294
 6946,Node Label,Activity,description,Montenegro Demilitarisatie Programma MONDEM thema: Kleine Wapens,status,4,identifier,NL-1-PPR-16564,title,DVB SALW vernietiging Mont
 6947,Node Label,Budget,value,1511854
-6948,Node Label,Location,name,MONTENEGRO,code,ME
+6948,Node Label,Location,is_country,True,name,MONTENEGRO,code,ME
 6955,Node Label,Activity,description,Appui par le CREPA Bénin au PPEA,status,4,identifier,NL-1-PPR-16566,title,PPEA La recherche par CREPA
 6956,Node Label,Budget,value,1487227
 6957,Node Label,Organization,type,23,ref,Crepa_Rn_Benin,name,Crepa Rn Benin
@@ -2213,7 +2213,7 @@
 7611,Node Label,Activity,description,"Running the HR website, publishing the HR newspaper.  The project will raise awareness of the public, civil society, intl community of the importance of HR protection in Central Asia",status,4,identifier,NL-1-PPR-17030,title,ALM_Media and Human Rights
 7612,Node Label,Budget,value,120000
 7613,Node Label,Organization,type,21,ref,Freedom_House,name,Freedom House
-7614,Node Label,Location,name,KAZAKHSTAN,code,KZ
+7614,Node Label,Location,is_country,True,name,KAZAKHSTAN,code,KZ
 7619,Node Label,Activity,status,4,identifier,NL-1-PPR-17042,description,Support to the activities of Forum for Environment,title,ADD Forum for Environment
 7620,Node Label,Budget,value,1734352
 7621,Node Label,Organization,name,Forum for Environment,ref,Forum_for_Environment,type,23
@@ -2382,7 +2382,7 @@
 8245,Node Label,Organization,name,STICHTING PRINS CLAUS FONDS,ref,STICHTING_PRINS_CLAUS_FONDS,type,22
 8258,Node Label,Activity,description,Financiële bijdrage ten behoeve van basic education in Malawi d.m.v. een plurilateraal partnership met DFID.,status,4,identifier,NL-1-PPR-2867,title,DCO BEC/BE Malawi via DFID
 8259,Node Label,Budget,value,49312026
-8260,Node Label,Location,name,MALAWI,code,MW
+8260,Node Label,Location,is_country,True,name,MALAWI,code,MW
 8273,Node Label,Activity,description,Versterking van institutionele capaciteit voor beleidsgericht onderzoek in Zuidelijk Afrika op basis van relevante en praktische beleidsstudies naar kwaliteit van basic education in Zuidelijk Afrika.,status,4,identifier,NL-1-PPR-2869,title,DCO BEC/SAQMEQ 2003/06
 8274,Node Label,Budget,value,6832977
 8285,Node Label,Activity,description,De sinds 1986 bestaande financieringsovereenkomst tussen de Staa t en de Stichting ECDPM continueren met 5 jaar.,status,4,identifier,NL-1-PPR-3033,title,DCO financieringsovereenkECDPM
@@ -2750,7 +2750,7 @@
 9759,Node Label,Activity,description,"HR Advocay, Training en Monitoring",identifier,NL-1-PPR-17573,status,4,title,DMV/MR Kurdish HR Project
 9760,Node Label,Budget,value,376500
 9761,Node Label,Organization,type,80,name,Democratic Progress Institude,ref,Democratic_Progress_Institude
-9762,Node Label,Location,name,TURKEY,code,TR
+9762,Node Label,Location,is_country,True,name,TURKEY,code,TR
 9767,Node Label,Activity,description,PEK OGI Hunan,identifier,NL-1-PPR-17578,title,PEK OGI Hunan,status,4
 9768,Node Label,Budget,value,617275
 9772,Node Label,Activity,status,4,description,PEK Shanghai Legal Aid III,identifier,NL-1-PPR-17579,title,PEK Shanghai Legal Aid III
@@ -2804,7 +2804,7 @@
 9909,Node Label,Activity,identifier,NL-1-PPR-17714,status,4,title,Iran Gooya,description,Bevordering van mediadiversiteit in Iran
 9910,Node Label,Budget,value,1475000
 9911,Node Label,Organization,ref,ROOZ,name,ROOZ,type,70
-9912,Node Label,Location,name,"IRAN, ISLAMIC REPUBLIC OF",code,IR
+9912,Node Label,Location,is_country,True,name,"IRAN, ISLAMIC REPUBLIC OF",code,IR
 9920,Node Label,Activity,status,4,description,ASIA Sangkhri Monastery II,identifier,NL-1-PPR-17741,title,PEK ASIA Sangkhri Monastery II
 9921,Node Label,Budget,value,195263
 9922,Node Label,Organization,ref,ASIA,name,ASIA,type,23
@@ -2821,7 +2821,7 @@
 9950,Node Label,Activity,description,ICTJ Lebanon program 2008-2009,identifier,NL-1-PPR-17754,status,4,title,ictj lebanon program
 9951,Node Label,Budget,value,116176
 9952,Node Label,Organization,ref,ICTJ,name,ICTJ,type,21
-9953,Node Label,Location,name,LEBANON,code,LB
+9953,Node Label,Location,is_country,True,name,LEBANON,code,LB
 9957,Node Label,Activity,status,4,identifier,NL-1-PPR-17755,description,Financiering PFM expert via IMF voor MinFin Burundi (ism DfID),title,DEK_Burundi_PFM_TA_IMF
 9958,Node Label,Budget,value,341609
 9963,Node Label,Activity,description,Support to small scale strategic initiatives in governance and human rights,status,4,identifier,NL-1-PPR-17760,title,ISL - SSF Governance 2008-2010
@@ -2846,14 +2846,14 @@
 10018,Node Label,Activity,status,4,identifier,NL-1-PPR-17797,description,HR - TRAINING PROGRAM FOR NATIONAL POLICE / WORKSHOP FOR SCHOOLCHILDREN,title,STD-FSA/RNDDH-HAITI
 10019,Node Label,Budget,value,97414
 10020,Node Label,Organization,ref,RNDDH,name,RNDDH,type,23
-10021,Node Label,Location,name,HAITI,code,HT
+10021,Node Label,Location,name,HAITI,code,HT,is_country,True
 10025,Node Label,Activity,description,humanitaire hulp en aanzet tot wederopbouw gedurende het terugkeerproces in Noord Uganda (Gezondheid en educatie),status,4,identifier,NL-1-PPR-17812,title,DMV/HH UG/AVSI/2008-2010
 10026,Node Label,Budget,value,2995300
 10027,Node Label,Organization,ref,AVSI__ASSOCIAZIONE_VOLONTARI_PER_IL_SERVIZIO_INTER,name,AVSI (ASSOCIAZIONE VOLONTARI PER IL SERVIZIO INTER,type,22
 10032,Node Label,Activity,description,Empowering girls in Oman,identifier,NL-1-PPR-17830,status,4,title,MUS Amideast 2008
 10033,Node Label,Budget,value,127077
 10034,Node Label,Organization,type,80,ref,AMIDEAST,name,AMIDEAST
-10035,Node Label,Location,name,"MIDDLE EAST, REGIONAL",code,589
+10035,Node Label,Location,is_country,False,name,"MIDDLE EAST, REGIONAL",code,589
 10039,Node Label,Activity,description,"The proposed action aims to build the capacity of AMAN as the Palestinian house of expertise on the issues of integrity, transparency and accountability",status,4,identifier,NL-1-PPR-17860,title,RAM AMAN Corruptiebestrijding
 10040,Node Label,Budget,value,929244
 10041,Node Label,Organization,ref,Coalition_for_Accountability___Integrity__Aman,name,"Coalition for Accountability & Integrity, Aman",type,23
@@ -2906,7 +2906,7 @@
 10180,Node Label,Budget,value,7852621
 10188,Node Label,Activity,status,4,identifier,NL-1-PPR-17908,description,Koepelactiviteit projecten FSA 2008 Rabat,title,FSA 2008 HMA Rabat
 10189,Node Label,Budget,value,663770
-10190,Node Label,Location,name,MOROCCO,code,MA
+10190,Node Label,Location,is_country,True,name,MOROCCO,code,MA
 10194,Node Label,Activity,status,4,identifier,NL-1-PPR-17911,description,"Geintegreerd humanitaire hulp project in Wadi Salih, West Darfur, 2008 - 2010",title,DMV/HH SD Tearfund Drfr
 10195,Node Label,Budget,value,2650974
 10196,Node Label,Organization,name,TEARFUND,ref,NL-KVK-41177385,type,22
@@ -2936,7 +2936,7 @@
 10274,Node Label,Organization,type,23,name,African Centre - Actv Uganda,ref,African_Centre___Actv_Uganda
 10280,Node Label,Activity,status,4,description,Mensenrechtenfonds Buenos Aires 2008,identifier,NL-1-PPR-17959,title,BUE Mensenrechtenfonds 2008
 10281,Node Label,Budget,value,212963
-10282,Node Label,Location,name,ARGENTINA,code,AR
+10282,Node Label,Location,is_country,True,name,ARGENTINA,code,AR
 10287,Node Label,Activity,description,Infrastructureel plan Afghaanse politie Uruzgan,status,4,identifier,NL-1-PPR-17961,title,Infrastructuur politie Uruzgan
 10288,Node Label,Budget,value,3591311
 10293,Node Label,Activity,status,4,identifier,NL-1-PPR-17962,description,to harmonize the likeminded donor group's financial assistance to NGOs working to promote and protect Human Rights/Good Governance (HR/GG) in the PT through a Secretariat responsible for channelling and following up donor funds to the NGOs,title,RAM NDC HR-GG Secretariat
@@ -2986,12 +2986,12 @@
 10421,Node Label,Budget,value,1305944
 10425,Node Label,Activity,description,bijdrage aan gevolgen van cycloon Nagris in Birma - mei 2008,status,4,identifier,NL-1-PPR-18041,title,DMH/HH MM/SC/Cyclone Nargis
 10426,Node Label,Budget,value,599070
-10427,Node Label,Location,name,MYANMAR,code,MM
+10427,Node Label,Location,is_country,True,name,MYANMAR,code,MM
 10431,Node Label,Activity,description,15 miljoen basic sanitation,identifier,NL-1-PPR-18042,status,4,title,DMW WSSCC 2008-201215
 10432,Node Label,Budget,value,64551508
 10442,Node Label,Activity,description,Milieufonds 2008,status,4,identifier,NL-1-PPR-18045,title,BRA PKP ODA milieufonds 2008
 10443,Node Label,Budget,value,159092
-10444,Node Label,Location,name,BRAZIL,code,BR
+10444,Node Label,Location,is_country,True,name,BRAZIL,code,BR
 10448,Node Label,Activity,status,4,identifier,NL-1-PPR-18051,description,DSI MFS Subsidie SOS-kinderdorpen 2009-2010,title,DCO MFS SOS-kinderdorpen
 10449,Node Label,Budget,value,1600818
 10450,Node Label,Organization,name,SOS Village D'Enfants,ref,SOS_Village_D_Enfants,type,22
@@ -3186,7 +3186,7 @@
 11030,Node Label,Activity,status,4,identifier,NL-1-PPR-18275,description,Producción radiofónica con enfoque de género y capacitación en TICs,title,QUI Mujeres y radio
 11031,Node Label,Budget,value,100582
 11032,Node Label,Organization,type,23,name,CORPORACION PROMOCION DE LA MUJER,ref,CORPORACION_PROMOCION_DE_LA_MUJER
-11033,Node Label,Location,name,ECUADOR,code,EC
+11033,Node Label,Location,is_country,True,name,ECUADOR,code,EC
 11038,Node Label,Activity,status,4,description,VEILIGHEID EN BURGERSCHAP CHILCA JUNIN,identifier,NL-1-PPR-18287,title,LIM MR 2008 - ISC CHILCA
 11039,Node Label,Budget,value,142102
 11040,Node Label,Organization,type,23,name,INSTITUTO SEGURIDAD CIUDADANA - ISC,ref,INSTITUTO_SEGURIDAD_CIUDADANA___ISC
@@ -3216,7 +3216,7 @@
 11131,Node Label,Activity,description,ontwikkelen mensenrechteneducatie on site en bevordering bewustzijn over mensenrechtensituatie in verleden en heden in Chili,status,4,identifier,NL-1-PPR-18318,title,STG-Educación Derechos Humanos
 11132,Node Label,Budget,value,317764
 11133,Node Label,Organization,type,70,name,PARQUE POR LA PAZ 'VILLA GRIMALDI',ref,PARQUE_POR_LA_PAZ__VILLA_GRIMALDI_
-11134,Node Label,Location,name,CHILE,code,CL
+11134,Node Label,Location,name,CHILE,code,CL,is_country,True
 11140,Node Label,Activity,description,"in kaart brengen ontwikkeling gedachtengoed binnen VN op econ., soc. en OS terrein plus verspreiding en promotie van dit werk",status,4,identifier,NL-1-PPR-18319,title,DVF UN Intel.History Project
 11141,Node Label,Budget,value,387346
 11142,Node Label,Organization,name,"The Graduate Center, Cuny",ref,The_Graduate_Center__Cuny,type,80
@@ -3248,7 +3248,7 @@
 11223,Node Label,Budget,value,135148
 11228,Node Label,Activity,status,4,identifier,NL-1-PPR-18348,description,To finance projects concerning human rights projects in Bhutan,title,NDE FSA Bhutan 2008
 11229,Node Label,Budget,value,191668
-11230,Node Label,Location,name,BHUTAN,code,BT
+11230,Node Label,Location,is_country,True,name,BHUTAN,code,BT
 11235,Node Label,Activity,status,4,identifier,NL-1-PPR-18349,description,Budget Support for Bhutan contributing to teh 10th Five Year Plan 2008-2013,title,NDE BSB 2008-2013
 11236,Node Label,Budget,value,18000000
 11237,Node Label,Organization,ref,BNMBT,name,BNMBT,type,10
@@ -3277,7 +3277,7 @@
 11301,Node Label,Budget,value,141741
 11305,Node Label,Activity,identifier,NL-1-PPR-18387,status,4,title,Expert KFOR,description,Financiering uitzending logistiek en materieel expert tbv KFOR
 11306,Node Label,Budget,value,258965
-11307,Node Label,Location,name,KOSOVO,code,XK
+11307,Node Label,Location,is_country,True,name,KOSOVO,code,XK
 11311,Node Label,Activity,description,Bijdrage aan IFPRI voor uitvoering 3-jarenplan 2008-2010,status,4,identifier,NL-1-PPR-18390,title,DDE Progr. steun IFPRI-CGIAR
 11312,Node Label,Budget,value,5346084
 11313,Node Label,Organization,ref,IFPRI,name,IFPRI,type,80
@@ -3384,7 +3384,7 @@
 11615,Node Label,Budget,value,2481974
 11622,Node Label,Activity,description,"Knowledge, research and innovation to make the turn to intergrated gender sensitive water management in South Azie",status,4,identifier,NL-1-PPR-18485,title,DMW-Crossing Boundaries Water
 11623,Node Label,Budget,value,4550936
-11624,Node Label,Location,name,"SOUTH ASIA, REGIONAL",code,679
+11624,Node Label,Location,is_country,False,name,"SOUTH ASIA, REGIONAL",code,679
 11631,Node Label,Activity,identifier,NL-1-PPR-18487,status,4,title,LAMBDA,description,"Support to LAMBDA, Mozambican association for sexual minority rights. Contribution via HIVOS."
 11632,Node Label,Budget,value,259375
 11637,Node Label,Activity,description,"Project ten behoeve van het verbeteren van de leefomstandigheden van lokale gemeenschappen in Somalië door hulpverlening op het gebied van gezondheid en sanitatie, toegang tot schoon (drink)water en inkomstengenererende activiteiten.",status,4,identifier,NL-1-PPR-18488,title,DMH/HH SO HR '08-'10
@@ -3429,7 +3429,7 @@
 11754,Node Label,Activity,identifier,NL-1-PPR-18540,status,4,title,DMW MEKWATSAN,description,Supporting drink-water and sanitation programmes in eight secundary urban centres in the Mekong Region
 11755,Node Label,Budget,value,8772542
 11756,Node Label,Organization,type,40,ref,org_41120,name,UN Habitat
-11757,Node Label,Location,name,"FAR EAST ASIA, REGIONAL",code,789
+11757,Node Label,Location,is_country,False,name,"FAR EAST ASIA, REGIONAL",code,789
 11767,Node Label,Activity,identifier,NL-1-PPR-18541,status,4,title,Enabling PSD,description,Enabling Private Sector Development in the Western Balkans
 11768,Node Label,Budget,value,2303463
 11775,Node Label,Activity,description,Ghana general budget suport operations (MDBS) 2009-2012,status,4,identifier,NL-1-PPR-18543,title,ACC_Budget Support 2009-2012
@@ -3552,7 +3552,7 @@
 12103,Node Label,Activity,description,MENSENRECHTENFONDS VENEZUELA,identifier,NL-1-PPR-18749,title,MRF VENEZUELA / CARACAS 2008,status,4
 12104,Node Label,Budget,value,114981
 12105,Node Label,Organization,name,The Carter Center,ref,The_Carter_Center,type,22
-12106,Node Label,Location,code,VE,name,"VENEZUELA, BOLIVARIAN REPUBLIC OF"
+12106,Node Label,Location,code,VE,is_country,True,name,"VENEZUELA, BOLIVARIAN REPUBLIC OF"
 12112,Node Label,Activity,status,2,description,PRM staatsfinanciën 2008 2011,identifier,NL-1-PPR-18750,title,PRM STAATSFINANCIËN 2008 2011
 12113,Node Label,Budget,value,10800000
 12123,Node Label,Activity,description,Consent Winning Activities t.b.v. lokale bevolking rondom Kandahar Airfield,status,4,identifier,NL-1-PPR-18754,title,KAF Hearts & Minds Prog.
@@ -3613,7 +3613,7 @@
 12289,Node Label,Activity,description,BUILDING A CULTURE OF PARTICIPATION AND NETWORKING AMONG NGO SECTOR AND PARLIAMENTARIANS IN JORDAN,status,4,identifier,NL-1-PPR-18801,title,FSA 2008 05 NGO NETWORKING
 12290,Node Label,Budget,value,104942
 12291,Node Label,Organization,ref,Partners___Jordan_Center_for_Civic_Collaboration,name,Partners - Jordan Center for Civic Collaboration,type,23
-12292,Node Label,Location,name,JORDAN,code,JO
+12292,Node Label,Location,is_country,True,name,JORDAN,code,JO
 12296,Node Label,Activity,status,4,identifier,NL-1-PPR-18802,description,Strengthening National Capacities to Prevent Domestic Violence 2008-2011,title,SKO DV prevention
 12297,Node Label,Budget,value,3328209
 12306,Node Label,Activity,status,4,identifier,NL-1-PPR-18803,description,Conservation incentives for land management and socio-environmental conflict mitigation,title,Fondo Patrimonio Natural
@@ -3657,7 +3657,7 @@
 12426,Node Label,Budget,value,814930
 12432,Node Label,Activity,description,Terre des Hommes activiteit ter bestrijding van kindersekstoerisme in Cambodja,status,4,identifier,NL-1-PPR-18848,title,DMH/MR KH seks. uitbuit. kind
 12433,Node Label,Budget,value,289459
-12434,Node Label,Location,name,CAMBODIA,code,KH
+12434,Node Label,Location,is_country,True,name,CAMBODIA,code,KH
 12441,Node Label,Activity,status,4,identifier,NL-1-PPR-18849,description,Support to 2008-2010 Programme of MOST,title,SKO MOST 2008-2010
 12442,Node Label,Budget,value,216936
 12443,Node Label,Organization,type,23,name,Most - Citizen Association,ref,Most___Citizen_Association
@@ -3822,7 +3822,7 @@
 12896,Node Label,Budget,value,3063420
 12903,Node Label,Activity,identifier,NL-1-PPR-19023,status,4,title,RAEIN-Africa,description,Bevorderen van onderzoek en innovatie in SA
 12904,Node Label,Budget,value,8655540
-12905,Node Label,Location,name,NAMIBIA,code,NA
+12905,Node Label,Location,is_country,True,name,NAMIBIA,code,NA
 12912,Node Label,Activity,description,Een bijdrage aan UNOPS voor het EUCOPPS Police Support programme voor de bouw van een gevangenis in Jericho,status,4,identifier,NL-1-PPR-19024,title,Construction Jericho Prison
 12913,Node Label,Budget,value,9286939
 12921,Node Label,Activity,status,4,identifier,NL-1-PPR-19025,description,Jornadas Culturales en Cultuurbeleid Bolivia,title,LAP Jornadas Culturales
@@ -3872,10 +3872,10 @@
 13058,Node Label,Activity,description,Sport and play as an effective learning tool for holistic child development in Southern Sudan and Burundi,status,4,identifier,NL-1-PPR-19082,title,Right to Play Burundi Sudan
 13059,Node Label,Budget,value,2184564
 13060,Node Label,Organization,type,21,ref,Right_To_Play,name,Right To Play
-13061,Node Label,Location,name,SOUTH SUDAN,code,SS
+13061,Node Label,Location,is_country,True,name,SOUTH SUDAN,code,SS
 13067,Node Label,Activity,status,4,identifier,NL-1-PPR-19085,description,Steun aan mensenrechtenonderwijs op Kroatische scholen,title,ZAG-FSA 01-2008
 13068,Node Label,Budget,value,35705
-13069,Node Label,Location,name,CROATIA,code,HR
+13069,Node Label,Location,is_country,True,name,CROATIA,code,HR
 13073,Node Label,Activity,identifier,NL-1-PPR-19086,title,ZAG-FSA 02/2008 IUC seminars,description,Ondersteuning van een serie seminars op gebied van Rule of Law,status,4
 13074,Node Label,Budget,value,63440
 13075,Node Label,Organization,name,INTER-UNIVERZITETSKI CENTAR,ref,INTER_UNIVERZITETSKI_CENTAR,type,80
@@ -4121,7 +4121,7 @@
 13741,Node Label,Activity,status,4,identifier,NL-1-PPR-19471,description,"Ontwikkelingsproject waarbij sociale voorzieningen duurzaam worden gefinancierd door commerciele activiteiten te Yele, Sierra Leone",title,EFV-Best of Both Worlds
 13742,Node Label,Budget,value,4227024
 13743,Node Label,Organization,type,22,name,Stichting Lion Heart Foundation,ref,Stichting_Lion_Heart_Foundation
-13744,Node Label,Location,name,SIERRA LEONE,code,SL
+13744,Node Label,Location,is_country,True,name,SIERRA LEONE,code,SL
 13750,Node Label,Activity,status,4,identifier,NL-1-PPR-19474,description,DSI - MDG5 Meshwork for Mother Care ihkv Schokland Fonds,title,DSI - MDG5 MMC
 13751,Node Label,Budget,value,3504284
 13757,Node Label,Activity,description,National Basic Education Policy Program (Pakistan) 2009-2012,status,4,identifier,NL-1-PPR-19477,title,ISL.Nat.Bas.Edu.Policy GTZ
@@ -4432,7 +4432,7 @@
 14570,Node Label,Budget,value,385324
 14575,Node Label,Activity,description,DPV Linking Emigrant Communities,identifier,NL-1-PPR-19995,status,4,title,DPV Linking Emigrant Comm
 14576,Node Label,Budget,value,169857
-14577,Node Label,Location,name,"NORTH OF SAHARA, REGIONAL",code,189
+14577,Node Label,Location,is_country,False,name,"NORTH OF SAHARA, REGIONAL",code,189
 14580,Node Label,Activity,description,Promoting the concept and strenghtening the application of Corporate Social Responsibility (CSR/RSE) and IB in Nicaragua,status,4,identifier,NL-1-PPR-19996,title,MNG Strength. Corp. Soc. Resp.
 14581,Node Label,Budget,value,153542
 14582,Node Label,Organization,type,23,ref,UNIRSE,name,UNIRSE
@@ -4530,65 +4530,6 @@
 14845,Node Label,Activity,description,Generate legal and technical condictions to authonomies process,status,4,identifier,NL-1-PPR-20093,title,Emergency support autonomies
 14846,Node Label,Budget,value,331797
 14847,Node Label,Organization,name,MINISTERIO DE AUTONOMIA,ref,MINISTERIO_DE_AUTONOMIA,type,10
-15170,Node Label,Activity,description,To promote culture and development activities in Bhutan,status,4,identifier,NL-1-PPR-20206,title,NDE Culture & Dev in Bhutan
-15172,Node Label,Organization,name,TG MEDIA INFOTAINMENT,ref,TG_MEDIA_INFOTAINMENT,type,23
-15171,Node Label,Budget,value,14040
-15002,Node Label,Organization,type,10,ref,AUSAID,name,AUSAID
-15001,Node Label,Budget,value,3472200
-15000,Node Label,Activity,description,Comprehensive HR services,status,4,identifier,NL-1-PPR-20145,title,HAN HIV/AIDS Harm Reduction
-14996,Node Label,Budget,value,3049191
-15017,Node Label,Activity,identifier,NL-1-PPR-20155,status,4,title,BUE MRF 2009,description,Overkoepelende Activiteit voor MRF-projecten aan te gaan in 2009
-15011,Node Label,Organization,ref,International_Confederation_of_Midwives,name,International Confederation of Midwives,type,22
-15010,Node Label,Budget,value,1957279
-15009,Node Label,Activity,description,Support International Confederation of Midwivesare 2009 - 2010,status,4,identifier,NL-1-PPR-20149,title,DSI ICM Support 2009 - 2010
-14984,Node Label,Activity,status,4,identifier,NL-1-PPR-20140,description,Fighting Impunity peacebuilding contexts,title,EFV WW/Conferentie TJ
-14981,Node Label,Organization,ref,Sustainability_Solutions_Africa__PTY__LTD,name,Sustainability Solutions Africa (PTY) LTD,type,23
-14980,Node Label,Budget,value,62611
-14979,Node Label,Activity,status,4,identifier,NL-1-PPR-20139,description,Post award Assessment of the Open Learning Systems Education Trust,title,PRE Assessment OLSET
-14995,Node Label,Activity,status,4,identifier,NL-1-PPR-20144,description,EFV-expertuitzendingen korte missie pool ter ondersteuning FS beleid,title,EFV-Korte Missie pool
-14989,Node Label,Budget,value,8611786
-14988,Node Label,Activity,identifier,NL-1-PPR-20143,status,4,title,RAM Global Gap,description,Improved livelihoods in rural areas through capacity-building of Palestinian farmers assisting them to reach Global Gap standards
-14985,Node Label,Budget,value,146657
-14964,Node Label,Activity,description,Verdeding van mensenrechtenbeschermers,status,4,identifier,NL-1-PPR-20132,title,KSS Protetction International
-14965,Node Label,Budget,value,1020000
-14959,Node Label,Activity,description,12050 ton zaad en kunstmest Uruzgan (en Daikundi),status,4,identifier,NL-1-PPR-20131,title,KAB-FAO Zaadprogramma 2009-10
-14960,Node Label,Budget,value,2775695
-14973,Node Label,Budget,value,904690
-14974,Node Label,Organization,name,FUNDACION MUJER SOLIDARIDAD,ref,FUNDACION_MUJER_SOLIDARIDAD,type,23
-14966,Node Label,Organization,name,Protection International,ref,Protection_International,type,30
-14972,Node Label,Activity,description,MRF 2009,status,4,identifier,NL-1-PPR-20134,title,QUI MENSENRECHTENFONDS 2009
-14943,Node Label,Activity,description,fonds ontw binnenland,identifier,NL-1-PPR-20128,title,FOB fase III,status,4
-14944,Node Label,Budget,value,6355000
-14939,Node Label,Activity,status,4,description,DDE Alg. kleine ODA-act. 2009,identifier,NL-1-PPR-20127,title,DDE Alg. kleine ODA-act 2009
-14940,Node Label,Budget,value,125544
-14951,Node Label,Budget,value,400737
-14952,Node Label,Organization,ref,UNIJOS_CENTRE_FOR_CONFLICT_MANAGEMENT_AND_PEACE_STUDIES,name,UNIJOS CENTRE FOR CONFLICT MANAGEMENT AND PEACE STUDIES,type,80
-14945,Node Label,Organization,type,22,name,STG. FONDS ONTWIKKELING BINNENLAND,ref,STG__FONDS_ONTWIKKELING_BINNENLAND
-14950,Node Label,Activity,identifier,NL-1-PPR-20130,status,4,title,CECOMPS JOS UNI,description,Centre for Conflict management and Peace Studies
-14922,Node Label,Activity,description,Documentaire,status,4,identifier,NL-1-PPR-20111,title,KSS Into the heart of darkness
-14915,Node Label,Budget,value,2477000
-14924,Node Label,Organization,name,IFPRODUCTIONS V. O. F.,ref,IFPRODUCTIONS_V__O__F_,type,70
-14923,Node Label,Budget,value,126000
-14928,Node Label,Budget,value,71000000
-14927,Node Label,Activity,identifier,NL-1-PPR-20112,title,LGDG,description,Financiering ontwikkelingsactiviteiten lokale overheden,status,2
-14935,Node Label,Budget,value,87710
-14934,Node Label,Activity,description,advies en ondersteuning door Millenniumcoaches voor akkoordhouders,status,4,identifier,NL-1-PPR-20115,title,AMDG-inzet millenniumcoaches
-14894,Node Label,Organization,type,23,ref,SARAKASI,name,SARAKASI
-14893,Node Label,Budget,value,738071
-14901,Node Label,Budget,value,15514706
-14900,Node Label,Activity,description,Levering verdere bijdrage democratiseringsproces Soeden en voortgang op CPA-proces,status,4,identifier,NL-1-PPR-20107,title,KHA Verkiezingen Democratie
-14908,Node Label,Budget,value,707671
-14907,Node Label,Activity,status,4,description,CSO strengthening and participation,identifier,NL-1-PPR-20108,title,YCSP civil society support
-14914,Node Label,Activity,identifier,NL-1-PPR-20109,status,4,title,ISL-CIADP,description,Chitral Integreated Area Development Programme
-14909,Node Label,Organization,type,21,name,Partners for Democratic Change,ref,Partners_for_Democratic_Change
-14873,Node Label,Budget,value,259804
-14874,Node Label,Organization,ref,WAGEINDICATOR_FOUNDATION_STICHTING_LOONWIJZER,name,WAGEINDICATOR FOUNDATION/STICHTING LOONWIJZER,type,22
-14879,Node Label,Activity,status,4,identifier,NL-1-PPR-20100,description,Financing of renewable energy by means of individualised carbon credits,title,DMW Fair Carbon Fund
-14880,Node Label,Budget,value,5660042
-14887,Node Label,Activity,status,4,identifier,NL-1-PPR-20104,description,"Supply of a Solar System to Lideke Wery Educational Institute, Induruwa.",title,Col Solar System to LWEI
-14888,Node Label,Budget,value,25813
-14889,Node Label,Organization,type,80,name,Lideke Wery Educational Institute,ref,Lideke_Wery_Educational_Institute
-14892,Node Label,Activity,status,4,identifier,NL-1-PPR-20105,description,Sarakasi Trust focuses on the promotion and accessibility of Kenyan performing arts to develop the cultural scene and livelihood of performers in slums.,title,Sarakasi Thrust
 14852,Node Label,Activity,status,4,identifier,NL-1-PPR-20096,description,Promoting human rights and pluralism in Sri Lanka through grant making a,title,Col Promoting HR - NTT
 14853,Node Label,Budget,value,130030
 14854,Node Label,Organization,name,NEELAN TIRUCHELVAM TRUST,ref,NEELAN_TIRUCHELVAM_TRUST,type,22
@@ -4597,70 +4538,289 @@
 14865,Node Label,Activity,description,Supporting Transparency Accountability and Electoral Processes in Pakistan,status,4,identifier,NL-1-PPR-20098,title,ISL TAF Governance Program
 14866,Node Label,Budget,value,6385643
 14872,Node Label,Activity,description,Check op arbeidsvoorwaarden en arbeidsomstandigheden,status,4,identifier,NL-1-PPR-20099,title,DDE Pilot-DencentWorkCheck
-15161,Node Label,Budget,value,1747000
-15160,Node Label,Activity,description,Support to the Electoral Cycle 2009-2012,status,4,identifier,NL-1-PPR-20202,title,LUS_Eletoral Cycle 2009-2012
-15156,Node Label,Organization,name,INFOSHARE (GUARANTEE) LTD,ref,INFOSHARE__GUARANTEE__LTD,type,10
-15155,Node Label,Budget,value,11628
-15154,Node Label,Activity,description,improving HR works in SL,identifier,NL-1-PPR-20200,title,COL PAX,status,4
-15150,Node Label,Budget,value,1378004
-15149,Node Label,Activity,description,upscaling SCCS,identifier,NL-1-PPR-20199,status,4,title,From SCCS to CSTL
-15144,Node Label,Budget,value,2587567
-15143,Node Label,Activity,status,4,description,Strengthening GSFP governance,identifier,NL-1-PPR-20198,title,GSFP domestic acountability
-15140,Node Label,Organization,type,70,ref,ALEXA_OONA_SCHULZ,name,ALEXA OONA SCHULZ
-15139,Node Label,Budget,value,24000
-15138,Node Label,Activity,status,4,identifier,NL-1-PPR-20196,description,"A documentary film  ""A journey to Tropical Amsterdam""   jurney to",title,Col Tropical Amsterdam
-15135,Node Label,Budget,value,85536
-15134,Node Label,Activity,description,Zimbabwe: versterking van relatie tussen politiek en civil society organisaties. Strengthening the relations between civil society and the MOC with the purpose to support one of the main drivers of change in Zimbabwe.,status,4,identifier,NL-1-PPR-20195,title,HAR-Versterking rel. pol./CS
-15129,Node Label,Budget,value,7224666
-15128,Node Label,Activity,identifier,NL-1-PPR-20194,status,4,title,HAR - PRPII,description,"PRPs goal is a reduction in extreme poverty and its main objective is to reduce hunger, poverty and vulnerability for up to 2 million of the poorest people in Zimbabwe in both rural and urban areas."
-15119,Node Label,Budget,value,54000
-15120,Node Label,Organization,type,22,ref,FRIENDS_INDEED,name,FRIENDS INDEED
-15111,Node Label,Organization,name,WERELDFOUNDATION FOR PPP ONLY,ref,WERELDFOUNDATION_FOR_PPP_ONLY,type,30
-15118,Node Label,Activity,description,Schoklandfonds subsdie programma Ananthagiri van Stichting Friends Indeed,status,4,identifier,NL-1-PPR-20192,title,DCO Schokland Friends Indeed
-15109,Node Label,Activity,description,Het bouwen van huizen dmv hypotheekverstrekking,status,4,identifier,NL-1-PPR-20191,title,DDE Schokland World Foundation
-15110,Node Label,Budget,value,2949000
-15105,Node Label,Budget,value,26020
-15106,Node Label,Organization,type,70,name,Health and Development Africa LTD,ref,Health_and_Development_Africa_LTD
-15100,Node Label,Organization,ref,CFM,name,CFM,type,70
-15104,Node Label,Activity,description,PRE MTR Regional Programme,identifier,NL-1-PPR-20190,title,PRE MTR 2009,status,4
-15098,Node Label,Activity,status,4,identifier,NL-1-PPR-20187,description,Technical assistance for monitoring dredging works in Beira harbour,title,MAP Support CFM
-15099,Node Label,Budget,value,380000
-15093,Node Label,Activity,status,4,description,Manifestarte en el Cerrito,identifier,NL-1-PPR-20186,title,GUA Manifestarte en el Cerrito
-15094,Node Label,Budget,value,59604
-15087,Node Label,Budget,value,252433
-15088,Node Label,Organization,type,23,name,BWFC HILLBROW YOUTH DEVELOPMENT PROJECT,ref,BWFC_HILLBROW_YOUTH_DEVELOPMENT_PROJECT
-15075,Node Label,Activity,description,Technical Assistance IMF,identifier,NL-1-PPR-20180,status,2,title,DVF IMF TOPICAL TRUST FUNDS
-15071,Node Label,Budget,value,2020420
-15086,Node Label,Activity,description,HILLBROW SPORT EN OS,status,4,identifier,NL-1-PPR-20184,title,Improve life through soccer
-15076,Node Label,Budget,value,7808753
-15066,Node Label,Activity,description,Uitvoering regeling sociaal ethisch beleggen door SenterNovem,status,4,identifier,NL-1-PPR-20176,title,DDE Sociaal-ethisch beleggen
-15063,Node Label,Organization,type,10,ref,SOCIAAL_ECONOMISCHE_RAAD__SER_,name,SOCIAAL ECONOMISCHE RAAD (SER)
-15070,Node Label,Activity,description,Preparedness for disasters due to climate change,status,4,identifier,NL-1-PPR-20177,title,DMW Preparedness for CC phase2
-15067,Node Label,Budget,value,20330
-15056,Node Label,Organization,name,NONVIOLENT PEACEFORCE,ref,NONVIOLENT_PEACEFORCE,type,23
-15055,Node Label,Budget,value,114322
-15062,Node Label,Budget,value,67012
-15061,Node Label,Activity,status,4,identifier,NL-1-PPR-20175,description,Bijdrage aan SER Internationale Summer School,title,DDE SER Summer School
-15050,Node Label,Budget,value,14593
-15049,Node Label,Activity,identifier,NL-1-PPR-20166,status,4,title,COL-CAA,description,providing nic's to facilitate democratic freedom
-15054,Node Label,Activity,description,Improving the safety and security of HRdefenders in sri lanka,status,4,identifier,NL-1-PPR-20167,title,Col Non violence peaceforce
-15051,Node Label,Organization,ref,CCA,name,CCA,type,23
-15041,Node Label,Budget,value,1898590
-15042,Node Label,Organization,type,70,ref,DAMEN_SHIPYARDS,name,DAMEN SHIPYARDS
-15045,Node Label,Activity,status,4,identifier,NL-1-PPR-20165,description,International Civil Society Support 2009-2010,title,DSI ICSS 2009-2010
-15046,Node Label,Budget,value,150000
-15034,Node Label,Activity,identifier,NL-1-PPR-20161,title,Col,description,Rehabilitation of internally displaced subjected to HR abuses,status,4
-15035,Node Label,Budget,value,82006
-15036,Node Label,Organization,name,SURVIVORS ASSOCIATED GUARANTEE (LTD),type,70,ref,SURVIVORS_ASSOCIATED_GUARANTEE__LTD_
-15040,Node Label,Activity,description,procurement ferryboat Vukovar - Bac,identifier,NL-1-PPR-20164,status,4,title,procurement ferryboat
-15025,Node Label,Organization,type,80,ref,IDAZIM,name,IDAZIM
-15028,Node Label,Activity,status,4,identifier,NL-1-PPR-20160,description,Institutional support for the Republican network of independent monitors in Kazakhstan,title,Election monitoring
-15029,Node Label,Budget,value,175237
-15030,Node Label,Organization,ref,RNIM,name,RNIM,type,30
+14873,Node Label,Budget,value,259804
+14874,Node Label,Organization,ref,WAGEINDICATOR_FOUNDATION_STICHTING_LOONWIJZER,name,WAGEINDICATOR FOUNDATION/STICHTING LOONWIJZER,type,22
+14879,Node Label,Activity,status,4,identifier,NL-1-PPR-20100,description,Financing of renewable energy by means of individualised carbon credits,title,DMW Fair Carbon Fund
+14880,Node Label,Budget,value,5660042
+14887,Node Label,Activity,status,4,identifier,NL-1-PPR-20104,description,"Supply of a Solar System to Lideke Wery Educational Institute, Induruwa.",title,Col Solar System to LWEI
+14888,Node Label,Budget,value,25813
+14889,Node Label,Organization,type,80,name,Lideke Wery Educational Institute,ref,Lideke_Wery_Educational_Institute
+14892,Node Label,Activity,status,4,identifier,NL-1-PPR-20105,description,Sarakasi Trust focuses on the promotion and accessibility of Kenyan performing arts to develop the cultural scene and livelihood of performers in slums.,title,Sarakasi Thrust
+14893,Node Label,Budget,value,738071
+14894,Node Label,Organization,type,23,ref,SARAKASI,name,SARAKASI
+14900,Node Label,Activity,description,Levering verdere bijdrage democratiseringsproces Soeden en voortgang op CPA-proces,status,4,identifier,NL-1-PPR-20107,title,KHA Verkiezingen Democratie
+14901,Node Label,Budget,value,15514706
+14907,Node Label,Activity,status,4,description,CSO strengthening and participation,identifier,NL-1-PPR-20108,title,YCSP civil society support
+14908,Node Label,Budget,value,707671
+14909,Node Label,Organization,type,21,name,Partners for Democratic Change,ref,Partners_for_Democratic_Change
+14914,Node Label,Activity,identifier,NL-1-PPR-20109,status,4,title,ISL-CIADP,description,Chitral Integreated Area Development Programme
+14915,Node Label,Budget,value,2477000
+14922,Node Label,Activity,description,Documentaire,status,4,identifier,NL-1-PPR-20111,title,KSS Into the heart of darkness
+14923,Node Label,Budget,value,126000
+14924,Node Label,Organization,name,IFPRODUCTIONS V. O. F.,ref,IFPRODUCTIONS_V__O__F_,type,70
+14927,Node Label,Activity,identifier,NL-1-PPR-20112,title,LGDG,description,Financiering ontwikkelingsactiviteiten lokale overheden,status,2
+14928,Node Label,Budget,value,71000000
+14934,Node Label,Activity,description,advies en ondersteuning door Millenniumcoaches voor akkoordhouders,status,4,identifier,NL-1-PPR-20115,title,AMDG-inzet millenniumcoaches
+14935,Node Label,Budget,value,87710
+14939,Node Label,Activity,status,4,description,DDE Alg. kleine ODA-act. 2009,identifier,NL-1-PPR-20127,title,DDE Alg. kleine ODA-act 2009
+14940,Node Label,Budget,value,125544
+14943,Node Label,Activity,description,fonds ontw binnenland,identifier,NL-1-PPR-20128,title,FOB fase III,status,4
+14944,Node Label,Budget,value,6355000
+14945,Node Label,Organization,type,22,name,STG. FONDS ONTWIKKELING BINNENLAND,ref,STG__FONDS_ONTWIKKELING_BINNENLAND
+14950,Node Label,Activity,identifier,NL-1-PPR-20130,status,4,title,CECOMPS JOS UNI,description,Centre for Conflict management and Peace Studies
+14951,Node Label,Budget,value,400737
+14952,Node Label,Organization,ref,UNIJOS_CENTRE_FOR_CONFLICT_MANAGEMENT_AND_PEACE_STUDIES,name,UNIJOS CENTRE FOR CONFLICT MANAGEMENT AND PEACE STUDIES,type,80
+14959,Node Label,Activity,description,12050 ton zaad en kunstmest Uruzgan (en Daikundi),status,4,identifier,NL-1-PPR-20131,title,KAB-FAO Zaadprogramma 2009-10
+14960,Node Label,Budget,value,2775695
+14964,Node Label,Activity,description,Verdeding van mensenrechtenbeschermers,status,4,identifier,NL-1-PPR-20132,title,KSS Protetction International
+14965,Node Label,Budget,value,1020000
+14966,Node Label,Organization,name,Protection International,ref,Protection_International,type,30
+14972,Node Label,Activity,description,MRF 2009,status,4,identifier,NL-1-PPR-20134,title,QUI MENSENRECHTENFONDS 2009
+14973,Node Label,Budget,value,904690
+14974,Node Label,Organization,name,FUNDACION MUJER SOLIDARIDAD,ref,FUNDACION_MUJER_SOLIDARIDAD,type,23
+14979,Node Label,Activity,status,4,identifier,NL-1-PPR-20139,description,Post award Assessment of the Open Learning Systems Education Trust,title,PRE Assessment OLSET
+14980,Node Label,Budget,value,62611
+14981,Node Label,Organization,ref,Sustainability_Solutions_Africa__PTY__LTD,name,Sustainability Solutions Africa (PTY) LTD,type,23
+14984,Node Label,Activity,status,4,identifier,NL-1-PPR-20140,description,Fighting Impunity peacebuilding contexts,title,EFV WW/Conferentie TJ
+14985,Node Label,Budget,value,146657
+14988,Node Label,Activity,identifier,NL-1-PPR-20143,status,4,title,RAM Global Gap,description,Improved livelihoods in rural areas through capacity-building of Palestinian farmers assisting them to reach Global Gap standards
+14989,Node Label,Budget,value,8611786
+14995,Node Label,Activity,status,4,identifier,NL-1-PPR-20144,description,EFV-expertuitzendingen korte missie pool ter ondersteuning FS beleid,title,EFV-Korte Missie pool
+14996,Node Label,Budget,value,3049191
+15000,Node Label,Activity,description,Comprehensive HR services,status,4,identifier,NL-1-PPR-20145,title,HAN HIV/AIDS Harm Reduction
+15001,Node Label,Budget,value,3472200
+15002,Node Label,Organization,type,10,ref,AUSAID,name,AUSAID
+15009,Node Label,Activity,description,Support International Confederation of Midwivesare 2009 - 2010,status,4,identifier,NL-1-PPR-20149,title,DSI ICM Support 2009 - 2010
+15010,Node Label,Budget,value,1957279
+15011,Node Label,Organization,ref,International_Confederation_of_Midwives,name,International Confederation of Midwives,type,22
+15017,Node Label,Activity,identifier,NL-1-PPR-20155,status,4,title,BUE MRF 2009,description,Overkoepelende Activiteit voor MRF-projecten aan te gaan in 2009
 15018,Node Label,Budget,value,183751
 15019,Node Label,Organization,name,FUNDACION MEMORIA ABIERTA,ref,FUNDACION_MEMORIA_ABIERTA,type,23
 15023,Node Label,Activity,status,4,description,HAR CAPACITY BLDG PMs OFF ZIM,identifier,NL-1-PPR-20157,title,HAR CAPACITY BLDG PMs OFF ZIM
 15024,Node Label,Budget,value,319306
+15025,Node Label,Organization,type,80,ref,IDAZIM,name,IDAZIM
+15028,Node Label,Activity,status,4,identifier,NL-1-PPR-20160,description,Institutional support for the Republican network of independent monitors in Kazakhstan,title,Election monitoring
+15029,Node Label,Budget,value,175237
+15030,Node Label,Organization,ref,RNIM,name,RNIM,type,30
+15034,Node Label,Activity,identifier,NL-1-PPR-20161,title,Col,description,Rehabilitation of internally displaced subjected to HR abuses,status,4
+15035,Node Label,Budget,value,82006
+15036,Node Label,Organization,name,SURVIVORS ASSOCIATED GUARANTEE (LTD),type,70,ref,SURVIVORS_ASSOCIATED_GUARANTEE__LTD_
+15040,Node Label,Activity,description,procurement ferryboat Vukovar - Bac,identifier,NL-1-PPR-20164,status,4,title,procurement ferryboat
+15041,Node Label,Budget,value,1898590
+15042,Node Label,Organization,type,70,ref,DAMEN_SHIPYARDS,name,DAMEN SHIPYARDS
+15045,Node Label,Activity,status,4,identifier,NL-1-PPR-20165,description,International Civil Society Support 2009-2010,title,DSI ICSS 2009-2010
+15046,Node Label,Budget,value,150000
+15049,Node Label,Activity,identifier,NL-1-PPR-20166,status,4,title,COL-CAA,description,providing nic's to facilitate democratic freedom
+15050,Node Label,Budget,value,14593
+15051,Node Label,Organization,ref,CCA,name,CCA,type,23
+15054,Node Label,Activity,description,Improving the safety and security of HRdefenders in sri lanka,status,4,identifier,NL-1-PPR-20167,title,Col Non violence peaceforce
+15055,Node Label,Budget,value,114322
+15056,Node Label,Organization,name,NONVIOLENT PEACEFORCE,ref,NONVIOLENT_PEACEFORCE,type,23
+15061,Node Label,Activity,status,4,identifier,NL-1-PPR-20175,description,Bijdrage aan SER Internationale Summer School,title,DDE SER Summer School
+15062,Node Label,Budget,value,67012
+15063,Node Label,Organization,type,10,ref,SOCIAAL_ECONOMISCHE_RAAD__SER_,name,SOCIAAL ECONOMISCHE RAAD (SER)
+15066,Node Label,Activity,description,Uitvoering regeling sociaal ethisch beleggen door SenterNovem,status,4,identifier,NL-1-PPR-20176,title,DDE Sociaal-ethisch beleggen
+15067,Node Label,Budget,value,20330
+15070,Node Label,Activity,description,Preparedness for disasters due to climate change,status,4,identifier,NL-1-PPR-20177,title,DMW Preparedness for CC phase2
+15071,Node Label,Budget,value,2020420
+15075,Node Label,Activity,description,Technical Assistance IMF,identifier,NL-1-PPR-20180,status,2,title,DVF IMF TOPICAL TRUST FUNDS
+15076,Node Label,Budget,value,7808753
+15086,Node Label,Activity,description,HILLBROW SPORT EN OS,status,4,identifier,NL-1-PPR-20184,title,Improve life through soccer
+15087,Node Label,Budget,value,252433
+15088,Node Label,Organization,type,23,name,BWFC HILLBROW YOUTH DEVELOPMENT PROJECT,ref,BWFC_HILLBROW_YOUTH_DEVELOPMENT_PROJECT
+15093,Node Label,Activity,status,4,description,Manifestarte en el Cerrito,identifier,NL-1-PPR-20186,title,GUA Manifestarte en el Cerrito
+15094,Node Label,Budget,value,59604
+15098,Node Label,Activity,status,4,identifier,NL-1-PPR-20187,description,Technical assistance for monitoring dredging works in Beira harbour,title,MAP Support CFM
+15099,Node Label,Budget,value,380000
+15100,Node Label,Organization,ref,CFM,name,CFM,type,70
+15104,Node Label,Activity,description,PRE MTR Regional Programme,identifier,NL-1-PPR-20190,title,PRE MTR 2009,status,4
+15105,Node Label,Budget,value,26020
+15106,Node Label,Organization,type,70,name,Health and Development Africa LTD,ref,Health_and_Development_Africa_LTD
+15109,Node Label,Activity,description,Het bouwen van huizen dmv hypotheekverstrekking,status,4,identifier,NL-1-PPR-20191,title,DDE Schokland World Foundation
+15110,Node Label,Budget,value,2949000
+15111,Node Label,Organization,name,WERELDFOUNDATION FOR PPP ONLY,ref,WERELDFOUNDATION_FOR_PPP_ONLY,type,30
+15118,Node Label,Activity,description,Schoklandfonds subsdie programma Ananthagiri van Stichting Friends Indeed,status,4,identifier,NL-1-PPR-20192,title,DCO Schokland Friends Indeed
+15119,Node Label,Budget,value,54000
+15120,Node Label,Organization,type,22,ref,FRIENDS_INDEED,name,FRIENDS INDEED
+15128,Node Label,Activity,identifier,NL-1-PPR-20194,status,4,title,HAR - PRPII,description,"PRPs goal is a reduction in extreme poverty and its main objective is to reduce hunger, poverty and vulnerability for up to 2 million of the poorest people in Zimbabwe in both rural and urban areas."
+15129,Node Label,Budget,value,7224666
+15134,Node Label,Activity,description,Zimbabwe: versterking van relatie tussen politiek en civil society organisaties. Strengthening the relations between civil society and the MOC with the purpose to support one of the main drivers of change in Zimbabwe.,status,4,identifier,NL-1-PPR-20195,title,HAR-Versterking rel. pol./CS
+15135,Node Label,Budget,value,85536
+15138,Node Label,Activity,status,4,identifier,NL-1-PPR-20196,description,"A documentary film  ""A journey to Tropical Amsterdam""   jurney to",title,Col Tropical Amsterdam
+15139,Node Label,Budget,value,24000
+15140,Node Label,Organization,type,70,ref,ALEXA_OONA_SCHULZ,name,ALEXA OONA SCHULZ
+15143,Node Label,Activity,status,4,description,Strengthening GSFP governance,identifier,NL-1-PPR-20198,title,GSFP domestic acountability
+15144,Node Label,Budget,value,2587567
+15149,Node Label,Activity,description,upscaling SCCS,identifier,NL-1-PPR-20199,status,4,title,From SCCS to CSTL
+15150,Node Label,Budget,value,1378004
+15154,Node Label,Activity,description,improving HR works in SL,identifier,NL-1-PPR-20200,title,COL PAX,status,4
+15155,Node Label,Budget,value,11628
+15156,Node Label,Organization,name,INFOSHARE (GUARANTEE) LTD,ref,INFOSHARE__GUARANTEE__LTD,type,10
+15160,Node Label,Activity,description,Support to the Electoral Cycle 2009-2012,status,4,identifier,NL-1-PPR-20202,title,LUS_Eletoral Cycle 2009-2012
+15161,Node Label,Budget,value,1747000
+15170,Node Label,Activity,description,To promote culture and development activities in Bhutan,status,4,identifier,NL-1-PPR-20206,title,NDE Culture & Dev in Bhutan
+15171,Node Label,Budget,value,14040
+15172,Node Label,Organization,name,TG MEDIA INFOTAINMENT,ref,TG_MEDIA_INFOTAINMENT,type,23
+15176,Node Label,Activity,description,"steun aan de regionale uitgave van Danas in de Sandzak, en de wekelijkse Europa-bijlage",status,4,identifier,NL-1-PPR-20207,title,Support to Danas newspaper
+15177,Node Label,Budget,value,61290
+15178,Node Label,Organization,type,70,ref,DAN_GRAF_D_O_O_,name,DAN GRAF D.O.O.
+15181,Node Label,Activity,status,4,identifier,NL-1-PPR-20208,description,contribution to multilateral fund for the implementation of the montreal protocol on substances that deplete the ozone layer,title,DMW Multilateral Fund MP
+15182,Node Label,Budget,value,2061708
+15183,Node Label,Organization,name,Montreal Protocol,ref,Montreal_Protocol,type,40
+15188,Node Label,Activity,identifier,NL-1-PPR-20209,status,4,title,Whisper Boat,description,Improvement of education quality at WBBA
+15189,Node Label,Budget,value,17136
+15190,Node Label,Organization,name,WHISPER BOAT BUILDING ACADEMY,ref,WHISPER_BOAT_BUILDING_ACADEMY,type,80
+15194,Node Label,Activity,status,4,identifier,NL-1-PPR-20210,description,enhancing H&A process and sectoral approach in MARN,title,GUA_support MARN fase II
+15195,Node Label,Budget,value,853987
+15196,Node Label,Organization,type,70,ref,CODERSA,name,CODERSA
+15200,Node Label,Activity,description,Strengthening and support community and public institutions,status,4,identifier,NL-1-PPR-20211,title,ISL SPO Program 2009-2013
+15201,Node Label,Budget,value,5889830
+15202,Node Label,Organization,ref,SPO,name,SPO,type,23
+15208,Node Label,Activity,identifier,NL-1-PPR-20212,title,COL,description,Documenting instances of torture and persecution,status,4
+15209,Node Label,Budget,value,42554
+15210,Node Label,Organization,type,23,ref,RAAJJE_FOUNDATION,name,RAAJJE FOUNDATION
+15214,Node Label,Activity,description,Victory Way- Lutte contre le harcelement sexuel,status,4,identifier,NL-1-PPR-20215,title,Lutte vs harcellement sexuel
+15215,Node Label,Budget,value,449935
+15216,Node Label,Organization,type,23,ref,Victory_Way,name,Victory Way
+15220,Node Label,Activity,status,4,identifier,NL-1-PPR-20216,description,The activity strengthens capacities and integrates production to meet market demands in four links of the wood value chain using certification as a key market tool.,title,MNG CADENA DE MADERA
+15221,Node Label,Budget,value,4982494
+15222,Node Label,Organization,ref,_JAGWOOD__RED_MESOAM_Y_DEL_CARIBE_DE_COMERC_FORESTAL,name,(JAGWOOD+)RED MESOAM.Y DEL CARIBE DE COMERC.FORESTAL,type,21
+15230,Node Label,Activity,status,4,identifier,NL-1-PPR-20217,description,The activity strenthen the specialty coffee chain by developing inclusive business approach and certification as a market tool to reach international niche markets.,title,MNG CADENA DE CAFE
+15231,Node Label,Budget,value,7098800
+15232,Node Label,Organization,name,FUNICA(FUND.DESAR.TEC.AGROPEC.FOREST.NIC.),type,23,ref,FUNICA_FUND_DESAR_TEC_AGROPEC_FOREST_NIC__
+15239,Node Label,Activity,status,4,identifier,NL-1-PPR-20218,description,"The activity contributes to the business development of 500 turistic SMEs thtough competitiveness, marketing, inclusive business and human resources certirfication.",title,MNG CADENA DE TURISMO
+15240,Node Label,Budget,value,5479320
+15241,Node Label,Organization,name,FUNDACION CENTRO EMPRESIAL PELLAS(CEP),type,23,ref,FUNDACION_CENTRO_EMPRESIAL_PELLAS_CEP_
+15247,Node Label,Activity,description,Observatoire de la Corruption au Maroc jaar 3,status,4,identifier,NL-1-PPR-20220,title,FSA 06/09 Observatoire
+15248,Node Label,Budget,value,83045
+15251,Node Label,Activity,description,seminars fragiele staten,status,4,identifier,NL-1-PPR-20222,title,Securing Development seminars
+15252,Node Label,Budget,value,66987
+15255,Node Label,Activity,status,4,identifier,NL-1-PPR-20226,description,Violence Against Women Legislation jaar III,title,FSA 07/09 VAW
+15256,Node Label,Budget,value,219277
+15259,Node Label,Activity,description,"Accélération de l¿OMD 5 au Mali 2009 ¿ 2011, en appui direct au PRODESS. Le financement étendra l¿offre en Soins Obstétricaux et Néonatals d¿Urgence et inclut des activités et approches diverses comme engager des ONGs au niveau opérationnel",status,2,identifier,NL-1-PPR-20228,title,Appui à l'OMD-5 / SRGR
+15260,Node Label,Budget,value,32951020
+15269,Node Label,Activity,description,AVB UNIFEM 2009 EN 2010,identifier,NL-1-PPR-20230,title,DVF AVB UNIFEM,status,4
+15270,Node Label,Budget,value,6000000
+15273,Node Label,Activity,description,Appui au plan d'action 2009-2013 pour l'amelioration du systeme de gestion des finances publiques,status,2,identifier,NL-1-PPR-20231,title,Appui au Plan PFM 2010-2013
+15274,Node Label,Budget,value,5400000
+15275,Node Label,Organization,ref,EC,name,EC,type,40
+15281,Node Label,Activity,status,4,identifier,NL-1-PPR-20234,description,Post-conflict programme for consolidating peace and development in Aceh,title,JAK CPDA trustfund
+15282,Node Label,Budget,value,5422000
+15289,Node Label,Activity,status,4,identifier,NL-1-PPR-20238,description,"The International Aid Transparency Initiative (IATI) aims to deliver a step shift in public availability and accessibility of information on aid flows and activities, globally.",title,IATI Aid Transparency
+15290,Node Label,Budget,value,350000
+15293,Node Label,Activity,identifier,NL-1-PPR-20239,title,DDE Studie PSD (Van der Geest),description,Evaluatiestudie Ïmpact van DDE programma's op PSD,status,4
+15294,Node Label,Budget,value,73882
+15297,Node Label,Activity,description,Core funding to IIED 2009 - 2011,status,4,identifier,NL-1-PPR-20240,title,DMW IIED core 2009-2011
+15298,Node Label,Budget,value,400000
+15299,Node Label,Organization,ref,IIED,name,IIED,type,80
+15304,Node Label,Activity,description,Apoyo a la modernización de la Asamblea Nacional,status,4,identifier,NL-1-PPR-20243,title,MNG PFID/Asamblea Nacional
+15305,Node Label,Budget,value,970153
+15312,Node Label,Activity,description,IMF Technische Assistentie,identifier,NL-1-PPR-20245,status,2,title,Ondersteuning AFRITACS
+15313,Node Label,Budget,value,8058751
+15322,Node Label,Activity,identifier,NL-1-PPR-20247,title,DDE Soc. Protection&Food Sec.,description,Joint Initiative on Social Protection and Food Security,status,4
+15323,Node Label,Budget,value,41000
+15329,Node Label,Activity,description,MNG Technical assistance from PAHO for capacity building and training of health workers,status,4,identifier,NL-1-PPR-20249,title,MNG PAHO Inst strength MINSA
+15330,Node Label,Budget,value,3819300
+15331,Node Label,Organization,ref,PAHO,name,PAHO,type,40
+15337,Node Label,Activity,status,4,description,Koepelactiviteit FSA Hma Rabat 2009,identifier,NL-1-PPR-20252,title,FSA 08/09 Centre Chourouk
+15338,Node Label,Budget,value,77795
+15339,Node Label,Organization,type,80,name,CENTRE CHOUROUK POUR LE DEVELOPPEMENT,ref,CENTRE_CHOUROUK_POUR_LE_DEVELOPPEMENT
+15343,Node Label,Activity,description,IFDC-Amélioration Accès des Pteurs agr. aux Intrants Non-Coton,status,4,identifier,NL-1-PPR-20256,title,Accès aux intrants non-coton
+15344,Node Label,Budget,value,3338458
+15351,Node Label,Activity,status,4,identifier,NL-1-PPR-20260,description,Duits Nederlandse Infrastructurele Projecten in Zuid Afghanistan,title,KAB D  NL INFRA PROJ Z AFG
+15352,Node Label,Budget,value,45043994
+15362,Node Label,Activity,description,SINGING A NEW POLICY TUNE,status,4,identifier,NL-1-PPR-20262,title,Procesfacilitator MDF/DPRN
+15363,Node Label,Budget,value,46956
+15366,Node Label,Activity,description,uitzending experts korte missies,identifier,NL-1-PPR-20263,status,4,title, korte missie pool FS
+15367,Node Label,Budget,value,110930
+15371,Node Label,Activity,description,To guarantee systematic attention for the victims of domestic and sexual violence and of violence based on gender by improving the provision of services and combating the impunity by promoting access to justice to women,status,4,identifier,NL-1-PPR-20264,title,MNG Improving Women Rights
+15372,Node Label,Budget,value,1495974
+15373,Node Label,Organization,type,10,ref,POLICIA_NACIONAL,name,POLICIA NACIONAL
+15380,Node Label,Activity,identifier,NL-1-PPR-20272,status,4,title,KAB-CEDAW/UNIFEM,description,steun Mofa voor Cedaw process ism UNIFEM
+15381,Node Label,Budget,value,70119
+15387,Node Label,Activity,status,4,identifier,NL-1-PPR-20278,description,OS,title,STEPs Women's Rights
+15388,Node Label,Budget,value,504038
+15391,Node Label,Activity,description,Uitvoering amendement uitstapprogramma's prostituees,status,4,identifier,NL-1-PPR-20279,title,DSI Amendement uitstapprog
+15392,Node Label,Budget,value,1577722
+15398,Node Label,Activity,description,Farmers will be provided with necessary agricultural inputs for flower and strawberry production,status,4,identifier,NL-1-PPR-20281,title,RAM Gaza Cash Crops 09-10
+15399,Node Label,Budget,value,1679970
+15402,Node Label,Activity,identifier,NL-1-PPR-20289,status,4,title,WOMEN WIN,description,"Three-year sportsprogram of four Kenyan women sportsorganisations to improve the position of more than 6000 women, on individual and gender-level, in economically marginalized areas."
+15403,Node Label,Budget,value,412057
+15404,Node Label,Organization,name,STICHTING WOMEN WIN,ref,STICHTING_WOMEN_WIN,type,22
+15410,Node Label,Activity,description,Traditional Leadership in Nigeria,identifier,NL-1-PPR-20291,title,FOPP,status,4
+15411,Node Label,Budget,value,928964
+15412,Node Label,Organization,type,70,ref,HIBAZ_CONSULT___VENTURES_LTD,name,HIBAZ CONSULT & VENTURES LTD
+15417,Node Label,Activity,status,4,identifier,NL-1-PPR-20295,description,Preparation for scaling-up the adaptive rehabilitation and revitalisation of EMRP,title,Interim support EMRP
+15418,Node Label,Budget,value,1583167
+15424,Node Label,Activity,description,Human rights,identifier,NL-1-PPR-20297,status,4,title,HAR-ZIMRIGHTS CNST. CIVIC EDU.
+15425,Node Label,Budget,value,137335
+15426,Node Label,Organization,type,23,ref,ZIMRIGHTS,name,ZIMRIGHTS
+15429,Node Label,Activity,description,HUMAN RIGHTS,identifier,NL-1-PPR-20299,status,4,title,HAR-CRISIS CONST. CIVIC EDUC.
+15430,Node Label,Budget,value,99999
+15431,Node Label,Organization,type,23,name,Crisis in Zimbabwe Coalition,ref,Crisis_in_Zimbabwe_Coalition
+15434,Node Label,Activity,status,4,identifier,NL-1-PPR-20300,description,To support the CNE in the elaboration of the Padron biometrico,title,Biometric voters system
+15435,Node Label,Budget,value,2696806
+15441,Node Label,Activity,description,DVB EXPERTUITZENDINGEN KORTE MISSIE POOL EFV 20144,status,4,identifier,NL-1-PPR-20304,title,DVB Expert Korte Missie Pool
+15442,Node Label,Budget,value,314407
+15445,Node Label,Activity,status,4,identifier,NL-1-PPR-20306,description,Evaluatie research data TI Pharma voor vloeibaar hittestabiele Oxytocine,title,Evaluatie Oxytocine
+15446,Node Label,Budget,value,16320
+15447,Node Label,Organization,name,Kinesis Pharma BV,ref,Kinesis_Pharma_BV,type,30
+15450,Node Label,Activity,description,Support to the Judicial Training Academy,status,4,identifier,NL-1-PPR-20314,title,BEL Judicial Training Academy
+15451,Node Label,Budget,value,146820
+15456,Node Label,Activity,description,Beheer OS schulden door NIO/FMO 2009,status,4,identifier,NL-1-PPR-20317,title,DVF 2009 NIO beheer OSschulden
+15457,Node Label,Budget,value,627662
+15460,Node Label,Activity,identifier,NL-1-PPR-20320,status,4,title,MAP_OLIPA,description,Strengthening of Producer Organisations
+15461,Node Label,Budget,value,1244399
+15462,Node Label,Organization,type,23,name,ASSOCIAÇAO OLIPA - ODES,ref,ASSOCIAÇAO_OLIPA___ODES
+15470,Node Label,Activity,description,"Support to Change Management programme within MAIL, including Institutional Strengthening for the agricultural education programme within MoE/TVET",status,4,identifier,NL-1-PPR-20326,title,KAB - CM/MAIL and NAEP/TVET
+15471,Node Label,Budget,value,3376976
+15476,Node Label,Activity,description,HAR-WOMAN COALITION CIVIC EDUCATION,identifier,NL-1-PPR-20327,status,4,title,HAR-WOMAN COALITION
+15477,Node Label,Budget,value,55824
+15478,Node Label,Organization,type,23,name,Women Coalition of Zimbabwe,ref,Women_Coalition_of_Zimbabwe
+15481,Node Label,Activity,description,Combating FGM and early marriage,identifier,NL-1-PPR-20330,status,4,title,KHA- Action against FGM/C
+15482,Node Label,Budget,value,1992374
+15489,Node Label,Activity,status,4,identifier,NL-1-PPR-20333,description,Crear condiciones de retorno a cafeteros desplazados,title,BOG PPP FNC Cesar
+15490,Node Label,Budget,value,2886066
+15491,Node Label,Organization,ref,FEDERACION_NACIONAL_DE_CAFETEROS_DE_COLOMBIA,name,FEDERACION NACIONAL DE CAFETEROS DE COLOMBIA,type,23
+15497,Node Label,Activity,description,Observación del Registro en el Padrón Biométrico,status,4,identifier,NL-1-PPR-20334,title,LAP Support to Carter Center
+15498,Node Label,Budget,value,376766
+15501,Node Label,Activity,description,Reducing HIV infection in adoclescents,status,4,identifier,NL-1-PPR-20336,title,Social cash transfers pilot
+15502,Node Label,Budget,value,8946284
+15508,Node Label,Activity,description,Core funding for IUCN International for the period 2010-2012,status,4,identifier,NL-1-PPR-20338,title,DME IUCN corefunding 2010-2012
+15509,Node Label,Budget,value,13564996
+15515,Node Label,Activity,description,FONDS SPORT EN ONTWIKKELING,identifier,NL-1-PPR-20339,status,4,title,DAK SN FONDS SPORT EN ONTW.
+15516,Node Label,Budget,value,38417
+15517,Node Label,Organization,type,23,ref,ACAPES,name,ACAPES
+15521,Node Label,Activity,status,4,identifier,NL-1-PPR-20340,description,Renforcement de capacité du SP CNLPE,title,OUA Appui au CNLPE
+15522,Node Label,Budget,value,57931
+15523,Node Label,Organization,type,10,ref,OVERHEID,name,OVERHEID
+15526,Node Label,Activity,description,BULAWAYO AGENDA CIVIC EDUCATION,identifier,NL-1-PPR-20342,status,4,title,BULAWAYO AGENDA EDUCATION
+15527,Node Label,Budget,value,139055
+15528,Node Label,Organization,type,23,ref,BULAWAYO_AGENDA,name,BULAWAYO AGENDA
+15531,Node Label,Activity,description,"Informeren van NL posten in het buitenland over MVO, OESO richtlijnen en mensenrechten",status,4,identifier,NL-1-PPR-20343,title,"DDE CSR, OECD Guidelines, HR"
+15532,Node Label,Budget,value,87024
+15535,Node Label,Activity,description,TAC consolidation 2008 and 2009,identifier,NL-1-PPR-20345,status,4,title,TAC consolidation phase
+15536,Node Label,Budget,value,63638
+15537,Node Label,Organization,name,Treatment Action Campaign,ref,Treatment_Action_Campaign,type,23
+15541,Node Label,Activity,status,4,identifier,NL-1-PPR-20346,description,STEP (SEEKING TO INPROVE PEOPLE),title,BAG/FSA 2009/02
+15542,Node Label,Budget,value,23198
+15543,Node Label,Organization,ref,STEP,name,STEP,type,22
+15546,Node Label,Activity,status,4,identifier,NL-1-PPR-20347,description,This is a human rights defenders program aimed at supporting the protection of individual HRDs and their institutions in order to achieve a human rights respecting culture in Kenya,title,HUMAN RIGHTS DEFENDERS PROGRAM
+15547,Node Label,Budget,value,512206
+15548,Node Label,Organization,ref,KHRC,name,KHRC,type,23
+15553,Node Label,Activity,status,4,identifier,NL-1-PPR-20348,description,Human Rights Advocacy and Information Campaign Activities,title,Human Rights Awareness
+15554,Node Label,Budget,value,134853
+15555,Node Label,Location,is_country,True,name,ERITREA,code,ER
+15562,Node Label,Activity,description,Leveraging and Educating Accountable Democracy in Indonesia,status,4,identifier,NL-1-PPR-20351,title,JAK Partnership LEAD programme
+15563,Node Label,Budget,value,22648306
+15564,Node Label,Organization,type,10,ref,KEMITRAAN,name,KEMITRAAN
+15573,Node Label,Activity,status,4,identifier,NL-1-PPR-20353,description,Establishment of community-investor partnerships in rural areas,title,MAP_Community Investor
+15574,Node Label,Budget,value,1871698
+15575,Node Label,Organization,type,10,name,MINISTRY OF PLANNING AND DEVELOPMENT,ref,MINISTRY_OF_PLANNING_AND_DEVELOPMENT
+15583,Node Label,Activity,status,4,identifier,NL-1-PPR-20354,description,Supporting trade through electronic certification of horticultural exports to the Netherlands,title,CLIENT Kenya project
+15584,Node Label,Budget,value,705969
+15585,Node Label,Organization,type,23,ref,KEPHIS,name,KEPHIS
+15589,Node Label,Activity,status,4,identifier,NL-1-PPR-20355,description,Strengthening the capacity of NCEW ni the promotion of workers' rights informal sector,title,NCEW Capacity Building
 15590,Node Label,Budget,value,158583
 15591,Node Label,Organization,ref,NCEW,name,NCEW,type,23
 15598,Node Label,Activity,status,4,identifier,NL-1-PPR-20356,description,Strengthening women's empowerment and leadership skills in Eritrea,title,Women's leadership
@@ -4677,342 +4837,271 @@
 15636,Node Label,Organization,type,80,ref,CEPEPE,name,CEPEPE
 15644,Node Label,Activity,status,4,identifier,NL-1-PPR-20369,description,Verwijderen munitievoorraden uit Tajikistan zodat deze niet in Afghanistan ingezet kunnen worden,title,FSD munitie Tajikistan
 15645,Node Label,Budget,value,614586
-15647,Node Label,Location,name,TAJIKISTAN,code,TJ
 15646,Node Label,Organization,ref,FSD,name,FSD,type,22
-15651,Node Label,Budget,value,3429410
+15647,Node Label,Location,is_country,True,name,TAJIKISTAN,code,TJ
 15650,Node Label,Activity,description,DDE Codex Trust Fund,identifier,NL-1-PPR-20370,status,4,title,DDE Codex Trust Fund
-15661,Node Label,Budget,value,1200000
+15651,Node Label,Budget,value,3429410
 15660,Node Label,Activity,identifier,NL-1-PPR-20371,status,4,title,Small Arms,description,"Combating violence committed with firearms by improving the performance of Public Prosecutor, Police and Judiciary"
-15670,Node Label,Activity,status,4,identifier,NL-1-PPR-20372,description,Monitoring of judicial approval of arrests,title,AST KIBHR Astana
+15661,Node Label,Budget,value,1200000
 15662,Node Label,Organization,ref,INSTITUTO_ENSENANZA_DESARROLLO_SOSTENIBLE_IEPADES,name,INSTITUTO ENSENANZA DESARROLLO SOSTENIBLE IEPADES,type,80
-15672,Node Label,Organization,ref,KIBHR,name,KIBHR,type,23
+15670,Node Label,Activity,status,4,identifier,NL-1-PPR-20372,description,Monitoring of judicial approval of arrests,title,AST KIBHR Astana
 15671,Node Label,Budget,value,82812
-15677,Node Label,Budget,value,10686526
+15672,Node Label,Organization,ref,KIBHR,name,KIBHR,type,23
 15676,Node Label,Activity,description,Vietnam Relay Facility,identifier,NL-1-PPR-20376,status,4,title,HAN VIETNAM RELAY FACILITY
-15686,Node Label,Budget,value,5812336
+15677,Node Label,Budget,value,10686526
 15685,Node Label,Activity,description,Samenbrengen en coordineren van kennis en onderzoek op het gebied van publiek private samenwerking gericht op duurzame economische ontwikkeling in ontwikkelingslanden,status,4,identifier,NL-1-PPR-20378,title,DDE RSM Resource Center Dev.
-15695,Node Label,Activity,identifier,NL-1-PPR-20379,title,PACOP,description,Programme d'Appui à l'Office du Niger pour l'exécution du Contrat Plan 08 12,status,2
+15686,Node Label,Budget,value,5812336
 15687,Node Label,Organization,type,30,name,ERASMUS UNIVERSITEIT ROTTERDAM FOR PPP ONLY,ref,ERASMUS_UNIVERSITEIT_ROTTERDAM_FOR_PPP_ONLY
-15521,Node Label,Activity,status,4,identifier,NL-1-PPR-20340,description,Renforcement de capacité du SP CNLPE,title,OUA Appui au CNLPE
-15522,Node Label,Budget,value,57931
-15516,Node Label,Budget,value,38417
-15517,Node Label,Organization,type,23,ref,ACAPES,name,ACAPES
-15527,Node Label,Budget,value,139055
-15528,Node Label,Organization,type,23,ref,BULAWAYO_AGENDA,name,BULAWAYO AGENDA
-15523,Node Label,Organization,type,10,ref,OVERHEID,name,OVERHEID
-15526,Node Label,Activity,description,BULAWAYO AGENDA CIVIC EDUCATION,identifier,NL-1-PPR-20342,status,4,title,BULAWAYO AGENDA EDUCATION
-15535,Node Label,Activity,description,TAC consolidation 2008 and 2009,identifier,NL-1-PPR-20345,status,4,title,TAC consolidation phase
-15536,Node Label,Budget,value,63638
-15531,Node Label,Activity,description,"Informeren van NL posten in het buitenland over MVO, OESO richtlijnen en mensenrechten",status,4,identifier,NL-1-PPR-20343,title,"DDE CSR, OECD Guidelines, HR"
-15532,Node Label,Budget,value,87024
-15542,Node Label,Budget,value,23198
-15543,Node Label,Organization,ref,STEP,name,STEP,type,22
-15537,Node Label,Organization,name,Treatment Action Campaign,ref,Treatment_Action_Campaign,type,23
-15541,Node Label,Activity,status,4,identifier,NL-1-PPR-20346,description,STEP (SEEKING TO INPROVE PEOPLE),title,BAG/FSA 2009/02
-15553,Node Label,Activity,status,4,identifier,NL-1-PPR-20348,description,Human Rights Advocacy and Information Campaign Activities,title,Human Rights Awareness
-15548,Node Label,Organization,ref,KHRC,name,KHRC,type,23
-15547,Node Label,Budget,value,512206
-15546,Node Label,Activity,status,4,identifier,NL-1-PPR-20347,description,This is a human rights defenders program aimed at supporting the protection of individual HRDs and their institutions in order to achieve a human rights respecting culture in Kenya,title,HUMAN RIGHTS DEFENDERS PROGRAM
-15563,Node Label,Budget,value,22648306
-15562,Node Label,Activity,description,Leveraging and Educating Accountable Democracy in Indonesia,status,4,identifier,NL-1-PPR-20351,title,JAK Partnership LEAD programme
-15555,Node Label,Location,name,ERITREA,code,ER
-15554,Node Label,Budget,value,134853
-15575,Node Label,Organization,type,10,name,MINISTRY OF PLANNING AND DEVELOPMENT,ref,MINISTRY_OF_PLANNING_AND_DEVELOPMENT
-15574,Node Label,Budget,value,1871698
-15573,Node Label,Activity,status,4,identifier,NL-1-PPR-20353,description,Establishment of community-investor partnerships in rural areas,title,MAP_Community Investor
-15564,Node Label,Organization,type,10,ref,KEMITRAAN,name,KEMITRAAN
-15589,Node Label,Activity,status,4,identifier,NL-1-PPR-20355,description,Strengthening the capacity of NCEW ni the promotion of workers' rights informal sector,title,NCEW Capacity Building
-15585,Node Label,Organization,type,23,ref,KEPHIS,name,KEPHIS
-15584,Node Label,Budget,value,705969
-15583,Node Label,Activity,status,4,identifier,NL-1-PPR-20354,description,Supporting trade through electronic certification of horticultural exports to the Netherlands,title,CLIENT Kenya project
-15814,Node Label,Organization,ref,Afghanistan_Reconstruction___Planning_Department,name,Afghanistan Reconstruction & Planning Department,type,10
-15818,Node Label,Activity,description,Doelstelling is om minimaal vijf kunstenaars per jaar deel te laten nemen aan het residency-programma t.b.v. ontwikkeling en versterking Kunstsector in OS-landen.,status,4,identifier,NL-1-PPR-20404,title,DCO Rijksakademie 2010-2012
-15819,Node Label,Budget,value,1625000
-15825,Node Label,Activity,status,4,identifier,NL-1-PPR-20405,description,Pilot scheme to improve smallholder and national food security in Zimbabwe,title,HAR-PILOT FOOD SECURITY ZIM
+15695,Node Label,Activity,identifier,NL-1-PPR-20379,title,PACOP,description,Programme d'Appui à l'Office du Niger pour l'exécution du Contrat Plan 08 12,status,2
+15696,Node Label,Budget,value,8977780
+15706,Node Label,Activity,status,4,identifier,NL-1-PPR-20381,description,To improve the knowledge of the Nicaraguan population upon SRHR,title,MNG Equity and SRHR
+15707,Node Label,Budget,value,868882
+15714,Node Label,Activity,description,New input to the Democratic Developmental State debate in SA through research and policy initiatives,status,4,identifier,NL-1-PPR-20383,title,Research Developmental State
+15715,Node Label,Budget,value,334376
+15720,Node Label,Activity,identifier,NL-1-PPR-20384,status,4,title,AST CHR,description,"Monitoring rights of the detained, suspected and convicted"
+15721,Node Label,Budget,value,111007
+15722,Node Label,Organization,name,CHARTER FOR HUMAN RIGHTS,ref,CHARTER_FOR_HUMAN_RIGHTS,type,70
+15727,Node Label,Activity,status,4,identifier,NL-1-PPR-20386,description,Strengthening UN coordination in the field,title,KHA Strenghtening UN RCO
+15728,Node Label,Budget,value,5528858
+15735,Node Label,Activity,description,Enhancing interethnic relations through humanitarian assistance to war-affected children,status,4,identifier,NL-1-PPR-20388,title,COL NPC -North/South relations
+15736,Node Label,Budget,value,115772
+15737,Node Label,Organization,ref,NPCSL,name,NPCSL,type,23
+15742,Node Label,Activity,status,4,identifier,NL-1-PPR-20389,description,Verder institutionaliseren van organisatie SARUA en haar inspanningen,title,DCO SARUA 2009-2012
+15743,Node Label,Budget,value,3139648
+15749,Node Label,Activity,description,ISL UNDP STRENGTHEN PARLIAMENT,identifier,NL-1-PPR-20391,status,4,title,ISL UNDP STRENGTHEN PARLIAMENT
+15750,Node Label,Budget,value,3402618
+15758,Node Label,Activity,status,4,description,ISL NWFP EDUCATION SECTOR IDPs,identifier,NL-1-PPR-20392,title,ISL NWFP EDUCATION SECTOR IDPs
+15759,Node Label,Budget,value,13081316
+15767,Node Label,Activity,status,4,identifier,NL-1-PPR-20393,description,ISL IMPROVING ACCESS TO QUALITY EFA IN BALUCHISTAN - SCF,title,ISL ACCESS TO QUALITY EFA BAL.
+15768,Node Label,Budget,value,19345366
+15776,Node Label,Activity,status,4,identifier,NL-1-PPR-20394,description,NATIONAL IMPACT ASSESSMENT PROGRAMME PAKISTAN - IUCN,title,ISL IMPACT ASSESSMENT PK
+15777,Node Label,Budget,value,5349719
+15784,Node Label,Activity,description,ISL BIOGAS SNV,identifier,NL-1-PPR-20395,title,ISL BIOGAS RSPN,status,4
+15785,Node Label,Budget,value,5156369
+15786,Node Label,Organization,name,RURAL SUPPORT PROG. NETWORK,ref,RURAL_SUPPORT_PROG__NETWORK,type,30
+15794,Node Label,Activity,status,4,identifier,NL-1-PPR-20396,description,"A political, legal and social enabling environment is created and sustained to empower families to abondon FGM/C and combat other forms of violence against children.",title,KAI Abandonment of FGM
+15795,Node Label,Budget,value,1762452
+15802,Node Label,Activity,status,4,identifier,NL-1-PPR-20401,description,Culturele Identiteit in Beweging; professionalisering dans- en theatersector in Mali/Benin,title,COT Le Grand Crû
+15803,Node Label,Budget,value,301908
+15804,Node Label,Organization,name,STICHTING LE GRAND CRU,ref,STICHTING_LE_GRAND_CRU,type,22
+15807,Node Label,Activity,status,4,identifier,NL-1-PPR-20402,description,WOMEN'S EMPOWERMENT THROUGH ADULT EDUCATION AND HUMAN RIGHTS PROMOTION,title,LUA - WOMEN'S EMPOWERMENT
 15808,Node Label,Budget,value,148072
 15809,Node Label,Organization,name,Lutheran World Federation,ref,Lutheran_World_Federation,type,21
 15812,Node Label,Activity,description,"Diverse werkzaamheden o.g.v.  rivieroeverbescherming, irrigatie en drinkwatervoorziening",status,4,identifier,NL-1-PPR-20403,title,KAB - ARPD waterinfrastructuur
 15813,Node Label,Budget,value,375772
-15834,Node Label,Budget,value,305421
-15835,Node Label,Organization,ref,TDP,name,TDP,type,70
-15840,Node Label,Activity,description,capaciteitsopbouw onder werkloze meisjes,identifier,NL-1-PPR-20413,status,4,title,MUS Empowering girls
-15841,Node Label,Budget,value,126238
+15814,Node Label,Organization,ref,Afghanistan_Reconstruction___Planning_Department,name,Afghanistan Reconstruction & Planning Department,type,10
+15818,Node Label,Activity,description,Doelstelling is om minimaal vijf kunstenaars per jaar deel te laten nemen aan het residency-programma t.b.v. ontwikkeling en versterking Kunstsector in OS-landen.,status,4,identifier,NL-1-PPR-20404,title,DCO Rijksakademie 2010-2012
+15819,Node Label,Budget,value,1625000
+15825,Node Label,Activity,status,4,identifier,NL-1-PPR-20405,description,Pilot scheme to improve smallholder and national food security in Zimbabwe,title,HAR-PILOT FOOD SECURITY ZIM
 15826,Node Label,Budget,value,618836
 15829,Node Label,Activity,description,Transparency Kyrgyzstan,identifier,NL-1-PPR-20408,title,AST TI KG,status,4
 15830,Node Label,Budget,value,106050
 15833,Node Label,Activity,description,Drama for Children in Gaza,identifier,NL-1-PPR-20410,status,4,title,RAM Gaza Drama Activities
-15858,Node Label,Activity,identifier,NL-1-PPR-20417,status,4,title,BEL B92 TV,description,Support to three investigative documentary series by TV B92
-15851,Node Label,Budget,value,4209368
-15860,Node Label,Organization,type,70,ref,RTV_B92,name,RTV B92
-15859,Node Label,Budget,value,60000
-15846,Node Label,Budget,value,60939
+15834,Node Label,Budget,value,305421
+15835,Node Label,Organization,ref,TDP,name,TDP,type,70
+15840,Node Label,Activity,description,capaciteitsopbouw onder werkloze meisjes,identifier,NL-1-PPR-20413,status,4,title,MUS Empowering girls
+15841,Node Label,Budget,value,126238
 15845,Node Label,Activity,status,4,identifier,NL-1-PPR-20414,description,Capacity Building Project on Election Campaign Design and,title,MUS Cap Building Women
-15850,Node Label,Activity,status,4,description,Ondersteuning landbeheer in Burundi,identifier,NL-1-PPR-20415,title,BUJ-Appui gestion foncière
+15846,Node Label,Budget,value,60939
 15847,Node Label,Organization,name,Global Connections Center (Tawasul),type,23,ref,Global_Connections_Center__Tawasul_
-15876,Node Label,Activity,status,4,identifier,NL-1-PPR-20424,description,Het bevorderen van de wetenschappelijke samenwerking tussen Zuid-Afrikaanse en Nederlandse onderzoekers op thema's die relevant zijn voor de ontwikkeling van Zuid-Afrika en die bijdragen aan de onderzoekscapaciteit in Zuid-Afrika.,title,PRE SANPAD fase-II
-15870,Node Label,Organization,ref,SERAP,name,SERAP,type,23
-15881,Node Label,Activity,status,4,identifier,NL-1-PPR-20425,description,"Financiering deelname vertegenwoordigers niet-OESO landen aan OESO workshop over Technical Barriers to Trade (TBT), oktober 2009",title,DDE OESO TBT workshop
-15877,Node Label,Budget,value,217924
-15864,Node Label,Budget,value,142294
+15850,Node Label,Activity,status,4,description,Ondersteuning landbeheer in Burundi,identifier,NL-1-PPR-20415,title,BUJ-Appui gestion foncière
+15851,Node Label,Budget,value,4209368
+15858,Node Label,Activity,identifier,NL-1-PPR-20417,status,4,title,BEL B92 TV,description,Support to three investigative documentary series by TV B92
+15859,Node Label,Budget,value,60000
+15860,Node Label,Organization,type,70,ref,RTV_B92,name,RTV B92
 15863,Node Label,Activity,description,Ondersteuning GPA proces,identifier,NL-1-PPR-20422,title,HAR GPA implementation support program phase 1,status,4
-15869,Node Label,Budget,value,559532
+15864,Node Label,Budget,value,142294
 15868,Node Label,Activity,description,promote magistrates'courts integrity and improve access to justice,status,4,identifier,NL-1-PPR-20423,title,SERAP magistrates integrity
-15721,Node Label,Budget,value,111007
-15722,Node Label,Organization,name,CHARTER FOR HUMAN RIGHTS,ref,CHARTER_FOR_HUMAN_RIGHTS,type,70
-15715,Node Label,Budget,value,334376
-15720,Node Label,Activity,identifier,NL-1-PPR-20384,status,4,title,AST CHR,description,"Monitoring rights of the detained, suspected and convicted"
-15707,Node Label,Budget,value,868882
-15714,Node Label,Activity,description,New input to the Democratic Developmental State debate in SA through research and policy initiatives,status,4,identifier,NL-1-PPR-20383,title,Research Developmental State
-15696,Node Label,Budget,value,8977780
-15706,Node Label,Activity,status,4,identifier,NL-1-PPR-20381,description,To improve the knowledge of the Nicaraguan population upon SRHR,title,MNG Equity and SRHR
-15743,Node Label,Budget,value,3139648
-15749,Node Label,Activity,description,ISL UNDP STRENGTHEN PARLIAMENT,identifier,NL-1-PPR-20391,status,4,title,ISL UNDP STRENGTHEN PARLIAMENT
-15737,Node Label,Organization,ref,NPCSL,name,NPCSL,type,23
-15742,Node Label,Activity,status,4,identifier,NL-1-PPR-20389,description,Verder institutionaliseren van organisatie SARUA en haar inspanningen,title,DCO SARUA 2009-2012
-15735,Node Label,Activity,description,Enhancing interethnic relations through humanitarian assistance to war-affected children,status,4,identifier,NL-1-PPR-20388,title,COL NPC -North/South relations
-15736,Node Label,Budget,value,115772
-15727,Node Label,Activity,status,4,identifier,NL-1-PPR-20386,description,Strengthening UN coordination in the field,title,KHA Strenghtening UN RCO
-15728,Node Label,Budget,value,5528858
-15784,Node Label,Activity,description,ISL BIOGAS SNV,identifier,NL-1-PPR-20395,title,ISL BIOGAS RSPN,status,4
-15777,Node Label,Budget,value,5349719
-15776,Node Label,Activity,status,4,identifier,NL-1-PPR-20394,description,NATIONAL IMPACT ASSESSMENT PROGRAMME PAKISTAN - IUCN,title,ISL IMPACT ASSESSMENT PK
-15768,Node Label,Budget,value,19345366
-15767,Node Label,Activity,status,4,identifier,NL-1-PPR-20393,description,ISL IMPROVING ACCESS TO QUALITY EFA IN BALUCHISTAN - SCF,title,ISL ACCESS TO QUALITY EFA BAL.
-15759,Node Label,Budget,value,13081316
-15758,Node Label,Activity,status,4,description,ISL NWFP EDUCATION SECTOR IDPs,identifier,NL-1-PPR-20392,title,ISL NWFP EDUCATION SECTOR IDPs
-15750,Node Label,Budget,value,3402618
-15807,Node Label,Activity,status,4,identifier,NL-1-PPR-20402,description,WOMEN'S EMPOWERMENT THROUGH ADULT EDUCATION AND HUMAN RIGHTS PROMOTION,title,LUA - WOMEN'S EMPOWERMENT
-15804,Node Label,Organization,name,STICHTING LE GRAND CRU,ref,STICHTING_LE_GRAND_CRU,type,22
-15803,Node Label,Budget,value,301908
-15802,Node Label,Activity,status,4,identifier,NL-1-PPR-20401,description,Culturele Identiteit in Beweging; professionalisering dans- en theatersector in Mali/Benin,title,COT Le Grand Crû
-15795,Node Label,Budget,value,1762452
-15794,Node Label,Activity,status,4,identifier,NL-1-PPR-20396,description,"A political, legal and social enabling environment is created and sustained to empower families to abondon FGM/C and combat other forms of violence against children.",title,KAI Abandonment of FGM
-15786,Node Label,Organization,name,RURAL SUPPORT PROG. NETWORK,ref,RURAL_SUPPORT_PROG__NETWORK,type,30
-15785,Node Label,Budget,value,5156369
-15274,Node Label,Budget,value,5400000
-15273,Node Label,Activity,description,Appui au plan d'action 2009-2013 pour l'amelioration du systeme de gestion des finances publiques,status,2,identifier,NL-1-PPR-20231,title,Appui au Plan PFM 2010-2013
-15281,Node Label,Activity,status,4,identifier,NL-1-PPR-20234,description,Post-conflict programme for consolidating peace and development in Aceh,title,JAK CPDA trustfund
-15275,Node Label,Organization,ref,EC,name,EC,type,40
-15289,Node Label,Activity,status,4,identifier,NL-1-PPR-20238,description,"The International Aid Transparency Initiative (IATI) aims to deliver a step shift in public availability and accessibility of information on aid flows and activities, globally.",title,IATI Aid Transparency
-15282,Node Label,Budget,value,5422000
-15293,Node Label,Activity,identifier,NL-1-PPR-20239,title,DDE Studie PSD (Van der Geest),description,Evaluatiestudie Ïmpact van DDE programma's op PSD,status,4
-15290,Node Label,Budget,value,350000
-15252,Node Label,Budget,value,66987
-15251,Node Label,Activity,description,seminars fragiele staten,status,4,identifier,NL-1-PPR-20222,title,Securing Development seminars
-15256,Node Label,Budget,value,219277
-15255,Node Label,Activity,status,4,identifier,NL-1-PPR-20226,description,Violence Against Women Legislation jaar III,title,FSA 07/09 VAW
-15260,Node Label,Budget,value,32951020
-15259,Node Label,Activity,description,"Accélération de l¿OMD 5 au Mali 2009 ¿ 2011, en appui direct au PRODESS. Le financement étendra l¿offre en Soins Obstétricaux et Néonatals d¿Urgence et inclut des activités et approches diverses comme engager des ONGs au niveau opérationnel",status,2,identifier,NL-1-PPR-20228,title,Appui à l'OMD-5 / SRGR
-15270,Node Label,Budget,value,6000000
-15269,Node Label,Activity,description,AVB UNIFEM 2009 EN 2010,identifier,NL-1-PPR-20230,title,DVF AVB UNIFEM,status,4
-15322,Node Label,Activity,identifier,NL-1-PPR-20247,title,DDE Soc. Protection&Food Sec.,description,Joint Initiative on Social Protection and Food Security,status,4
-15323,Node Label,Budget,value,41000
-15329,Node Label,Activity,description,MNG Technical assistance from PAHO for capacity building and training of health workers,status,4,identifier,NL-1-PPR-20249,title,MNG PAHO Inst strength MINSA
-15330,Node Label,Budget,value,3819300
-15331,Node Label,Organization,ref,PAHO,name,PAHO,type,40
-15337,Node Label,Activity,status,4,description,Koepelactiviteit FSA Hma Rabat 2009,identifier,NL-1-PPR-20252,title,FSA 08/09 Centre Chourouk
-15338,Node Label,Budget,value,77795
-15339,Node Label,Organization,type,80,name,CENTRE CHOUROUK POUR LE DEVELOPPEMENT,ref,CENTRE_CHOUROUK_POUR_LE_DEVELOPPEMENT
-15294,Node Label,Budget,value,73882
-15297,Node Label,Activity,description,Core funding to IIED 2009 - 2011,status,4,identifier,NL-1-PPR-20240,title,DMW IIED core 2009-2011
-15298,Node Label,Budget,value,400000
-15299,Node Label,Organization,ref,IIED,name,IIED,type,80
-15304,Node Label,Activity,description,Apoyo a la modernización de la Asamblea Nacional,status,4,identifier,NL-1-PPR-20243,title,MNG PFID/Asamblea Nacional
-15305,Node Label,Budget,value,970153
-15312,Node Label,Activity,description,IMF Technische Assistentie,identifier,NL-1-PPR-20245,status,2,title,Ondersteuning AFRITACS
-15313,Node Label,Budget,value,8058751
-15196,Node Label,Organization,type,70,ref,CODERSA,name,CODERSA
-15195,Node Label,Budget,value,853987
-15194,Node Label,Activity,status,4,identifier,NL-1-PPR-20210,description,enhancing H&A process and sectoral approach in MARN,title,GUA_support MARN fase II
-15190,Node Label,Organization,name,WHISPER BOAT BUILDING ACADEMY,ref,WHISPER_BOAT_BUILDING_ACADEMY,type,80
-15208,Node Label,Activity,identifier,NL-1-PPR-20212,title,COL,description,Documenting instances of torture and persecution,status,4
-15202,Node Label,Organization,ref,SPO,name,SPO,type,23
-15201,Node Label,Budget,value,5889830
-15200,Node Label,Activity,description,Strengthening and support community and public institutions,status,4,identifier,NL-1-PPR-20211,title,ISL SPO Program 2009-2013
-15181,Node Label,Activity,status,4,identifier,NL-1-PPR-20208,description,contribution to multilateral fund for the implementation of the montreal protocol on substances that deplete the ozone layer,title,DMW Multilateral Fund MP
-15178,Node Label,Organization,type,70,ref,DAN_GRAF_D_O_O_,name,DAN GRAF D.O.O.
-15177,Node Label,Budget,value,61290
-15176,Node Label,Activity,description,"steun aan de regionale uitgave van Danas in de Sandzak, en de wekelijkse Europa-bijlage",status,4,identifier,NL-1-PPR-20207,title,Support to Danas newspaper
-15189,Node Label,Budget,value,17136
-15188,Node Label,Activity,identifier,NL-1-PPR-20209,status,4,title,Whisper Boat,description,Improvement of education quality at WBBA
-15183,Node Label,Organization,name,Montreal Protocol,ref,Montreal_Protocol,type,40
-15182,Node Label,Budget,value,2061708
-15232,Node Label,Organization,name,FUNICA(FUND.DESAR.TEC.AGROPEC.FOREST.NIC.),type,23,ref,FUNICA_FUND_DESAR_TEC_AGROPEC_FOREST_NIC__
-15239,Node Label,Activity,status,4,identifier,NL-1-PPR-20218,description,"The activity contributes to the business development of 500 turistic SMEs thtough competitiveness, marketing, inclusive business and human resources certirfication.",title,MNG CADENA DE TURISMO
-15230,Node Label,Activity,status,4,identifier,NL-1-PPR-20217,description,The activity strenthen the specialty coffee chain by developing inclusive business approach and certification as a market tool to reach international niche markets.,title,MNG CADENA DE CAFE
-15231,Node Label,Budget,value,7098800
-15247,Node Label,Activity,description,Observatoire de la Corruption au Maroc jaar 3,status,4,identifier,NL-1-PPR-20220,title,FSA 06/09 Observatoire
-15248,Node Label,Budget,value,83045
-15240,Node Label,Budget,value,5479320
-15241,Node Label,Organization,name,FUNDACION CENTRO EMPRESIAL PELLAS(CEP),type,23,ref,FUNDACION_CENTRO_EMPRESIAL_PELLAS_CEP_
-15214,Node Label,Activity,description,Victory Way- Lutte contre le harcelement sexuel,status,4,identifier,NL-1-PPR-20215,title,Lutte vs harcellement sexuel
-15215,Node Label,Budget,value,449935
-15209,Node Label,Budget,value,42554
-15210,Node Label,Organization,type,23,ref,RAAJJE_FOUNDATION,name,RAAJJE FOUNDATION
-15221,Node Label,Budget,value,4982494
-15222,Node Label,Organization,ref,_JAGWOOD__RED_MESOAM_Y_DEL_CARIBE_DE_COMERC_FORESTAL,name,(JAGWOOD+)RED MESOAM.Y DEL CARIBE DE COMERC.FORESTAL,type,21
-15216,Node Label,Organization,type,23,ref,Victory_Way,name,Victory Way
-15220,Node Label,Activity,status,4,identifier,NL-1-PPR-20216,description,The activity strengthens capacities and integrates production to meet market demands in four links of the wood value chain using certification as a key market tool.,title,MNG CADENA DE MADERA
-15461,Node Label,Budget,value,1244399
-15460,Node Label,Activity,identifier,NL-1-PPR-20320,status,4,title,MAP_OLIPA,description,Strengthening of Producer Organisations
-15470,Node Label,Activity,description,"Support to Change Management programme within MAIL, including Institutional Strengthening for the agricultural education programme within MoE/TVET",status,4,identifier,NL-1-PPR-20326,title,KAB - CM/MAIL and NAEP/TVET
-15462,Node Label,Organization,type,23,name,ASSOCIAÇAO OLIPA - ODES,ref,ASSOCIAÇAO_OLIPA___ODES
-15451,Node Label,Budget,value,146820
-15450,Node Label,Activity,description,Support to the Judicial Training Academy,status,4,identifier,NL-1-PPR-20314,title,BEL Judicial Training Academy
-15457,Node Label,Budget,value,627662
-15456,Node Label,Activity,description,Beheer OS schulden door NIO/FMO 2009,status,4,identifier,NL-1-PPR-20317,title,DVF 2009 NIO beheer OSschulden
-15445,Node Label,Activity,status,4,identifier,NL-1-PPR-20306,description,Evaluatie research data TI Pharma voor vloeibaar hittestabiele Oxytocine,title,Evaluatie Oxytocine
-15442,Node Label,Budget,value,314407
-15447,Node Label,Organization,name,Kinesis Pharma BV,ref,Kinesis_Pharma_BV,type,30
-15446,Node Label,Budget,value,16320
-15434,Node Label,Activity,status,4,identifier,NL-1-PPR-20300,description,To support the CNE in the elaboration of the Padron biometrico,title,Biometric voters system
-15431,Node Label,Organization,type,23,name,Crisis in Zimbabwe Coalition,ref,Crisis_in_Zimbabwe_Coalition
-15441,Node Label,Activity,description,DVB EXPERTUITZENDINGEN KORTE MISSIE POOL EFV 20144,status,4,identifier,NL-1-PPR-20304,title,DVB Expert Korte Missie Pool
-15435,Node Label,Budget,value,2696806
-15502,Node Label,Budget,value,8946284
-15508,Node Label,Activity,description,Core funding for IUCN International for the period 2010-2012,status,4,identifier,NL-1-PPR-20338,title,DME IUCN corefunding 2010-2012
-15509,Node Label,Budget,value,13564996
-15515,Node Label,Activity,description,FONDS SPORT EN ONTWIKKELING,identifier,NL-1-PPR-20339,status,4,title,DAK SN FONDS SPORT EN ONTW.
-15491,Node Label,Organization,ref,FEDERACION_NACIONAL_DE_CAFETEROS_DE_COLOMBIA,name,FEDERACION NACIONAL DE CAFETEROS DE COLOMBIA,type,23
-15497,Node Label,Activity,description,Observación del Registro en el Padrón Biométrico,status,4,identifier,NL-1-PPR-20334,title,LAP Support to Carter Center
-15498,Node Label,Budget,value,376766
-15501,Node Label,Activity,description,Reducing HIV infection in adoclescents,status,4,identifier,NL-1-PPR-20336,title,Social cash transfers pilot
-15481,Node Label,Activity,description,Combating FGM and early marriage,identifier,NL-1-PPR-20330,status,4,title,KHA- Action against FGM/C
-15482,Node Label,Budget,value,1992374
-15489,Node Label,Activity,status,4,identifier,NL-1-PPR-20333,description,Crear condiciones de retorno a cafeteros desplazados,title,BOG PPP FNC Cesar
-15490,Node Label,Budget,value,2886066
-15471,Node Label,Budget,value,3376976
-15476,Node Label,Activity,description,HAR-WOMAN COALITION CIVIC EDUCATION,identifier,NL-1-PPR-20327,status,4,title,HAR-WOMAN COALITION
-15477,Node Label,Budget,value,55824
-15478,Node Label,Organization,type,23,name,Women Coalition of Zimbabwe,ref,Women_Coalition_of_Zimbabwe
-15391,Node Label,Activity,description,Uitvoering amendement uitstapprogramma's prostituees,status,4,identifier,NL-1-PPR-20279,title,DSI Amendement uitstapprog
-15388,Node Label,Budget,value,504038
-15387,Node Label,Activity,status,4,identifier,NL-1-PPR-20278,description,OS,title,STEPs Women's Rights
-15381,Node Label,Budget,value,70119
-15380,Node Label,Activity,identifier,NL-1-PPR-20272,status,4,title,KAB-CEDAW/UNIFEM,description,steun Mofa voor Cedaw process ism UNIFEM
-15373,Node Label,Organization,type,10,ref,POLICIA_NACIONAL,name,POLICIA NACIONAL
-15372,Node Label,Budget,value,1495974
-15371,Node Label,Activity,description,To guarantee systematic attention for the victims of domestic and sexual violence and of violence based on gender by improving the provision of services and combating the impunity by promoting access to justice to women,status,4,identifier,NL-1-PPR-20264,title,MNG Improving Women Rights
-15367,Node Label,Budget,value,110930
-15366,Node Label,Activity,description,uitzending experts korte missies,identifier,NL-1-PPR-20263,status,4,title, korte missie pool FS
-15363,Node Label,Budget,value,46956
-15362,Node Label,Activity,description,SINGING A NEW POLICY TUNE,status,4,identifier,NL-1-PPR-20262,title,Procesfacilitator MDF/DPRN
-15352,Node Label,Budget,value,45043994
-15351,Node Label,Activity,status,4,identifier,NL-1-PPR-20260,description,Duits Nederlandse Infrastructurele Projecten in Zuid Afghanistan,title,KAB D  NL INFRA PROJ Z AFG
-15344,Node Label,Budget,value,3338458
-15343,Node Label,Activity,description,IFDC-Amélioration Accès des Pteurs agr. aux Intrants Non-Coton,status,4,identifier,NL-1-PPR-20256,title,Accès aux intrants non-coton
-15429,Node Label,Activity,description,HUMAN RIGHTS,identifier,NL-1-PPR-20299,status,4,title,HAR-CRISIS CONST. CIVIC EDUC.
-15430,Node Label,Budget,value,99999
-15425,Node Label,Budget,value,137335
-15426,Node Label,Organization,type,23,ref,ZIMRIGHTS,name,ZIMRIGHTS
-15418,Node Label,Budget,value,1583167
-15424,Node Label,Activity,description,Human rights,identifier,NL-1-PPR-20297,status,4,title,HAR-ZIMRIGHTS CNST. CIVIC EDU.
-15412,Node Label,Organization,type,70,ref,HIBAZ_CONSULT___VENTURES_LTD,name,HIBAZ CONSULT & VENTURES LTD
-15417,Node Label,Activity,status,4,identifier,NL-1-PPR-20295,description,Preparation for scaling-up the adaptive rehabilitation and revitalisation of EMRP,title,Interim support EMRP
-15410,Node Label,Activity,description,Traditional Leadership in Nigeria,identifier,NL-1-PPR-20291,title,FOPP,status,4
-15411,Node Label,Budget,value,928964
-15403,Node Label,Budget,value,412057
-15404,Node Label,Organization,name,STICHTING WOMEN WIN,ref,STICHTING_WOMEN_WIN,type,22
-15399,Node Label,Budget,value,1679970
-15402,Node Label,Activity,identifier,NL-1-PPR-20289,status,4,title,WOMEN WIN,description,"Three-year sportsprogram of four Kenyan women sportsorganisations to improve the position of more than 6000 women, on individual and gender-level, in economically marginalized areas."
-15392,Node Label,Budget,value,1577722
-15398,Node Label,Activity,description,Farmers will be provided with necessary agricultural inputs for flower and strawberry production,status,4,identifier,NL-1-PPR-20281,title,RAM Gaza Cash Crops 09-10
-16144,Node Label,Organization,name,KOFI ANNAN FOUNDATION,ref,KOFI_ANNAN_FOUNDATION,type,22
-16148,Node Label,Activity,status,4,identifier,NL-1-PPR-20641,description,"Support for Partner Country Caucus and the Co-Chair , Working Party on Aid Effectiveness",title,KAI Support Working Party
-16142,Node Label,Activity,status,4,identifier,NL-1-PPR-20638,description,ondersteuning van de Kofi Annan Foundation,title,EFV-Kofi Annan Foundation
-16143,Node Label,Budget,value,3000000
-16138,Node Label,Budget,value,32300
-16139,Node Label,Organization,type,23,ref,Women_s_Trust,name,Women's Trust
+15869,Node Label,Budget,value,559532
+15870,Node Label,Organization,ref,SERAP,name,SERAP,type,23
+15876,Node Label,Activity,status,4,identifier,NL-1-PPR-20424,description,Het bevorderen van de wetenschappelijke samenwerking tussen Zuid-Afrikaanse en Nederlandse onderzoekers op thema's die relevant zijn voor de ontwikkeling van Zuid-Afrika en die bijdragen aan de onderzoekscapaciteit in Zuid-Afrika.,title,PRE SANPAD fase-II
+15877,Node Label,Budget,value,217924
+15881,Node Label,Activity,status,4,identifier,NL-1-PPR-20425,description,"Financiering deelname vertegenwoordigers niet-OESO landen aan OESO workshop over Technical Barriers to Trade (TBT), oktober 2009",title,DDE OESO TBT workshop
+15882,Node Label,Budget,value,50848
+15885,Node Label,Activity,status,4,identifier,NL-1-PPR-20426,description,Bijdrage aan Werkplan 2009/2010,title,DMH/HH WW/HAP/09-10
+15886,Node Label,Budget,value,462250
+15887,Node Label,Organization,ref,HAP,name,HAP,type,21
+15892,Node Label,Activity,description,Promoting Access to Justice in Southern Thailand for Victims of Human Rights Violations,status,4,identifier,NL-1-PPR-20430,title,BAN LEGAL ASSISTANCE (MAC)
+15893,Node Label,Budget,value,75735
+15894,Node Label,Organization,name,The Asian Foundation,ref,The_Asian_Foundation,type,23
+15897,Node Label,Activity,status,4,identifier,NL-1-PPR-20431,description,Improving Livelihood in the Occupied Palestinian Territories ¿ West Bank,title,RAM Land Development 3
+15898,Node Label,Budget,value,14435480
+15904,Node Label,Activity,status,4,description,Afghan Women Business Federation,identifier,NL-1-PPR-20435,title,KAB - AWBF tailoring Uruzgan
+15905,Node Label,Budget,value,136069
+15906,Node Label,Organization,type,23,name,AFGHAN WOMEN'S BUSINESS FEDERATION,ref,AFGHAN_WOMEN_S_BUSINESS_FEDERATION
+15910,Node Label,Activity,description,Business Development Centre Uruzgan,identifier,NL-1-PPR-20437,status,4,title,KAB-ACTD BDC Uruzgan
+15911,Node Label,Budget,value,365179
+15912,Node Label,Organization,ref,AFGHANISTAN_CENTER_FOR_TRANING_AND_DEVELOPMENT,name,AFGHANISTAN CENTER FOR TRANING AND DEVELOPMENT,type,23
+15918,Node Label,Activity,status,4,identifier,NL-1-PPR-20443,description,Organisatie van conferentie over leiderschap in service delivery in Zuid-Afrika.,title,Wineland Conference 2010
+15919,Node Label,Budget,value,89662
+15922,Node Label,Activity,description,Subsidie aan ZEN via HIVOS,identifier,NL-1-PPR-20444,title,DAF ZEN-HIVOS NL,status,4
+15923,Node Label,Budget,value,59989
+15926,Node Label,Activity,status,4,description,Court monitoring Montenegro fase 2,identifier,NL-1-PPR-20445,title,BEL Court Monitoring MNE 2
+15927,Node Label,Budget,value,249800
+15932,Node Label,Activity,status,4,identifier,NL-1-PPR-20446,description,Parliamentarians taken lead on legislation /reviewing to facilitate maternal health and eliminate legal obtacles that limit women's access to health care services and women rights,title,MNG Safe motherhood 2015
+15933,Node Label,Budget,value,62847
+15934,Node Label,Organization,ref,IEEPP_ASOC_INSTIT_ESTUD_ESTRAT_POLIT_PUBLICAS_,name,IEEPP(ASOC.INSTIT.ESTUD.ESTRAT.POLIT.PUBLICAS),type,23
+15938,Node Label,Activity,description,Ontwikkeling landbouwonderwijs Afghanistan,status,4,identifier,NL-1-PPR-20447,title,KAB - WUR landbouwonderwijs
+15939,Node Label,Budget,value,3400030
+15944,Node Label,Activity,status,4,identifier,NL-1-PPR-20448,description,Capacitating and Referral of People with Disability to Earn a Respectable Living,title,KAB - AOAD vervolg
+15945,Node Label,Budget,value,308540
+15946,Node Label,Organization,ref,Accessibility_Organization_for_Afghan_Disabled,name,Accessibility Organization for Afghan Disabled,type,23
+15949,Node Label,Activity,description,Promote transparency and anti-corruption in the public sector by installing specific units in the ministries,status,4,identifier,NL-1-PPR-20450,title,Promote Units of Transparency
+15950,Node Label,Budget,value,454698
+15951,Node Label,Organization,name,MINISTERIO DE TRANSPARENCIA,ref,MINISTERIO_DE_TRANSPARENCIA,type,10
+15956,Node Label,Activity,description,MNG PSI consortium to implement the national strategy for SRHR,status,4,identifier,NL-1-PPR-20452,title,MNG PSI consortium for SRH
+15957,Node Label,Budget,value,7646800
+15964,Node Label,Activity,description,Support the Multi Party Foundation in the strengthening of Democracy,status,4,identifier,NL-1-PPR-20458,title,Promote Multi-Party Democracy
+15965,Node Label,Budget,value,2912459
+15971,Node Label,Activity,description,NL-Unicef partnerschap bijdrage MDG7 in Drie Gebieden en Zuidelijk Soedan,status,4,identifier,NL-1-PPR-20459,title,KHA drinkwater en sanitatie
+15972,Node Label,Budget,value,24986760
+15980,Node Label,Activity,status,4,description,DSI - SMS Combats HIV/AIDS,identifier,NL-1-PPR-20460,title,DSI - SMS Combats HIV/AIDS
+15981,Node Label,Budget,value,55288
+15985,Node Label,Activity,status,4,identifier,NL-1-PPR-20462,description,Opzetten MA-programma in Peace and Conflict Studies,title,UPEACE/Great Lakes Region
+15986,Node Label,Budget,value,6087712
+15992,Node Label,Activity,description,Programme on Culture and Development Third Phase hiring of culture scouts,status,4,identifier,NL-1-PPR-20463,title,SKO C&O 3 - Culture Scouts
+15993,Node Label,Budget,value,26830
+15994,Node Label,Organization,name,"ISAKOVSKA, B.K.",ref,ISAKOVSKA__B_K_,type,70
+15997,Node Label,Activity,description,Ontwikkeling beleid t.a.v. SME's in Moldova,status,4,identifier,NL-1-PPR-20464,title,Supporting SME policy Moldova
+15998,Node Label,Budget,value,1043136
+16005,Node Label,Activity,description,"Establishment of a network of Youth Zones where youth will receive training in live skills, computer literacy and soccer with the aim of providing them with better opportunities on the labour market",status,4,identifier,NL-1-PPR-20465,title,Youth live skills labor market
+16006,Node Label,Budget,value,1005214
+16012,Node Label,Activity,description,Training for Journalists of the Western Balkans on Environmental Issues,status,4,identifier,NL-1-PPR-20468,title,BEL Training for Journalists
+16013,Node Label,Budget,value,199256
+16017,Node Label,Activity,description,"Tv drama and documentary series to bring the law about Domestic Violence against women, to the people",status,4,identifier,NL-1-PPR-20469,title,N'weti Domestic Violence TV
+16018,Node Label,Budget,value,1278857
+16025,Node Label,Activity,status,4,identifier,NL-1-PPR-20473,description,human rights documentation and advocacy in Thailand,title,BAN WGJP project D
+16026,Node Label,Budget,value,258470
+16027,Node Label,Organization,type,23,name,WORKING GROUP ON JUSTICE FOR PEACE,ref,WORKING_GROUP_ON_JUSTICE_FOR_PEACE
+16033,Node Label,Activity,description,preserving Pattani-Malay culture in Southern Thailand,status,4,identifier,NL-1-PPR-20474,title,BAN Negotiating cultural space
+16034,Node Label,Budget,value,137474
+16039,Node Label,Activity,status,4,identifier,NL-1-PPR-20481,description,Strategic research program in order to influence policy making in different social and economic areas,title,Policy related research
+16040,Node Label,Budget,value,5458356
+16048,Node Label,Activity,status,4,identifier,NL-1-PPR-20482,description,Core bijdrage Global Forum on Agricultural Research,title,DCO GFAR 2009-2014
+16049,Node Label,Budget,value,5036039
+16050,Node Label,Organization,ref,GFAR,name,GFAR,type,80
+16058,Node Label,Activity,description,Supporting HCMC to manage the flood,identifier,NL-1-PPR-20484,status,4,title,HAN_HCMC Flood Management
+16059,Node Label,Budget,value,2929112
+16060,Node Label,Organization,type,10,name,PEOPLE COMMITTEE OF HO CHI MINH CITY,ref,PEOPLE_COMMITTEE_OF_HO_CHI_MINH_CITY
+16065,Node Label,Activity,description,DPV NOMRA Research on African Migration Issues,status,4,identifier,NL-1-PPR-20485,title,DPV NOMRA Migration Studies
+16066,Node Label,Budget,value,1231453
+16072,Node Label,Activity,description,Support to Office of the Public Prosecutor for Human Rights,status,4,identifier,NL-1-PPR-20486,title,Support the Public Prosecutor
+16073,Node Label,Budget,value,475063
+16078,Node Label,Activity,description,The Global Research Initiative on Unsafe Abortion,status,4,identifier,NL-1-PPR-20488,title,DSO Research Unsafe Abortion
+16079,Node Label,Budget,value,5983333
+16080,Node Label,Organization,name,THE ALAN GUTTMACHER INSTITUTE,ref,THE_ALAN_GUTTMACHER_INSTITUTE,type,80
+16088,Node Label,Activity,description,Establishment of the Judicial Police,identifier,NL-1-PPR-20492,status,4,title,RAM Judicial Police
+16089,Node Label,Budget,value,969000
+16094,Node Label,Activity,description,Phase II - river flood protection through gabions,status,4,identifier,NL-1-PPR-20495,title,KAB-URU HECO gabions phase 2
+16095,Node Label,Budget,value,1045500
+16096,Node Label,Organization,ref,Helmand_Engineering_Coordination_Organization,name,Helmand Engineering Coordination Organization,type,70
+16100,Node Label,Activity,description,Palestine Film Fund,identifier,NL-1-PPR-20498,status,4,title,RAM Palestine Film Fund
+16101,Node Label,Budget,value,547574
+16102,Node Label,Organization,name,A.M. QATTAN FOUNDATION,ref,A_M__QATTAN_FOUNDATION,type,23
+16108,Node Label,Activity,description,Evaluatie IS-academie,identifier,NL-1-PPR-20535,status,4,title,DEK review IS Acadamie
+16109,Node Label,Budget,value,55878
+16110,Node Label,Organization,name,SALTET & VAN DE PUTTE,ref,SALTET___VAN_DE_PUTTE,type,70
+16113,Node Label,Activity,status,2,identifier,NL-1-PPR-20614,description,Empowering Selfhelp Sanitation of rural and peri urban communities,title,DMW EMPOWERING SELFH. SANIT.
+16114,Node Label,Budget,value,13450622
+16126,Node Label,Activity,description,DPV Capacity Building African Diaspora Ministeries,status,4,identifier,NL-1-PPR-20630,title,DPV Cap.Building Diaspora Min.
+16127,Node Label,Budget,value,410000
+16131,Node Label,Activity,description,personele inzet in projecten uitgevoerd door leden van PSO op het gebied van humanitaire hulp,status,4,identifier,NL-1-PPR-20634,title,DMH/HH WW PSO 2009-2010
 16132,Node Label,Budget,value,1921406
 16137,Node Label,Activity,description,THE WOMEN'S TRUST - WOMEN'S ECONOMIC SUMMIT,status,4,identifier,NL-1-PPR-20637,title,HAR - WOMEN'S ECONOMIC SUMMIT
-16167,Node Label,Organization,type,23,name,EHRCO - ETHIOPIAN HUMAN RIGHT COUNCIL,ref,EHRCO___ETHIOPIAN_HUMAN_RIGHT_COUNCIL
-16174,Node Label,Activity,description,GMIC Bijdrage aan Government Media and Information Centre GMIC,status,4,identifier,NL-1-PPR-20652,title,KAB Government Media Centre
-16165,Node Label,Activity,description,Ethiopian Human Rights Council,identifier,NL-1-PPR-20647,title,ADD_EHRCO,status,4
-16166,Node Label,Budget,value,0
-16155,Node Label,Activity,identifier,NL-1-PPR-20645,status,4,title,PAJUST,description,Accompanying Program for transitional Justice
-16156,Node Label,Budget,value,11545005
+16138,Node Label,Budget,value,32300
+16139,Node Label,Organization,type,23,ref,Women_s_Trust,name,Women's Trust
+16142,Node Label,Activity,status,4,identifier,NL-1-PPR-20638,description,ondersteuning van de Kofi Annan Foundation,title,EFV-Kofi Annan Foundation
+16143,Node Label,Budget,value,3000000
+16144,Node Label,Organization,name,KOFI ANNAN FOUNDATION,ref,KOFI_ANNAN_FOUNDATION,type,22
+16148,Node Label,Activity,status,4,identifier,NL-1-PPR-20641,description,"Support for Partner Country Caucus and the Co-Chair , Working Party on Aid Effectiveness",title,KAI Support Working Party
 16149,Node Label,Budget,value,105000
 16150,Node Label,Organization,ref,PEMA,name,PEMA,type,10
-16102,Node Label,Organization,name,A.M. QATTAN FOUNDATION,ref,A_M__QATTAN_FOUNDATION,type,23
-16101,Node Label,Budget,value,547574
-16100,Node Label,Activity,description,Palestine Film Fund,identifier,NL-1-PPR-20498,status,4,title,RAM Palestine Film Fund
-16096,Node Label,Organization,ref,Helmand_Engineering_Coordination_Organization,name,Helmand Engineering Coordination Organization,type,70
-16095,Node Label,Budget,value,1045500
-16094,Node Label,Activity,description,Phase II - river flood protection through gabions,status,4,identifier,NL-1-PPR-20495,title,KAB-URU HECO gabions phase 2
-16089,Node Label,Budget,value,969000
-16088,Node Label,Activity,description,Establishment of the Judicial Police,identifier,NL-1-PPR-20492,status,4,title,RAM Judicial Police
-16131,Node Label,Activity,description,personele inzet in projecten uitgevoerd door leden van PSO op het gebied van humanitaire hulp,status,4,identifier,NL-1-PPR-20634,title,DMH/HH WW PSO 2009-2010
-16127,Node Label,Budget,value,410000
-16126,Node Label,Activity,description,DPV Capacity Building African Diaspora Ministeries,status,4,identifier,NL-1-PPR-20630,title,DPV Cap.Building Diaspora Min.
-16114,Node Label,Budget,value,13450622
-16113,Node Label,Activity,status,2,identifier,NL-1-PPR-20614,description,Empowering Selfhelp Sanitation of rural and peri urban communities,title,DMW EMPOWERING SELFH. SANIT.
-16110,Node Label,Organization,name,SALTET & VAN DE PUTTE,ref,SALTET___VAN_DE_PUTTE,type,70
-16109,Node Label,Budget,value,55878
-16108,Node Label,Activity,description,Evaluatie IS-academie,identifier,NL-1-PPR-20535,status,4,title,DEK review IS Acadamie
-16229,Node Label,Budget,value,786450
-16233,Node Label,Activity,description,Appui à la SFI pour la mise en oeuve de réformes visant l'amélioration du Climat des Affaires au Mali,status,4,identifier,NL-1-PPR-20670,title,Climat d'affaires phase2
-16234,Node Label,Budget,value,1771500
-16241,Node Label,Activity,status,4,identifier,NL-1-PPR-20673,description,ondersteuningsmissie identificering kansen ORIO voor haven Dakar,title,appui PAD concernant ORIO
+16155,Node Label,Activity,identifier,NL-1-PPR-20645,status,4,title,PAJUST,description,Accompanying Program for transitional Justice
+16156,Node Label,Budget,value,11545005
+16165,Node Label,Activity,description,Ethiopian Human Rights Council,identifier,NL-1-PPR-20647,title,ADD_EHRCO,status,4
+16166,Node Label,Budget,value,0
+16167,Node Label,Organization,type,23,name,EHRCO - ETHIOPIAN HUMAN RIGHT COUNCIL,ref,EHRCO___ETHIOPIAN_HUMAN_RIGHT_COUNCIL
+16174,Node Label,Activity,description,GMIC Bijdrage aan Government Media and Information Centre GMIC,status,4,identifier,NL-1-PPR-20652,title,KAB Government Media Centre
+16175,Node Label,Budget,value,1185000
+16179,Node Label,Activity,identifier,NL-1-PPR-20653,status,4,title,LUA - AJARP,description,Preventie van geweld jegens kinderen en bescherming van hun rechten
+16180,Node Label,Budget,value,76686
+16181,Node Label,Organization,type,23,name,AJARP  - ASS. JOVENS REINTEG E PROGRESSO,ref,AJARP____ASS__JOVENS_REINTEG_E_PROGRESSO
+16185,Node Label,Activity,description,Averting new HIV infections in young people in Tanah Papua: an education sector response,status,4,identifier,NL-1-PPR-20655,title,JAK HIV Aids Education Papua 3
+16186,Node Label,Budget,value,7673758
+16195,Node Label,Activity,status,4,description,Livelihoods project Somalia,identifier,NL-1-PPR-20656,title,DMH/HH SO/Oxfam/livelihoods
+16196,Node Label,Budget,value,485484
+16201,Node Label,Activity,status,4,identifier,NL-1-PPR-20661,description,"The establishment of this centre improves the capacity for training and education in the horticultural sector of Kenya, which will result in an enhanced expertise and an improving financial performance of the industry on the long term.",title,KHC - Training Centre
+16202,Node Label,Budget,value,1630712
+16203,Node Label,Organization,ref,FRESH_PRODUCE_EXPORTERS_ASSOCIATION_OF_KENYA__FPEAK_,name,FRESH PRODUCE EXPORTERS ASSOCIATION OF KENYA (FPEAK),type,23
+16208,Node Label,Activity,identifier,NL-1-PPR-20662,title,AMM FSA/2009/02 Univ Council,description,Building University Students' Council Members Democratic Capacity,status,4
+16209,Node Label,Budget,value,51547
+16210,Node Label,Organization,ref,Al_Hayat_Centre_for_Civil_Society_Development,name,Al-Hayat Centre for Civil Society Development,type,23
+16213,Node Label,Activity,status,4,identifier,NL-1-PPR-20663,description,BZ bijdrage aan EZ voor institutionele subsidie aan MVO Nederland,title,DDE-MVO Nederland
+16214,Node Label,Budget,value,4327824
 16223,Node Label,Activity,description,"Tot stand brengen van meer samenwerking en synergie tussen beleid, onderzoek en praktijk gericht op versterking vh beleid op groei en verdeling",status,4,identifier,NL-1-PPR-20668,title,DDE Kenniskring G & V
 16224,Node Label,Budget,value,40391
 16225,Node Label,Organization,type,10,ref,START_PEOPLE,name,START PEOPLE
 16228,Node Label,Activity,description,IS-Academie HIV/AIDS,identifier,NL-1-PPR-20669,status,4,title,DEK IS-Academie HIV/AIDS
-16252,Node Label,Budget,value,1411000
-16253,Node Label,Organization,name,RADBOUD UNIVERSITEIT NIJMEGEN,ref,RADBOUD_UNIVERSITEIT_NIJMEGEN,type,80
-16258,Node Label,Activity,identifier,NL-1-PPR-20677,title,DEK ISA Armoede & Goed Bestuur,description,IS-Acadamie traject over de relatie Armoede & Goed Bestuur,status,4
-16259,Node Label,Budget,value,744786
+16229,Node Label,Budget,value,786450
+16233,Node Label,Activity,description,Appui à la SFI pour la mise en oeuve de réformes visant l'amélioration du Climat des Affaires au Mali,status,4,identifier,NL-1-PPR-20670,title,Climat d'affaires phase2
+16234,Node Label,Budget,value,1771500
+16241,Node Label,Activity,status,4,identifier,NL-1-PPR-20673,description,ondersteuningsmissie identificering kansen ORIO voor haven Dakar,title,appui PAD concernant ORIO
 16242,Node Label,Budget,value,72500
 16245,Node Label,Activity,status,4,identifier,NL-1-PPR-20674,description,DEC IS-Academie Samenwerking DEC en UVA/AMIDST onderwijs en ontwikkeling,title,DEK IS-Academie Onderwijs
 16246,Node Label,Budget,value,561500
 16251,Node Label,Activity,description,IS-Acadamie traject met CIDIN over versterking maatschappelijk middenveld tbv armoedebestrijding,status,4,identifier,NL-1-PPR-20676,title,DEK ISA Maatsch. Middenveld
-16186,Node Label,Budget,value,7673758
-16185,Node Label,Activity,description,Averting new HIV infections in young people in Tanah Papua: an education sector response,status,4,identifier,NL-1-PPR-20655,title,JAK HIV Aids Education Papua 3
-16196,Node Label,Budget,value,485484
-16195,Node Label,Activity,status,4,description,Livelihoods project Somalia,identifier,NL-1-PPR-20656,title,DMH/HH SO/Oxfam/livelihoods
-16179,Node Label,Activity,identifier,NL-1-PPR-20653,status,4,title,LUA - AJARP,description,Preventie van geweld jegens kinderen en bescherming van hun rechten
-16175,Node Label,Budget,value,1185000
-16181,Node Label,Organization,type,23,name,AJARP  - ASS. JOVENS REINTEG E PROGRESSO,ref,AJARP____ASS__JOVENS_REINTEG_E_PROGRESSO
-16180,Node Label,Budget,value,76686
-16210,Node Label,Organization,ref,Al_Hayat_Centre_for_Civil_Society_Development,name,Al-Hayat Centre for Civil Society Development,type,23
-16209,Node Label,Budget,value,51547
-16214,Node Label,Budget,value,4327824
-16213,Node Label,Activity,status,4,identifier,NL-1-PPR-20663,description,BZ bijdrage aan EZ voor institutionele subsidie aan MVO Nederland,title,DDE-MVO Nederland
-16202,Node Label,Budget,value,1630712
-16201,Node Label,Activity,status,4,identifier,NL-1-PPR-20661,description,"The establishment of this centre improves the capacity for training and education in the horticultural sector of Kenya, which will result in an enhanced expertise and an improving financial performance of the industry on the long term.",title,KHC - Training Centre
-16208,Node Label,Activity,identifier,NL-1-PPR-20662,title,AMM FSA/2009/02 Univ Council,description,Building University Students' Council Members Democratic Capacity,status,4
-16203,Node Label,Organization,ref,FRESH_PRODUCE_EXPORTERS_ASSOCIATION_OF_KENYA__FPEAK_,name,FRESH PRODUCE EXPORTERS ASSOCIATION OF KENYA (FPEAK),type,23
-16317,Node Label,Budget,value,1687076
-16321,Node Label,Activity,status,4,identifier,NL-1-PPR-20695,description,Noodhulp aan niet-geregistreerde Rohingya's vluchtelingen uit Myanmar  (Birma) die in Bangladesh c.q. Thailand verblijven.,title,DMH/HH MM/ACF/Rohingya
+16252,Node Label,Budget,value,1411000
+16253,Node Label,Organization,name,RADBOUD UNIVERSITEIT NIJMEGEN,ref,RADBOUD_UNIVERSITEIT_NIJMEGEN,type,80
+16258,Node Label,Activity,identifier,NL-1-PPR-20677,title,DEK ISA Armoede & Goed Bestuur,description,IS-Acadamie traject over de relatie Armoede & Goed Bestuur,status,4
+16259,Node Label,Budget,value,744786
+16264,Node Label,Activity,description,bevorderen van de rechten van inheemse landarbeidsters,status,4,identifier,NL-1-PPR-20679,title,STG Inheemse landarbeidsters
+16265,Node Label,Budget,value,197607
+16266,Node Label,Organization,ref,ASOCIACION_NACIONAL_DE_MUJERES_RURALES_E_INDIGENAS,name,ASOCIACION NACIONAL DE MUJERES RURALES E INDIGENAS,type,23
+16271,Node Label,Activity,identifier,NL-1-PPR-20680,status,4,title,BEL-IBCM,description,International Bussiness College Mitrovica
+16272,Node Label,Budget,value,706910
+16278,Node Label,Activity,description,Samenwerking Afrika ASC-DAF,identifier,NL-1-PPR-20682,status,4,title,DEK IS-Academie Afrika
+16279,Node Label,Budget,value,1154496
+16280,Node Label,Organization,name,AFRIKA STUDIECENTRUM (ASC),ref,AFRIKA_STUDIECENTRUM__ASC_,type,80
+16285,Node Label,Activity,description,Samenwerkingsverband EFV met kennininstellingen,status,4,identifier,NL-1-PPR-20683,title,DEC IS-Academie Fragile Staten
+16286,Node Label,Budget,value,1549460
+16295,Node Label,Activity,identifier,NL-1-PPR-20684,title,DEC ISA Migratie & Ontwikling,description,ISA Migratie & Ontwikkeling partnerschap binnen IS-academie traject,status,4
+16296,Node Label,Budget,value,1307000
+16297,Node Label,Organization,ref,UNIVERSITEIT_MAASTRICHT___UNIVERSITY_MAASTRICHT,name,UNIVERSITEIT MAASTRICHT / UNIVERSITY MAASTRICHT,type,80
+16302,Node Label,Activity,status,4,identifier,NL-1-PPR-20685,description,DEC IS-Academie Duurzame/Hernieuwbare energie,title,DEC ISA duurz energie
+16303,Node Label,Budget,value,1038000
+16309,Node Label,Activity,description,Fase 3 van het NABDP van MRRD in Uruzgan (Dutch 3),status,4,identifier,NL-1-PPR-20687,title,KAB - UNDP NABDP fase 3
 16310,Node Label,Budget,value,16304328
 16316,Node Label,Activity,description,Onderzoeksprogramma 2007-2010,identifier,NL-1-PPR-20692,status,4,title,DEK WOTRO 2007-2010
-16327,Node Label,Budget,value,1845225
-16334,Node Label,Activity,status,4,identifier,NL-1-PPR-20701,description,Global Core Funding (2009-2012),title,WSP Global Core Funding
+16317,Node Label,Budget,value,1687076
+16321,Node Label,Activity,status,4,identifier,NL-1-PPR-20695,description,Noodhulp aan niet-geregistreerde Rohingya's vluchtelingen uit Myanmar  (Birma) die in Bangladesh c.q. Thailand verblijven.,title,DMH/HH MM/ACF/Rohingya
 16322,Node Label,Budget,value,407197
 16326,Node Label,Activity,description,Noodhulp aan ziekenhuizen voor Palestijnse vluchtelingen,status,4,identifier,NL-1-PPR-20698,title,DMH/HH OT/NRK/Gaza en Libanon
-16344,Node Label,Budget,value,109784
-16345,Node Label,Organization,ref,CSU,name,CSU,type,23
+16327,Node Label,Budget,value,1845225
+16334,Node Label,Activity,status,4,identifier,NL-1-PPR-20701,description,Global Core Funding (2009-2012),title,WSP Global Core Funding
 16335,Node Label,Budget,value,5354000
 16343,Node Label,Activity,description,Counselling services,identifier,NL-1-PPR-20706,status,4,title,HAR - COUNSELLING SERV. UNIT
-16354,Node Label,Activity,status,4,description,Global Framework for Action,identifier,NL-1-PPR-20709,title, GF4A drinkwater en sanitatie
-16355,Node Label,Budget,value,1184962
+16344,Node Label,Budget,value,109784
+16345,Node Label,Organization,ref,CSU,name,CSU,type,23
 16348,Node Label,Activity,description,DPV - Return and Reintegration Irak,identifier,NL-1-PPR-20707,status,4,title,DPV - AVRR Irak
 16349,Node Label,Budget,value,750000
-16271,Node Label,Activity,identifier,NL-1-PPR-20680,status,4,title,BEL-IBCM,description,International Bussiness College Mitrovica
-16266,Node Label,Organization,ref,ASOCIACION_NACIONAL_DE_MUJERES_RURALES_E_INDIGENAS,name,ASOCIACION NACIONAL DE MUJERES RURALES E INDIGENAS,type,23
-16265,Node Label,Budget,value,197607
-16264,Node Label,Activity,description,bevorderen van de rechten van inheemse landarbeidsters,status,4,identifier,NL-1-PPR-20679,title,STG Inheemse landarbeidsters
-16280,Node Label,Organization,name,AFRIKA STUDIECENTRUM (ASC),ref,AFRIKA_STUDIECENTRUM__ASC_,type,80
-16279,Node Label,Budget,value,1154496
-16278,Node Label,Activity,description,Samenwerking Afrika ASC-DAF,identifier,NL-1-PPR-20682,status,4,title,DEK IS-Academie Afrika
-16272,Node Label,Budget,value,706910
-16296,Node Label,Budget,value,1307000
-16295,Node Label,Activity,identifier,NL-1-PPR-20684,title,DEC ISA Migratie & Ontwikling,description,ISA Migratie & Ontwikkeling partnerschap binnen IS-academie traject,status,4
-16286,Node Label,Budget,value,1549460
-16285,Node Label,Activity,description,Samenwerkingsverband EFV met kennininstellingen,status,4,identifier,NL-1-PPR-20683,title,DEC IS-Academie Fragile Staten
-16309,Node Label,Activity,description,Fase 3 van het NABDP van MRRD in Uruzgan (Dutch 3),status,4,identifier,NL-1-PPR-20687,title,KAB - UNDP NABDP fase 3
-16303,Node Label,Budget,value,1038000
-16302,Node Label,Activity,status,4,identifier,NL-1-PPR-20685,description,DEC IS-Academie Duurzame/Hernieuwbare energie,title,DEC ISA duurz energie
-16297,Node Label,Organization,ref,UNIVERSITEIT_MAASTRICHT___UNIVERSITY_MAASTRICHT,name,UNIVERSITEIT MAASTRICHT / UNIVERSITY MAASTRICHT,type,80
+16354,Node Label,Activity,status,4,description,Global Framework for Action,identifier,NL-1-PPR-20709,title, GF4A drinkwater en sanitatie
+16355,Node Label,Budget,value,1184962
+16360,Node Label,Activity,identifier,NL-1-PPR-20713,status,4,title,DEBPEA,description,Appui à la constitution de pôles d'entreprises agricoles competitifs et durables et améliorer l'environnement institutionnel par la mise au point des instruments innovateurs.Achèvement decembre 2014
+16361,Node Label,Budget,value,8531496
+16369,Node Label,Activity,description,"Water supply and irrigation in Deh Rawod, Uruzgan",status,4,identifier,NL-1-PPR-20716,title,KAB-URU irrigation and wells
+16370,Node Label,Budget,value,1323027
+16371,Node Label,Organization,ref,SOCIAL_ASSOCIATION_FOR_DEVELOPMENT_OF_AFGHANISTAN,name,SOCIAL ASSOCIATION FOR DEVELOPMENT OF AFGHANISTAN,type,23
+16375,Node Label,Activity,description,Support for the Palestinian Civil Police through EUPOL COPPS Program Fund,status,4,identifier,NL-1-PPR-20718,title,RAM Palestinian Civil Police
+16376,Node Label,Budget,value,2897059
+16382,Node Label,Activity,description,HBF 2010-2012,status,4,identifier,NL-1-PPR-20721,title,Hubert Bals Fonds 2010-2012
+16383,Node Label,Budget,value,4000060
+16384,Node Label,Organization,type,21,name,INTERNATIONAL FILM FESTIVAL ROTTERDAM,ref,INTERNATIONAL_FILM_FESTIVAL_ROTTERDAM
+16390,Node Label,Activity,description,Jan Vrijman Fonds 2010-2012,identifier,NL-1-PPR-20722,status,4,title,JVF 2010-2012
+16391,Node Label,Budget,value,2037010
+16397,Node Label,Activity,status,4,identifier,NL-1-PPR-20723,description,Promoción de los Derechos Humanos y Lucha contra la Impunidad,title,BOG Apoyo a la CCA
+16398,Node Label,Budget,value,2784071
+16399,Node Label,Organization,name,"JOSE ALVEAR RESTREPO, COLECTIVO DE ABOGADOS",type,23,ref,JOSE_ALVEAR_RESTREPO__COLECTIVO_DE_ABOGADOS
+16406,Node Label,Activity,description,External Evaluation Human Rights Fund,status,4,identifier,NL-1-PPR-20727,title,PEK External Evaluation MRF
 16407,Node Label,Budget,value,29722
 16408,Node Label,Organization,type,70,name,Human European Consultancy,ref,Human_European_Consultancy
 16411,Node Label,Activity,description,Kleine cassaveproducenten in Ghana profiteren van nieuwe technologie die door DADTCO is ontwikkeld,status,4,identifier,NL-1-PPR-20729,title,DDE IFDC Schokland 2009-2013
@@ -5029,95 +5118,6 @@
 16444,Node Label,Organization,type,23,ref,DEJUSTICIA,name,DEJUSTICIA
 16451,Node Label,Activity,description,vervolgonderzoek PolEcon Indonesië,status,4,identifier,NL-1-PPR-20738,title,JAK PolEcon Ondrzk  VZorge
 16452,Node Label,Budget,value,75000
-16361,Node Label,Budget,value,8531496
-16360,Node Label,Activity,identifier,NL-1-PPR-20713,status,4,title,DEBPEA,description,Appui à la constitution de pôles d'entreprises agricoles competitifs et durables et améliorer l'environnement institutionnel par la mise au point des instruments innovateurs.Achèvement decembre 2014
-16370,Node Label,Budget,value,1323027
-16369,Node Label,Activity,description,"Water supply and irrigation in Deh Rawod, Uruzgan",status,4,identifier,NL-1-PPR-20716,title,KAB-URU irrigation and wells
-16375,Node Label,Activity,description,Support for the Palestinian Civil Police through EUPOL COPPS Program Fund,status,4,identifier,NL-1-PPR-20718,title,RAM Palestinian Civil Police
-16371,Node Label,Organization,ref,SOCIAL_ASSOCIATION_FOR_DEVELOPMENT_OF_AFGHANISTAN,name,SOCIAL ASSOCIATION FOR DEVELOPMENT OF AFGHANISTAN,type,23
-16382,Node Label,Activity,description,HBF 2010-2012,status,4,identifier,NL-1-PPR-20721,title,Hubert Bals Fonds 2010-2012
-16376,Node Label,Budget,value,2897059
-16384,Node Label,Organization,type,21,name,INTERNATIONAL FILM FESTIVAL ROTTERDAM,ref,INTERNATIONAL_FILM_FESTIVAL_ROTTERDAM
-16383,Node Label,Budget,value,4000060
-16391,Node Label,Budget,value,2037010
-16390,Node Label,Activity,description,Jan Vrijman Fonds 2010-2012,identifier,NL-1-PPR-20722,status,4,title,JVF 2010-2012
-16398,Node Label,Budget,value,2784071
-16397,Node Label,Activity,status,4,identifier,NL-1-PPR-20723,description,Promoción de los Derechos Humanos y Lucha contra la Impunidad,title,BOG Apoyo a la CCA
-16406,Node Label,Activity,description,External Evaluation Human Rights Fund,status,4,identifier,NL-1-PPR-20727,title,PEK External Evaluation MRF
-16399,Node Label,Organization,name,"JOSE ALVEAR RESTREPO, COLECTIVO DE ABOGADOS",type,23,ref,JOSE_ALVEAR_RESTREPO__COLECTIVO_DE_ABOGADOS
-15951,Node Label,Organization,name,MINISTERIO DE TRANSPARENCIA,ref,MINISTERIO_DE_TRANSPARENCIA,type,10
-15950,Node Label,Budget,value,454698
-15949,Node Label,Activity,description,Promote transparency and anti-corruption in the public sector by installing specific units in the ministries,status,4,identifier,NL-1-PPR-20450,title,Promote Units of Transparency
-15946,Node Label,Organization,ref,Accessibility_Organization_for_Afghan_Disabled,name,Accessibility Organization for Afghan Disabled,type,23
-15945,Node Label,Budget,value,308540
-15944,Node Label,Activity,status,4,identifier,NL-1-PPR-20448,description,Capacitating and Referral of People with Disability to Earn a Respectable Living,title,KAB - AOAD vervolg
-15939,Node Label,Budget,value,3400030
-15938,Node Label,Activity,description,Ontwikkeling landbouwonderwijs Afghanistan,status,4,identifier,NL-1-PPR-20447,title,KAB - WUR landbouwonderwijs
-15934,Node Label,Organization,ref,IEEPP_ASOC_INSTIT_ESTUD_ESTRAT_POLIT_PUBLICAS_,name,IEEPP(ASOC.INSTIT.ESTUD.ESTRAT.POLIT.PUBLICAS),type,23
-15933,Node Label,Budget,value,62847
-15932,Node Label,Activity,status,4,identifier,NL-1-PPR-20446,description,Parliamentarians taken lead on legislation /reviewing to facilitate maternal health and eliminate legal obtacles that limit women's access to health care services and women rights,title,MNG Safe motherhood 2015
-15927,Node Label,Budget,value,249800
-15926,Node Label,Activity,status,4,description,Court monitoring Montenegro fase 2,identifier,NL-1-PPR-20445,title,BEL Court Monitoring MNE 2
-15923,Node Label,Budget,value,59989
-15922,Node Label,Activity,description,Subsidie aan ZEN via HIVOS,identifier,NL-1-PPR-20444,title,DAF ZEN-HIVOS NL,status,4
-15919,Node Label,Budget,value,89662
-15912,Node Label,Organization,ref,AFGHANISTAN_CENTER_FOR_TRANING_AND_DEVELOPMENT,name,AFGHANISTAN CENTER FOR TRANING AND DEVELOPMENT,type,23
-15918,Node Label,Activity,status,4,identifier,NL-1-PPR-20443,description,Organisatie van conferentie over leiderschap in service delivery in Zuid-Afrika.,title,Wineland Conference 2010
-15910,Node Label,Activity,description,Business Development Centre Uruzgan,identifier,NL-1-PPR-20437,status,4,title,KAB-ACTD BDC Uruzgan
-15911,Node Label,Budget,value,365179
-15905,Node Label,Budget,value,136069
-15906,Node Label,Organization,type,23,name,AFGHAN WOMEN'S BUSINESS FEDERATION,ref,AFGHAN_WOMEN_S_BUSINESS_FEDERATION
-15898,Node Label,Budget,value,14435480
-15904,Node Label,Activity,status,4,description,Afghan Women Business Federation,identifier,NL-1-PPR-20435,title,KAB - AWBF tailoring Uruzgan
-15894,Node Label,Organization,name,The Asian Foundation,ref,The_Asian_Foundation,type,23
-15897,Node Label,Activity,status,4,identifier,NL-1-PPR-20431,description,Improving Livelihood in the Occupied Palestinian Territories ¿ West Bank,title,RAM Land Development 3
-15892,Node Label,Activity,description,Promoting Access to Justice in Southern Thailand for Victims of Human Rights Violations,status,4,identifier,NL-1-PPR-20430,title,BAN LEGAL ASSISTANCE (MAC)
-15893,Node Label,Budget,value,75735
-15886,Node Label,Budget,value,462250
-15887,Node Label,Organization,ref,HAP,name,HAP,type,21
-15882,Node Label,Budget,value,50848
-15885,Node Label,Activity,status,4,identifier,NL-1-PPR-20426,description,Bijdrage aan Werkplan 2009/2010,title,DMH/HH WW/HAP/09-10
-16049,Node Label,Budget,value,5036039
-16048,Node Label,Activity,status,4,identifier,NL-1-PPR-20482,description,Core bijdrage Global Forum on Agricultural Research,title,DCO GFAR 2009-2014
-16058,Node Label,Activity,description,Supporting HCMC to manage the flood,identifier,NL-1-PPR-20484,status,4,title,HAN_HCMC Flood Management
-16050,Node Label,Organization,ref,GFAR,name,GFAR,type,80
-16034,Node Label,Budget,value,137474
-16033,Node Label,Activity,description,preserving Pattani-Malay culture in Southern Thailand,status,4,identifier,NL-1-PPR-20474,title,BAN Negotiating cultural space
-16040,Node Label,Budget,value,5458356
-16039,Node Label,Activity,status,4,identifier,NL-1-PPR-20481,description,Strategic research program in order to influence policy making in different social and economic areas,title,Policy related research
-16025,Node Label,Activity,status,4,identifier,NL-1-PPR-20473,description,human rights documentation and advocacy in Thailand,title,BAN WGJP project D
-16018,Node Label,Budget,value,1278857
-16027,Node Label,Organization,type,23,name,WORKING GROUP ON JUSTICE FOR PEACE,ref,WORKING_GROUP_ON_JUSTICE_FOR_PEACE
-16026,Node Label,Budget,value,258470
-16012,Node Label,Activity,description,Training for Journalists of the Western Balkans on Environmental Issues,status,4,identifier,NL-1-PPR-20468,title,BEL Training for Journalists
-16006,Node Label,Budget,value,1005214
-16017,Node Label,Activity,description,"Tv drama and documentary series to bring the law about Domestic Violence against women, to the people",status,4,identifier,NL-1-PPR-20469,title,N'weti Domestic Violence TV
-16013,Node Label,Budget,value,199256
-15994,Node Label,Organization,name,"ISAKOVSKA, B.K.",ref,ISAKOVSKA__B_K_,type,70
-15997,Node Label,Activity,description,Ontwikkeling beleid t.a.v. SME's in Moldova,status,4,identifier,NL-1-PPR-20464,title,Supporting SME policy Moldova
-15998,Node Label,Budget,value,1043136
-16005,Node Label,Activity,description,"Establishment of a network of Youth Zones where youth will receive training in live skills, computer literacy and soccer with the aim of providing them with better opportunities on the labour market",status,4,identifier,NL-1-PPR-20465,title,Youth live skills labor market
-15985,Node Label,Activity,status,4,identifier,NL-1-PPR-20462,description,Opzetten MA-programma in Peace and Conflict Studies,title,UPEACE/Great Lakes Region
-15986,Node Label,Budget,value,6087712
-15992,Node Label,Activity,description,Programme on Culture and Development Third Phase hiring of culture scouts,status,4,identifier,NL-1-PPR-20463,title,SKO C&O 3 - Culture Scouts
-15993,Node Label,Budget,value,26830
-15971,Node Label,Activity,description,NL-Unicef partnerschap bijdrage MDG7 in Drie Gebieden en Zuidelijk Soedan,status,4,identifier,NL-1-PPR-20459,title,KHA drinkwater en sanitatie
-15972,Node Label,Budget,value,24986760
-15980,Node Label,Activity,status,4,description,DSI - SMS Combats HIV/AIDS,identifier,NL-1-PPR-20460,title,DSI - SMS Combats HIV/AIDS
-15981,Node Label,Budget,value,55288
-15956,Node Label,Activity,description,MNG PSI consortium to implement the national strategy for SRHR,status,4,identifier,NL-1-PPR-20452,title,MNG PSI consortium for SRH
-15957,Node Label,Budget,value,7646800
-15964,Node Label,Activity,description,Support the Multi Party Foundation in the strengthening of Democracy,status,4,identifier,NL-1-PPR-20458,title,Promote Multi-Party Democracy
-15965,Node Label,Budget,value,2912459
-16072,Node Label,Activity,description,Support to Office of the Public Prosecutor for Human Rights,status,4,identifier,NL-1-PPR-20486,title,Support the Public Prosecutor
-16066,Node Label,Budget,value,1231453
-16065,Node Label,Activity,description,DPV NOMRA Research on African Migration Issues,status,4,identifier,NL-1-PPR-20485,title,DPV NOMRA Migration Studies
-16060,Node Label,Organization,type,10,name,PEOPLE COMMITTEE OF HO CHI MINH CITY,ref,PEOPLE_COMMITTEE_OF_HO_CHI_MINH_CITY
-16080,Node Label,Organization,name,THE ALAN GUTTMACHER INSTITUTE,ref,THE_ALAN_GUTTMACHER_INSTITUTE,type,80
-16079,Node Label,Budget,value,5983333
-16078,Node Label,Activity,description,The Global Research Initiative on Unsafe Abortion,status,4,identifier,NL-1-PPR-20488,title,DSO Research Unsafe Abortion
-16073,Node Label,Budget,value,475063
-16059,Node Label,Budget,value,2929112
 16453,Node Label,Organization,type,70,ref,PALEM_RAJA_AGUNG,name,PALEM RAJA AGUNG
 16456,Node Label,Activity,identifier,NL-1-PPR-20745,status,4,title,KHA Agr. Dev.,description,South Kordofan Rural Development Project
 16457,Node Label,Budget,value,3304000
@@ -5763,7 +5763,7 @@
 18117,Node Label,Budget,value,11512200
 18125,Node Label,Activity,description,DMC MRF 2010,identifier,NL-1-PPR-21290,title,DMC MRF 2010,status,4
 18126,Node Label,Budget,value,50480
-18127,Node Label,Location,name,SYRIAN ARAB REPUBLIC,code,SY
+18127,Node Label,Location,is_country,True,name,SYRIAN ARAB REPUBLIC,code,SY
 18129,Node Label,Activity,status,4,description,PRE - TWIST THEATRE DEVELOPMENT PROJECTS,identifier,NL-1-PPR-21293,title,Improve Skills Theatre Groups
 18130,Node Label,Budget,value,691009
 18131,Node Label,Organization,type,70,name,TWIST THEATRE DEVELOPMENTS PROJECTS,ref,TWIST_THEATRE_DEVELOPMENTS_PROJECTS
@@ -5870,7 +5870,7 @@
 18358,Node Label,Budget,value,74933
 18360,Node Label,Activity,status,4,identifier,NL-1-PPR-21377,description,Literatuur/Bibliotheek en medische bijstand,title,MRF 2010 / HAV
 18361,Node Label,Budget,value,74382
-18362,Node Label,Location,name,CUBA,code,CU
+18362,Node Label,Location,name,CUBA,code,CU,is_country,True
 18364,Node Label,Activity,identifier,NL-1-PPR-21378,status,4,title,MAN_FSA 10/03 KSP FOR RIGHTS,description,KSP FOR RIGHTS
 18365,Node Label,Budget,value,14338
 18366,Node Label,Organization,ref,FFPD,name,FFPD,type,23
@@ -5963,7 +5963,7 @@
 18565,Node Label,Organization,ref,CNOSS,name,CNOSS,type,10
 18571,Node Label,Activity,description,MENSENRECHTENACTIVITEITEN,identifier,NL-1-PPR-21460,title,TUNIS/MENSENRECHTENRONDS2010,status,4
 18572,Node Label,Budget,value,74990
-18573,Node Label,Location,name,TUNISIA,code,TN
+18573,Node Label,Location,is_country,True,name,TUNISIA,code,TN
 18575,Node Label,Activity,identifier,NL-1-PPR-21461,title,RAB FSA 03/10 World Press Pho,description,FSA 03/10 World Press Photo 2009,status,4
 18576,Node Label,Budget,value,23650
 18578,Node Label,Activity,description,monitoren van rechtszaken en analyse,identifier,NL-1-PPR-21462,status,4,title,GYLA - trial monitoring
@@ -6071,7 +6071,7 @@
 18829,Node Label,Budget,value,3601090
 18836,Node Label,Activity,status,4,identifier,NL-1-PPR-21528,description,Delegatie PKP ODA 2010 naar SNV Niger,title,OUA PKP ODA Niger 2010
 18837,Node Label,Budget,value,95000
-18838,Node Label,Location,name,NIGER,code,NE
+18838,Node Label,Location,name,NIGER,code,NE,is_country,True
 18840,Node Label,Activity,identifier,NL-1-PPR-21530,title,Troika Partenaires Techn.&Fin.,description,Dit secretariaat ondersteunt de donor-troika bij vertegenwoordiging en coordiatie van donoren mbt PRSP-monitoring; beheer van ABS en tenuitvoerlegging van Parijs/Accra agenda,status,4
 18841,Node Label,Budget,value,162050
 18848,Node Label,Activity,description,Institutional capacity development for business expansion,status,4,identifier,NL-1-PPR-21531,title,IT-Infrastructure Investments
@@ -6137,7 +6137,7 @@
 18987,Node Label,Organization,name,Reef Finance Company,ref,Reef_Finance_Company,type,23
 18996,Node Label,Activity,description,Training judges from Laos,identifier,NL-1-PPR-21582,title,BAN HRF,status,4
 18997,Node Label,Budget,value,50000
-18998,Node Label,Location,code,LA,name,LAO PEOPLE'S DEMOCRATIC REPUBLIC
+18998,Node Label,Location,code,LA,is_country,True,name,LAO PEOPLE'S DEMOCRATIC REPUBLIC
 19000,Node Label,Activity,status,4,identifier,NL-1-PPR-21583,description,International Civil Society Support 2009-2010,title,DSO ICSS 2009-2010
 19001,Node Label,Budget,value,165000
 19004,Node Label,Activity,status,4,description,DSO - SMS Combats HIV/AIDS,identifier,NL-1-PPR-21584,title,DSO - SMS Combats HIV/AIDS
@@ -6217,7 +6217,7 @@
 19178,Node Label,Budget,value,15477766
 19186,Node Label,Activity,description,STD PKP ODA 2010,identifier,NL-1-PPR-21641,status,4,title,STD PKP ODA 2010
 19187,Node Label,Budget,value,81349
-19188,Node Label,Location,name,DOMINICAN REPUBLIC,code,DO
+19188,Node Label,Location,is_country,True,name,DOMINICAN REPUBLIC,code,DO
 19191,Node Label,Activity,description,Peace building between Ngok and Misseryia through livestock markets,status,4,identifier,NL-1-PPR-21642,title,KHA Abyei Livelihood Progr.
 19192,Node Label,Budget,value,2246037
 19193,Node Label,Organization,name,VET-CARE ORGANIZATION (VCO- SUDAN),type,23,ref,VET_CARE_ORGANIZATION__VCO__SUDAN_
@@ -6287,7 +6287,7 @@
 19347,Node Label,Budget,value,105364
 19352,Node Label,Activity,description,Bijdrage aan CHF CAR 2010,identifier,NL-1-PPR-21717,status,4,title,DMH/HH CAR CHF 2010
 19353,Node Label,Budget,value,1500000
-19354,Node Label,Location,name,CENTRAL AFRICAN REPUBLIC,code,CF
+19354,Node Label,Location,is_country,True,name,CENTRAL AFRICAN REPUBLIC,code,CF
 19358,Node Label,Activity,description,DCM International Pratitioners Symposium 'Overcoming Barriers: Building partnerships for migration and human development',status,4,identifier,NL-1-PPR-21720,title,DCM International Symposium
 19359,Node Label,Budget,value,17875
 19363,Node Label,Activity,identifier,NL-1-PPR-21721,status,4,title,BAN VAHU 2010,description,Training Burmese in civil society development
@@ -6358,7 +6358,7 @@
 19508,Node Label,Organization,ref,UCEP,name,UCEP,type,80
 19515,Node Label,Activity,status,4,description,Bijdrage aan UNHCR en UNICEF,identifier,NL-1-PPR-21766,title,DMH/HH TD/2.1/KFO 2010
 19516,Node Label,Budget,value,3699996
-19517,Node Label,Location,name,CHAD,code,TD
+19517,Node Label,Location,name,CHAD,code,TD,is_country,True
 19522,Node Label,Activity,description,STD ANNE FRANK 2010,identifier,NL-1-PPR-21767,status,4,title,STD ANNE FRANK 2010
 19523,Node Label,Budget,value,21642
 19525,Node Label,Activity,description,Building analytical Capacity on Zimbabwe's Transition,status,4,identifier,NL-1-PPR-21768,title,Build analytical cap. Zimbabwe
@@ -6573,7 +6573,7 @@
 20026,Node Label,Activity,description,Bestrijding geweld tegen vrouwen en kinderen,status,4,identifier,NL-1-PPR-21935,title,MTV Mensenrechtenfonds 2010
 20027,Node Label,Budget,value,50000
 20028,Node Label,Organization,type,23,ref,VISIONAIR,name,VISIONAIR
-20029,Node Label,Location,name,URUGUAY,code,UY
+20029,Node Label,Location,is_country,True,name,URUGUAY,code,UY
 20031,Node Label,Activity,identifier,NL-1-PPR-21936,status,4,title,KUONA TRUST,description,"This projects aims to support and stimulate the development of visual arts in Kenya. In addition, this project is socially relevant due to their efforts to combine arts with public debate."
 20032,Node Label,Budget,value,313252
 20033,Node Label,Organization,type,23,ref,Kuona_Trust,name,Kuona Trust
@@ -6637,7 +6637,7 @@
 20160,Node Label,Budget,value,734862
 20164,Node Label,Activity,description,bevorderen transparantie financieren van politieke partijen en verkiezingen,status,4,identifier,NL-1-PPR-21985,title,KUA Transparantie partijfinanc
 20165,Node Label,Budget,value,41370
-20166,Node Label,Location,name,MALAYSIA,code,MY
+20166,Node Label,Location,is_country,True,name,MALAYSIA,code,MY
 20171,Node Label,Activity,status,4,identifier,NL-1-PPR-21986,description,bevorderen deelname burgers in lokaal en provinciaal bestuur,title,KUA Burgerschapsvorming
 20172,Node Label,Budget,value,51220
 20173,Node Label,Organization,type,23,ref,PUSAT_KOMAS,name,PUSAT KOMAS
@@ -6656,7 +6656,7 @@
 20211,Node Label,Activity,status,4,identifier,NL-1-PPR-21997,description,Nederlands Dans Theater  voert een 5-daagse dansworkshop voor kinderen in het teken van de Dag van de Rechten van het Kind.,title,Dans en Kinderrechten
 20212,Node Label,Budget,value,6500
 20213,Node Label,Organization,name,NEDERLANDS DANS THEATER,ref,NEDERLANDS_DANS_THEATER,type,70
-20214,Node Label,Location,name,MEXICO,code,MX
+20214,Node Label,Location,is_country,True,name,MEXICO,code,MX
 20216,Node Label,Activity,description,"Fondo común de apoyo a la sociedad civil para la Gobernabilidad Democrática en Nicaragua, Fase II",status,4,identifier,NL-1-PPR-21998,title,Fondo Común Sociedad Civil II
 20217,Node Label,Budget,value,1222659
 20224,Node Label,Activity,description,MNG Fortalecimiento Derechos Sexuales y Reproductivos de las Mujeres en Nicaragua,status,4,identifier,NL-1-PPR-21999,title,MNG SRHR post-abortion care
@@ -7208,7 +7208,7 @@
 21706,Node Label,Budget,value,972790
 21712,Node Label,Activity,status,4,identifier,NL-1-PPR-22405,description,TOT STAND BRENGEN VAN DIALOOG TUSSEN PARLEMENTARIERS EN CIVIL SOCIETY,title,ALG/APPUI AU PARLEMENT
 21713,Node Label,Budget,value,120000
-21714,Node Label,Location,name,ALGERIA,code,DZ
+21714,Node Label,Location,is_country,True,name,ALGERIA,code,DZ
 21720,Node Label,Activity,description,"Women's Empowerment through adult education, phase II is focused on proving access to formal and civic education",status,4,identifier,NL-1-PPR-22406,title,LUA / WOMEN'S EMPOWERMENT PHII
 21721,Node Label,Budget,value,258362
 21725,Node Label,Activity,description,Ethnic Victimization in Kirkuk,identifier,NL-1-PPR-22407,status,4,title,BAG FSA 2010/05
@@ -7273,7 +7273,7 @@
 21850,Node Label,Budget,value,421573
 21856,Node Label,Activity,description,FBWPP - Support of the Family and Battered Women Protection Programme Libya,status,4,identifier,NL-1-PPR-22444,title,TRI 1312S00 / 2010 - 001
 21857,Node Label,Budget,value,24954
-21858,Node Label,Location,name,LIBYAN ARAB JAMAHIRIYA,code,LY
+21858,Node Label,Location,is_country,True,name,LIBYAN ARAB JAMAHIRIYA,code,LY
 21860,Node Label,Activity,description,Leaderschip Development Programme for HIV Positive Women and Girls in Libya,status,4,identifier,NL-1-PPR-22447,title,TRI 1976S00 / 2010 - 001
 21861,Node Label,Budget,value,20000
 21863,Node Label,Activity,identifier,NL-1-PPR-22449,title,GIRE,description,"Contribute to the Defense and Promotion of Reproductive & Sexual Rights, (abortion rights) for women in Mexico",status,4
@@ -7376,7 +7376,7 @@
 22104,Node Label,Activity,description,Opleiden Aboriginal vrouwen,identifier,NL-1-PPR-22520,status,4,title,Mensenrechten Australie
 22105,Node Label,Budget,value,8822
 22106,Node Label,Organization,type,22,name,Indigenous Community Volunteers LTD,ref,Indigenous_Community_Volunteers_LTD
-22107,Node Label,Location,name,PAPUA NEW GUINEA,code,PG
+22107,Node Label,Location,is_country,True,name,PAPUA NEW GUINEA,code,PG
 22112,Node Label,Activity,status,4,description,PRE-Saldanha Bay Municipality,identifier,NL-1-PPR-22522,title,Municipal Capacity Building
 22113,Node Label,Budget,value,40786
 22115,Node Label,Activity,description,Match making for synergy between SA and the NL,status,4,identifier,NL-1-PPR-22523,title,NGO Study tour Netherlands
@@ -7820,7 +7820,7 @@
 23071,Node Label,Organization,type,10,ref,AFROSAI_E,name,AFROSAI-E
 23075,Node Label,Activity,description,Bijdrage aan VN noodhulp verzoek Liberia,status,4,identifier,NL-1-PPR-22943,title,DMH/HH LR UNICEF 2011
 23076,Node Label,Budget,value,1000000
-23077,Node Label,Location,name,LIBERIA,code,LR
+23077,Node Label,Location,is_country,True,name,LIBERIA,code,LR
 23083,Node Label,Activity,description,DSO - Ondersteuning platform van onderzoeks enkennisinstellingen mbt Health System Research,status,4,identifier,NL-1-PPR-22946,title,DSO - NWO/WOTRO GHSR platform
 23084,Node Label,Budget,value,299836
 23091,Node Label,Activity,description,Inventarisatie agrarisch beroepsonderwijs,status,4,identifier,NL-1-PPR-22947,title,DSO Invent. Agrar. Beroepsond.
@@ -7855,7 +7855,7 @@
 23162,Node Label,Organization,type,23,name,LAWYERS FOR HUMAN RIGHTS DEVELOPMENT,ref,LAWYERS_FOR_HUMAN_RIGHTS_DEVELOPMENT
 23166,Node Label,Activity,status,4,description,Bijdrage VN hulpverzoek Ivoorkust,identifier,NL-1-PPR-22967,title,DMH/HH CI UNHCR/2011
 23167,Node Label,Budget,value,2000000
-23168,Node Label,Location,name,COTE D'IVOIRE,code,CI
+23168,Node Label,Location,is_country,True,name,COTE D'IVOIRE,code,CI
 23172,Node Label,Activity,status,2,identifier,NL-1-PPR-22968,description,DME WB Energy Sector Management Assistance Program (ESMAP),title,DME ESMAP 2011-2014
 23173,Node Label,Budget,value,52560000
 23180,Node Label,Activity,status,4,identifier,NL-1-PPR-22969,description,COL Publication of Sinhala monthly HR news paper,title,COL Rights Now Collective
@@ -8423,7 +8423,7 @@
 24618,Node Label,Budget,value,4796512
 24623,Node Label,Activity,description,Ondersteuning vrijheid van meningsuiting in Guinee via private media,status,4,identifier,NL-1-PPR-23434,title,DAK BBC WST Voix Guineennes
 24624,Node Label,Budget,value,67000
-24625,Node Label,Location,name,GUINEA,code,GN
+24625,Node Label,Location,is_country,True,name,GUINEA,code,GN
 24627,Node Label,Activity,identifier,NL-1-PPR-23435,title,DDE-reg int & agr dev for Food,description,DDE- Regional Integration and Agricultural Development for Food,status,4
 24628,Node Label,Budget,value,250000
 24631,Node Label,Activity,status,2,identifier,NL-1-PPR-23436,description,UNDP Cap-Net Phase 3: Capacity Building for Sustainable Development of Water Resources in a context of Changing Climate,title,UNDP Cap-Net Phase 3
@@ -8449,7 +8449,7 @@
 24684,Node Label,Activity,status,4,identifier,NL-1-PPR-23452,description,Aanpak kinderarbeid dmv maatschappelijk verantwoord ondernemen,title,SJO CHILD LABOUR AND CSR
 24685,Node Label,Budget,value,144000
 24686,Node Label,Organization,ref,CONSEJO_NACIONAL_DE_LA_EMPRESA_PRIVADA___CONEP,name,CONSEJO NACIONAL DE LA EMPRESA PRIVADA - CONEP,type,23
-24687,Node Label,Location,name,PANAMA,code,PA
+24687,Node Label,Location,is_country,True,name,PANAMA,code,PA
 24691,Node Label,Activity,status,2,identifier,NL-1-PPR-23453,description,Programmafinanciering aan het International Water and Sanitation Centre   IRC,title,IRC WATER SANITATION CENTRE
 24692,Node Label,Budget,value,20440000
 24700,Node Label,Activity,status,4,description,COL Galle literary festival 2012,identifier,NL-1-PPR-23454,title,COL Galle lit. festival 2012
@@ -10513,7 +10513,7 @@
 30080,Node Label,Activity,description,Mensenrechtenfonds ODA BY,identifier,NL-1-PPR-25024,status,4,title,Mensenrechtenfonds ODA BY
 30081,Node Label,Budget,value,112400
 30082,Node Label,Organization,ref,DUMMY,name,DUMMY,type,10
-30083,Node Label,Location,name,BELARUS,code,BY
+30083,Node Label,Location,is_country,True,name,BELARUS,code,BY
 30085,Node Label,Activity,status,4,identifier,NL-1-PPR-25029,description,"""Documentaire ""After the Insurrection""",title,After the Insurrection
 30086,Node Label,Budget,value,31046
 30089,Node Label,Activity,status,2,description,Reintegration repatries Mtabila,identifier,NL-1-PPR-25030,title,Reintegr. repatries Mtabila
@@ -11319,7 +11319,7 @@
 32094,Node Label,Activity,description,Elections Azerbaijan,identifier,NL-1-PPR-25728,status,4,title,Elections Azerbaijan
 32095,Node Label,Budget,value,48600
 32096,Node Label,Organization,ref,EMDS,name,EMDS,type,23
-32097,Node Label,Location,name,AZERBAIJAN,code,AZ
+32097,Node Label,Location,is_country,True,name,AZERBAIJAN,code,AZ
 32099,Node Label,Activity,description,KAI vocational training centre for the disabled,status,4,identifier,NL-1-PPR-25729,title,KAI Vocational Training Dis.
 32100,Node Label,Budget,value,25518
 32103,Node Label,Activity,description,POLITICAL-ECONOMIC ANALYSIS,identifier,NL-1-PPR-25730,status,4,title,POLITICAL-ECONOMIC ANALYSIS
@@ -12125,7 +12125,7 @@
 34053,Node Label,Budget,value,914867
 34058,Node Label,Activity,status,4,identifier,NL-1-PPR-26485,description,DMM RTOP FOCAL POINT MEETING 2014 IN BOTSWANA,title,DMM RTOP FOCAL POINT BOTSWANA
 34059,Node Label,Budget,value,136008
-34060,Node Label,Location,name,BOTSWANA,code,BW
+34060,Node Label,Location,is_country,True,name,BOTSWANA,code,BW
 34063,Node Label,Activity,description,BEROEPSONDERWIJS IN KINDERVERZOGING VOOR DAKLOZE EN ALLEENSTAANDE VROUWEN,status,4,identifier,NL-1-PPR-26486,title,TUN MR/02/2014 PUERICULTURE
 34064,Node Label,Budget,value,71160
 34065,Node Label,Organization,ref,BEITY,name,BEITY,type,23
@@ -12950,7 +12950,7 @@
 35980,Node Label,Budget,value,10737496
 35985,Node Label,Activity,status,4,identifier,NL-1-PPR-27201,description,BUE AOA/01 YERBA MATE PRODUCTION PARAGUAY,title,BUE AOA YERBA MATE PARAGUAY
 35986,Node Label,Budget,value,20000
-35987,Node Label,Location,name,PARAGUAY,code,PY
+35987,Node Label,Location,is_country,True,name,PARAGUAY,code,PY
 35989,Node Label,Activity,description,Build Peaceful Communities,identifier,NL-1-PPR-27203,status,2,title,DSH  BUILD PEACEFUL COM.
 35990,Node Label,Budget,value,8031324
 35996,Node Label,Activity,status,2,identifier,NL-1-PPR-27205,description,"DMM MP Oxfam Canada   Strengthening the movement to end various forms of violence againtst women in Colombia, Mexico and Cuba",title,DMM MP OXFAM CANADA
@@ -13276,7 +13276,7 @@
 36796,Node Label,Organization,type,70,ref,MAYDAY_RESCUE_ORG,name,MAYDAY RESCUE.ORG
 36799,Node Label,Activity,status,4,identifier,NL-1-PPR-27588,description,WFP Flash Appeal Vanuatu / Cycloon PAM 2015,title,WFP Cycloon Vanuatu 2015
 36800,Node Label,Budget,value,499500
-36801,Node Label,Location,name,VANUATU,code,VU
+36801,Node Label,Location,is_country,True,name,VANUATU,code,VU
 36804,Node Label,Activity,description,"Regional Forum on Women's resistance to Extremism and terrorism and their struggle for right, peace and security",status,4,identifier,NL-1-PPR-27591,title,BAG 1325 MENA Women Security F
 36805,Node Label,Budget,value,43500
 36808,Node Label,Activity,status,4,description,ICE- EVALUATIE PCF 2015,identifier,NL-1-PPR-27595,title,ICE- EVALUATIE PCF 2015
@@ -15612,7 +15612,7 @@
 41974,Node Label,Budget,value,1000000
 41976,Node Label,Activity,status,2,identifier,XM-DAC-7-PPR-4000000141,title,ARC DRC ZOA,description,"Enabling communities, civil society and government addressing root causes of conflicts in the Hauts Plateaux de Kalehe"
 41977,Node Label,Budget,value,8200000
-41978,Node Label,Location,name,CONGO,code,CG
+41978,Node Label,Location,name,CONGO,code,CG,is_country,True
 41985,Node Label,Activity,description,ACC - PPB ODA 2017,status,2,identifier,XM-DAC-7-PPR-4000000146,title,ACC - PPB ODA 2017
 41986,Node Label,Budget,value,75000
 41987,Node Label,Organization,ref,GM___Ghana_Netherlands_Business_and_Culture_Council,name,GM - Ghana Netherlands Business and Culture Council,type,70

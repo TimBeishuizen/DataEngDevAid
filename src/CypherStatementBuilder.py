@@ -1,7 +1,7 @@
 from typing import Union, Any
 
 
-def get_escaped_str(v: Union[str, list, Any]) -> str:
+def get_escaped_str(v: Union[bool, int, float, str, list, Any]) -> str:
     if v is None:
         # Treat as an empty string.
         return "''"
